@@ -1,0 +1,17 @@
+根据自己的需求进行修改即可，更换镜像源也行
+$env:HTTP_PROXY="http://127.0.0.1:7897"
+$env:HTTPS_PROXY="http://127.0.0.1:7897"
+
+这里问AI，让AI告诉你到底下哪个版本的
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+pip install pysc2
+
+https://github.com/oxwhirl/smac/releases下载地图文件压缩包
+解压到D:\Program Files (x86)\StarCraft II\Maps\
+结束后就会在D:\Program Files (x86)\StarCraft II\Maps\SMAC_Maps\下生成很多地图文件
+根据实际需要可以更改路径
+
+pip install git+https://github.com/oxwhirl/smac.git
+
+pip install pettingzoo[mpe]
