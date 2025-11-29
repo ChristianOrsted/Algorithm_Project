@@ -1,100 +1,284 @@
-from pettingzoo.mpe import simple_spread_v3
+from weak_tie_env import WeakTieStarCraft2Env
 import numpy as np
-import torch
 import time
-from weak_tie_module import WeakTieGraph, WeakTieMAPPO_Critic
+import os
+import sys
+from datetime import datetime
+from weak_tie_module import WeakTieGraph
+from mappo_agent import WeakTieMAPPOAgent
 
-# --- 配置参数 ---
-N_AGENTS = 3
-MAX_CYCLES = 25
-OBS_RANGE = 0.5  # 论文中的观测范围定义
-ALPHA = 0.3  # 弱联系阈值
+# ==============================================================================
+# 论文复现配置 (Batch Training 版)
+# ==============================================================================
+MAP_NAME = "2s3z"
+N_EPISODES = 50000
+BATCH_SIZE = 32
+PPO_EPOCH = 15
+MINI_BATCH_SIZE = 8
+
+OBS_RANGE = 15.0
+EVAL_INTERVAL = 500
+EVAL_EPISODES = 20
+MODEL_PATH = "best_model.pt"
+STEP_DELAY = 0.0
+
+ENTROPY_START = 0.2
+ENTROPY_END = 0.05
+ENTROPY_DECAY_EPISODES = 100000
+
+if MAP_NAME in ["1c3s5z", "50m", "10m_vs_11m"]:
+    HIDDEN_DIM = 256
+    LR = 0.0003
+    print(f">>> [困难地图] {MAP_NAME} -> 应用论文参数: Hidden={HIDDEN_DIM}, LR={LR}")
+else:
+    HIDDEN_DIM = 128
+    LR = 0.0005
+    print(f">>> [常规地图] {MAP_NAME} -> 应用参数: Hidden={HIDDEN_DIM}, LR={LR}")
 
 
-def get_agent_positions(env):
-    """从 MPE 环境中获取真实的智能体位置 (x, y)"""
-    # MPE 的 parallel_env 包装器下，通常可以通过 unwrapped 访问底层属性
-    # 这里为了通用性，尝试访问底层 agents 对象
-    try:
-        # 这里的 env.agents 是 agent 名字列表
-        # 我们需要访问 env.unwrapped.agents 对象列表来获取物理状态
-        positions = []
-        for agent in env.unwrapped.agents:
-            positions.append(agent.state.p_pos)
-        return np.array(positions)
-    except:
-        # 如果无法直接访问，生成随机位置仅作演示（防止代码报错卡住）
-        return np.random.rand(N_AGENTS, 2)
+# ==============================================================================
+# 日志系统
+# ==============================================================================
+class Logger:
+    """同时输出到控制台和文件的日志类"""
+    def __init__(self, log_file):
+        self.terminal = sys.stdout
+        self.log = open(log_file, 'w', encoding='utf-8')
+        
+    def write(self, message):
+        self.terminal.write(message)
+        self.log.write(message)
+        self.log.flush()  # 实时写入文件
+        
+    def flush(self):
+        self.terminal.flush()
+        self.log.flush()
+
+
+def get_next_train_number(log_dir='log'):
+    """自动获取下一个训练编号"""
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+        return 1
+    
+    existing_logs = [f for f in os.listdir(log_dir) if f.startswith('train') and f.endswith('.txt')]
+    
+    if not existing_logs:
+        return 1
+    
+    # 提取所有编号
+    numbers = []
+    for log_file in existing_logs:
+        try:
+            # 从 train1.txt 中提取 1
+            num = int(log_file.replace('train', '').replace('.txt', ''))
+            numbers.append(num)
+        except:
+            continue
+    
+    if numbers:
+        return max(numbers) + 1
+    else:
+        return 1
+
+
+def setup_logger(log_dir='log'):
+    """设置日志系统"""
+    # 确保目录存在
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+    
+    train_num = get_next_train_number(log_dir)
+    log_file = os.path.join(log_dir, f'train{train_num}.txt')
+    
+    # 标准化路径显示（统一使用系统默认分隔符）
+    log_file_display = os.path.normpath(log_file)
+    
+    logger = Logger(log_file)
+    sys.stdout = logger
+    sys.stderr = logger
+    
+    print("="*60)
+    print(f"训练开始 - 第 {train_num} 次训练")
+    print(f"日志文件: {log_file_display}")
+    print(f"开始时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("="*60)
+    print()
+    
+    return train_num, log_file_display
+
+
+def get_current_entropy(episode):
+    if episode > ENTROPY_DECAY_EPISODES:
+        return ENTROPY_END
+    frac = 1.0 - (episode / ENTROPY_DECAY_EPISODES)
+    return ENTROPY_END + frac * (ENTROPY_START - ENTROPY_END)
+
+
+def run_episode(env, agent, wt_graph, train_mode=True):
+    obs, state = env.reset()
+    terminated = False
+
+    episode_reward = 0
+    raw_episode_reward = 0
+
+    actor_hidden = agent.init_hidden(batch_size=1)
+
+    episode_buffer = {'obs': [], 'acts': [], 'rewards': [], 'dones': [],
+                      'avails': [], 'probs': [], 'masks': [], 'keys': []}
+
+    while not terminated:
+        avail_actions = env.get_avail_actions()
+        positions = env.get_all_unit_positions()
+        alive_mask = np.any(positions != 0, axis=1)
+
+        mask_beta, key_agent_idx = wt_graph.compute_graph_info(positions, alive_mask)
+
+        actions, probs, next_hidden = agent.select_action(
+            obs, avail_actions, mask_beta, key_agent_idx, actor_hidden,
+            deterministic=(not train_mode)
+        )
+
+        reward, terminated, info = env.step(actions)
+        next_obs = env.get_obs()
+
+        shaped_reward = reward / 5.0
+
+        if train_mode:
+            episode_buffer['obs'].append([obs])
+            episode_buffer['acts'].append([actions])
+            episode_buffer['rewards'].append([[shaped_reward] * len(actions)])
+            episode_buffer['dones'].append([[float(terminated)] * len(actions)])
+            episode_buffer['avails'].append([avail_actions])
+            episode_buffer['probs'].append([probs])
+            episode_buffer['masks'].append([mask_beta])
+            episode_buffer['keys'].append([key_agent_idx])
+
+        obs = next_obs
+        actor_hidden = next_hidden
+        episode_reward += shaped_reward
+        raw_episode_reward += reward
+
+    is_win = info.get('battle_won', False)
+    next_data = None
+
+    return episode_reward, raw_episode_reward, is_win, episode_buffer, next_data
 
 
 def main():
-    # 1. 初始化环境
-    env = simple_spread_v3.parallel_env(
-        render_mode="human",
-        max_cycles=MAX_CYCLES,
-        continuous_actions=False,
-        N=N_AGENTS
-    )
-    observations, infos = env.reset()
+    # 设置日志系统
+    train_num, log_file = setup_logger()
+    
+    # 记录配置信息
+    print(f"地图名称: {MAP_NAME}")
+    print(f"训练回合数: {N_EPISODES}")
+    print(f"批次大小: {BATCH_SIZE}")
+    print(f"PPO轮数: {PPO_EPOCH}")
+    print(f"隐藏层维度: {HIDDEN_DIM}")
+    print(f"学习率: {LR}")
+    print(f"评估间隔: {EVAL_INTERVAL}")
+    print()
+    
+    try:
+        env = WeakTieStarCraft2Env(map_name=MAP_NAME, difficulty="2", window_size_x=800, window_size_y=600)
+    except Exception as e:
+        print(f"环境启动失败: {e}")
+        return
 
-    # 获取维度信息
-    sample_agent = env.agents[0]
-    obs_dim = env.observation_space(sample_agent).shape[0]
-    act_dim = env.action_space(sample_agent).n
+    env_info = env.get_env_info()
+    n_agents = env_info["n_agents"]
+    n_actions = env_info["n_actions"]
+    obs_dim = env_info["obs_shape"]
 
-    print(f"环境初始化完成: {N_AGENTS} Agents")
-    print(f"Obs Dim: {obs_dim}, Act Dim: {act_dim}")
+    print(f"--- Batch Training 启动: {MAP_NAME} ---")
+    print(f"--- Batch Size: {BATCH_SIZE}, Epochs: {PPO_EPOCH} ---")
+    print(f"--- 智能体数量: {n_agents}, 观测维度: {obs_dim}, 动作数: {n_actions} ---")
+    print()
 
-    # 2. 初始化核心算法模块
-    wt_graph = WeakTieGraph(n_agents=N_AGENTS, obs_range=OBS_RANGE, alpha=ALPHA)
-    wt_critic = WeakTieMAPPO_Critic(n_agents=N_AGENTS, obs_dim=obs_dim, act_dim=act_dim)
+    wt_graph = WeakTieGraph(n_agents, obs_range=OBS_RANGE, alpha_quantile=0.3)
 
-    print("\n>>> 开始弱联系算法运行演示 <<<\n")
+    agent = WeakTieMAPPOAgent(n_agents, obs_dim, n_actions,
+                              hidden_dim=HIDDEN_DIM, lr=LR,
+                              ppo_epoch=PPO_EPOCH, mini_batch_size=MINI_BATCH_SIZE)
 
-    step = 0
-    while env.agents:
-        # --- 模拟动作选择 (这里用随机动作，实际应替换为 Actor 网络) ---
-        actions = {agent: env.action_space(agent).sample() for agent in env.agents}
+    if os.path.exists(MODEL_PATH):
+        print("发现旧模型，删除以重新训练...")
+        try:
+            os.remove(MODEL_PATH)
+        except:
+            pass
 
-        # 环境步进
-        next_obs, rewards, terminations, truncations, infos = env.step(actions)
+    best_win_rate = 0.0
+    total_wins = 0
+    recent_raw_rewards = []
 
-        # --- 核心环节：获取位置并构建图 ---
-        positions = get_agent_positions(env)
+    batch_buffer = []
+    
+    training_start_time = time.time()
 
-        # 计算联系强度矩阵、主导智能体、弱联系掩码
-        H, key_agent_idx, mask_beta = wt_graph.compute_tie_strength_matrix(positions)
+    for episode in range(1, N_EPISODES + 1):
+        curr_entropy = get_current_entropy(episode)
 
-        # --- 核心环节：准备数据输入网络 ---
-        # 将数据转换为 Tensor 并增加 batch 维度
-        obs_tensor = torch.tensor(np.array([observations[a] for a in env.agents]), dtype=torch.float32).unsqueeze(0)
+        _, raw_reward, is_win, buffer, next_data = run_episode(env, agent, wt_graph, train_mode=True)
 
-        # 将离散动作转换为 One-hot 编码供 Critic 使用
-        act_indices = np.array([actions[a] for a in env.agents])
-        act_onehot = np.eye(act_dim)[act_indices]
-        act_tensor = torch.tensor(act_onehot, dtype=torch.float32).unsqueeze(0)
+        batch_buffer.append((buffer, next_data))
 
-        mask_beta_tensor = torch.tensor(mask_beta, dtype=torch.float32).unsqueeze(0)
-        key_idx_tensor = torch.tensor([key_agent_idx], dtype=torch.long).unsqueeze(0)
+        if is_win: total_wins += 1
+        recent_raw_rewards.append(raw_reward)
 
-        # --- 核心环节：Critic 前向传播 (计算 V 值) ---
-        values = wt_critic(obs_tensor, act_tensor, mask_beta_tensor, key_idx_tensor)
+        if len(batch_buffer) >= BATCH_SIZE:
+            loss = agent.update_batch(batch_buffer, entropy_coef=curr_entropy)
+            batch_buffer = []
+            print(f"Ep {episode} | Update! Loss: {loss:.4f} | Ent: {curr_entropy:.3f}")
 
-        # 打印信息
-        print(f"Step {step}:")
-        print(f"  - Key Agent Index: {key_agent_idx}")
-        print(f"  - Weak Tie Mask (Agent 0视角): {mask_beta[0].astype(int)}")  # 1代表保留(弱联系)，0代表丢弃(强联系)
-        print(f"  - Critic Values: {values.detach().numpy().flatten().round(3)}")
+        res_str = "WIN" if is_win else "LOSE"
+        if episode % 10 == 0:
+            elapsed_time = time.time() - training_start_time
+            print(f"Ep {episode} | RawRew: {raw_reward:.2f} | {res_str} | Wins: {total_wins} | Time: {elapsed_time/60:.1f}min")
 
-        observations = next_obs
-        step += 1
-        time.sleep(0.1)  # 慢放以便观察
+        if episode % 200 == 0:
+            avg_rew = np.mean(recent_raw_rewards) if recent_raw_rewards else 0
+            status = "提升中" if avg_rew > 5.0 else "探索中"
+            print(f"\n==============================================")
+            print(f"[趋势] 第 {episode - 199}~{episode} 轮 ({status})")
+            print(f"平均得分: {avg_rew:.2f}")
+            print(f"当前胜场: {total_wins}")
+            print(f"总胜率: {total_wins/episode*100:.2f}%")
+            print(f"==============================================\n")
+            recent_raw_rewards = []
 
-        if all(terminations.values()) or all(truncations.values()):
-            break
+        if episode % EVAL_INTERVAL == 0:
+            print(f">>> 正在评估 ({EVAL_EPISODES}局)...")
+            eval_wins = 0
+            eval_rewards = []
+            for _ in range(EVAL_EPISODES):
+                _, raw_rew, win, _, _ = run_episode(env, agent, wt_graph, train_mode=False)
+                if win: eval_wins += 1
+                eval_rewards.append(raw_rew)
+
+            win_rate = eval_wins / EVAL_EPISODES
+            avg_eval_reward = np.mean(eval_rewards)
+            print(f">>> 真实胜率: {win_rate * 100:.1f}% | 平均得分: {avg_eval_reward:.2f}")
+
+            if win_rate >= best_win_rate and win_rate > 0:
+                best_win_rate = win_rate
+                agent.save_model(MODEL_PATH)
+                print(f">>> 模型已保存 (胜率 {best_win_rate:.1%})")
 
     env.close()
-    print("\n✅ 演示结束")
+    
+    total_time = time.time() - training_start_time
+    print("\n" + "="*60)
+    print("训练完成!")
+    print(f"最终统计:")
+    print(f"总回合数: {N_EPISODES}")
+    print(f"总胜场数: {total_wins}")
+    print(f"最终胜率: {total_wins/N_EPISODES*100:.2f}%")
+    print(f"最佳评估胜率: {best_win_rate*100:.1f}%")
+    print(f"总训练时间: {total_time/3600:.2f} 小时")
+    print(f"日志已保存至: {log_file}")
+    print(f"结束时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("="*60)
 
 
 if __name__ == "__main__":
