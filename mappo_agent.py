@@ -59,7 +59,10 @@ class WeakTieMAPPOAgent:
         self.clip_param = clip_param
         self.ppo_epoch = ppo_epoch
         self.mini_batch_size = mini_batch_size
+
+        # 自动检测设备
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(f"🚀 Agent running on device: {self.device}")
 
         # 归一化层
         self.obs_norm = RunningMeanStd(shape=(obs_dim,))
@@ -78,9 +81,7 @@ class WeakTieMAPPOAgent:
     def init_hidden(self, batch_size=1):
         return torch.zeros(batch_size, self.n_agents, self.hidden_dim).to(self.device)
 
-    # ⭐️ 修改：增加 update_stats 参数，控制是否更新均值方差
     def normalize_obs(self, obs, update_stats=True):
-        """对观测进行归一化"""
         flat_obs = obs.reshape(-1, self.obs_dim)
         if update_stats:
             self.obs_norm.update(flat_obs)
@@ -99,7 +100,7 @@ class WeakTieMAPPOAgent:
             mask = mask[None, ...]
             key_idx = key_idx[None, ...]
 
-        # ⭐️ 玩游戏时：update_stats=True (收集统计信息)
+        # 玩游戏时更新统计量
         obs = self.normalize_obs(obs, update_stats=True)
 
         obs_t = torch.FloatTensor(obs).to(self.device)
@@ -127,14 +128,10 @@ class WeakTieMAPPOAgent:
         return actions.cpu().numpy()[0], probs.cpu().numpy()[0], new_hidden
 
     def update_batch(self, buffer_list, entropy_coef=0.01):
-        """
-        基于 Batch (多个 Episodes) 进行 PPO 更新
-        """
         batch_obs_list, batch_acts_list, batch_rews_list, batch_dones_list = [], [], [], []
         batch_avails_list, batch_masks_list, batch_keys_list, batch_old_probs_list = [], [], [], []
         batch_lens = []
 
-        # --- 1. 数据收集与预处理 ---
         for episode_data in buffer_list:
             buf = episode_data[0]
             t_len = len(buf['obs'])
@@ -148,7 +145,7 @@ class WeakTieMAPPOAgent:
             keys = np.array(buf['keys']).reshape(t_len, 1)
             probs = np.array(buf['probs']).reshape(t_len, self.n_agents, -1)
 
-            # ⭐️ 训练时：update_stats=False (不再更新统计量，保持稳定)
+            # 训练时不更新统计量
             obs = self.normalize_obs(obs, update_stats=False)
 
             batch_obs_list.append(torch.FloatTensor(obs))
@@ -161,7 +158,6 @@ class WeakTieMAPPOAgent:
             batch_old_probs_list.append(torch.FloatTensor(probs))
             batch_lens.append(t_len)
 
-        # --- 2. 手动 Padding ---
         BatchSize = len(batch_lens)
         MaxTime = max(batch_lens)
 
@@ -192,7 +188,6 @@ class WeakTieMAPPOAgent:
 
         valid_mask_agent = valid_mask.unsqueeze(-1).expand(-1, -1, self.n_agents)
 
-        # --- 3. GAE ---
         with torch.no_grad():
             values = []
             critic_hidden = self.init_hidden(BatchSize)
@@ -219,7 +214,6 @@ class WeakTieMAPPOAgent:
 
             returns = advantages + values
 
-        # --- 4. Update ---
         total_loss_log = 0
         indices = np.arange(BatchSize)
 
@@ -303,20 +297,45 @@ class WeakTieMAPPOAgent:
 
         return total_loss_log / (self.ppo_epoch * (BatchSize / self.mini_batch_size))
 
-    def save_model(self, path):
+    # --- 保存完整状态 ---
+    def save_model(self, path, episode):
+        save_dir = os.path.dirname(path)
+        if not os.path.exists(save_dir) and save_dir != '':
+            os.makedirs(save_dir)
+
         torch.save({
+            'episode': episode,
             'actor': self.actor.state_dict(),
             'critic': self.critic.state_dict(),
+            'optimizer': self.optimizer.state_dict(),
             'obs_norm': {'mean': self.obs_norm.mean, 'var': self.obs_norm.var, 'count': self.obs_norm.count}
         }, path)
+        print(f"💾 模型已保存到: {path}")
 
+    # --- 加载完整状态并返回 episode ---
     def load_model(self, path):
+        start_episode = 0
         if os.path.exists(path):
-            ckpt = torch.load(path)
-            self.actor.load_state_dict(ckpt['actor'])
-            self.critic.load_state_dict(ckpt['critic'])
-            if 'obs_norm' in ckpt:
-                self.obs_norm.mean = ckpt['obs_norm']['mean']
-                self.obs_norm.var = ckpt['obs_norm']['var']
-                self.obs_norm.count = ckpt['obs_norm']['count']
-            print(f"✅ 模型已加载: {path}")
+            try:
+                ckpt = torch.load(path, map_location=self.device)
+                self.actor.load_state_dict(ckpt['actor'])
+                self.critic.load_state_dict(ckpt['critic'])
+
+                if 'optimizer' in ckpt:
+                    self.optimizer.load_state_dict(ckpt['optimizer'])
+
+                if 'obs_norm' in ckpt:
+                    self.obs_norm.mean = ckpt['obs_norm']['mean']
+                    self.obs_norm.var = ckpt['obs_norm']['var']
+                    self.obs_norm.count = ckpt['obs_norm']['count']
+
+                if 'episode' in ckpt:
+                    start_episode = ckpt['episode']
+
+                print(f"✅ 成功加载模型: {path} (从第 {start_episode} 轮继续)")
+            except Exception as e:
+                print(f"⚠️ 模型加载失败: {e}，将重新开始训练。")
+        else:
+            print(f"ℹ️ 未找到模型 {path}，将重新开始训练。")
+
+        return start_episode
