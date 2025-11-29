@@ -33,7 +33,7 @@ CHECKPOINT_INTERVAL = 1000  # 每 1000 轮覆盖更新一次存档
 #   "best"  -> 强制加载 best_model.pt (如果你觉得之前的模型更好)
 #   "latest"-> 自动比较两者，谁的轮数大加载谁
 #   "none"  -> 强制从头开始 (Ep 1)
-RESUME_SOURCE = "latest"
+RESUME_SOURCE = "best"
 
 # 提速优化
 GRAPH_UPDATE_INTERVAL = 3
