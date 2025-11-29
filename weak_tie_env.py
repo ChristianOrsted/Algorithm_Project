@@ -12,7 +12,6 @@ class WeakTieStarCraft2Env(StarCraft2Env):
     def reset(self):
         """重置环境并记录所有智能体的 Tag，保证ID顺序一致"""
         obs, state = super().reset()
-        # 记录初始时的所有单位Tag，确保后续索引对齐
         self.agent_tags = sorted(list(self.agents.keys()))
         return obs, state
 
@@ -28,6 +27,5 @@ class WeakTieStarCraft2Env(StarCraft2Env):
                 # 直接访问 PySC2 Unit 对象的 pos 属性
                 positions.append([unit.pos.x, unit.pos.y])
             else:
-                # 死亡单位坐标归零
                 positions.append([0.0, 0.0])
         return np.array(positions)
