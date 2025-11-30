@@ -1062,3 +1062,2649 @@ Traceback (most recent call last):
     unified = b"".join(self.recv_buffer)
               ^^^^^^^^^^^^^^^^^^^^^^^^^^
 KeyboardInterrupt
+
+============================================================
+启动时间: 2025-11-30 00:31:59
+============================================================
+
+地图: 1c3s5z | 目标回合: 15000
+Device: cuda
+环境已启动（无渲染模式，性能优化已开启）
+🚀 Agent running on device: cuda
+d:\Playground\Algorithm_Project\train_smac.py:102: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  ckpt = torch.load(path, map_location=device)
+
+存档状态扫描:
+[Ckpt]  自动存档: Ep 5000
+[Best]  最佳模型: Ep 1500
+未找到可用模型或策略设为 none，从头开始训练。
+
+正式开始训练 (从 Ep 1 到 15000)
+配置: LR=0.0001, Entropy=0.05→0.001, PPO_Epoch=15
+
+Ep 10 | RawRew: 8.45 | LOSE | Wins: 0 | Time: 0.2m
+Ep 20 | RawRew: 6.43 | LOSE | Wins: 0 | Time: 0.3m
+Ep 30 | RawRew: 10.07 | LOSE | Wins: 0 | Time: 0.4m
+Ep 32 | Loss: 0.1871 | Ent: 0.049
+Ep 40 | RawRew: 7.91 | LOSE | Wins: 0 | Time: 0.6m
+Ep 50 | RawRew: 5.76 | LOSE | Wins: 0 | Time: 0.7m
+Ep 60 | RawRew: 8.55 | LOSE | Wins: 0 | Time: 0.8m
+Ep 64 | Loss: 0.1327 | Ent: 0.049
+Ep 70 | RawRew: 9.69 | LOSE | Wins: 0 | Time: 1.2m
+Ep 80 | RawRew: 9.17 | LOSE | Wins: 0 | Time: 1.2m
+Ep 90 | RawRew: 7.54 | LOSE | Wins: 0 | Time: 1.3m
+Ep 96 | Loss: 0.0466 | Ent: 0.048
+Ep 100 | RawRew: 6.61 | LOSE | Wins: 0 | Time: 1.5m
+Ep 110 | RawRew: 7.41 | LOSE | Wins: 0 | Time: 1.6m
+Ep 120 | RawRew: 6.61 | LOSE | Wins: 0 | Time: 1.7m
+Ep 128 | Loss: 0.0133 | Ent: 0.048
+Ep 130 | RawRew: 8.25 | LOSE | Wins: 0 | Time: 2.1m
+Ep 140 | RawRew: 9.33 | LOSE | Wins: 0 | Time: 2.2m
+Ep 150 | RawRew: 10.15 | LOSE | Wins: 0 | Time: 2.2m
+Ep 160 | Loss: 0.0027 | Ent: 0.047
+Ep 160 | RawRew: 7.55 | LOSE | Wins: 0 | Time: 2.5m
+Ep 170 | RawRew: 10.05 | LOSE | Wins: 0 | Time: 2.6m
+Ep 180 | RawRew: 9.52 | LOSE | Wins: 0 | Time: 2.7m
+Ep 190 | RawRew: 9.05 | LOSE | Wins: 0 | Time: 2.8m
+Ep 192 | Loss: 0.0215 | Ent: 0.047
+Ep 200 | RawRew: 8.75 | LOSE | Wins: 0 | Time: 3.1m
+
+=== [趋势报告] Ep 200 ===
+平均得分: 8.23
+当前运行胜场: 0/200 (0.00%)
+探索系数: 0.0467
+============================
+
+Ep 210 | RawRew: 8.60 | LOSE | Wins: 0 | Time: 3.2m
+Ep 220 | RawRew: 9.03 | LOSE | Wins: 0 | Time: 3.3m
+Ep 224 | Loss: 0.0052 | Ent: 0.046
+Ep 230 | RawRew: 11.60 | LOSE | Wins: 0 | Time: 3.5m
+Ep 240 | RawRew: 10.20 | LOSE | Wins: 0 | Time: 3.6m
+Ep 250 | RawRew: 6.78 | LOSE | Wins: 0 | Time: 3.7m
+Ep 256 | Loss: 0.0286 | Ent: 0.046
+Ep 260 | RawRew: 11.14 | LOSE | Wins: 0 | Time: 3.9m
+Ep 270 | RawRew: 9.81 | LOSE | Wins: 0 | Time: 4.0m
+Ep 280 | RawRew: 11.55 | LOSE | Wins: 0 | Time: 4.0m
+Ep 288 | Loss: 0.0090 | Ent: 0.045
+Ep 290 | RawRew: 7.95 | LOSE | Wins: 0 | Time: 4.3m
+Ep 300 | RawRew: 7.14 | LOSE | Wins: 0 | Time: 4.4m
+Ep 310 | RawRew: 8.49 | LOSE | Wins: 0 | Time: 4.5m
+Ep 320 | Loss: 0.0035 | Ent: 0.045
+Ep 320 | RawRew: 8.48 | LOSE | Wins: 0 | Time: 4.7m
+Ep 330 | RawRew: 9.97 | LOSE | Wins: 0 | Time: 4.8m
+Ep 340 | RawRew: 10.67 | LOSE | Wins: 0 | Time: 4.9m
+Ep 350 | RawRew: 8.95 | LOSE | Wins: 0 | Time: 5.0m
+Ep 352 | Loss: -0.0118 | Ent: 0.044
+Ep 360 | RawRew: 9.07 | LOSE | Wins: 0 | Time: 5.2m
+Ep 370 | RawRew: 11.45 | LOSE | Wins: 0 | Time: 5.3m
+Ep 380 | RawRew: 13.56 | LOSE | Wins: 0 | Time: 5.4m
+Ep 384 | Loss: -0.0045 | Ent: 0.044
+Ep 390 | RawRew: 8.88 | LOSE | Wins: 0 | Time: 5.7m
+Ep 400 | RawRew: 8.34 | LOSE | Wins: 0 | Time: 5.8m
+
+=== [趋势报告] Ep 400 ===
+平均得分: 9.75
+当前运行胜场: 0/400 (0.00%)
+探索系数: 0.0435
+============================
+
+Ep 410 | RawRew: 12.00 | LOSE | Wins: 0 | Time: 5.9m
+Ep 416 | Loss: 0.0027 | Ent: 0.043
+Ep 420 | RawRew: 12.11 | LOSE | Wins: 0 | Time: 6.3m
+Ep 430 | RawRew: 10.83 | LOSE | Wins: 0 | Time: 6.4m
+Ep 440 | RawRew: 9.76 | LOSE | Wins: 0 | Time: 6.5m
+Ep 448 | Loss: 0.0258 | Ent: 0.043
+Ep 450 | RawRew: 10.01 | LOSE | Wins: 0 | Time: 6.8m
+Ep 460 | RawRew: 14.73 | LOSE | Wins: 0 | Time: 6.9m
+Ep 470 | RawRew: 11.39 | LOSE | Wins: 0 | Time: 7.0m
+Ep 480 | Loss: 0.0377 | Ent: 0.042
+Ep 480 | RawRew: 12.43 | LOSE | Wins: 0 | Time: 7.2m
+Ep 490 | RawRew: 12.24 | LOSE | Wins: 0 | Time: 7.2m
+Ep 500 | RawRew: 13.07 | LOSE | Wins: 0 | Time: 7.3m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.62
+Ep 510 | RawRew: 8.98 | LOSE | Wins: 0 | Time: 7.9m
+Ep 512 | Loss: 0.0124 | Ent: 0.042
+Ep 520 | RawRew: 11.31 | LOSE | Wins: 0 | Time: 8.2m
+Ep 530 | RawRew: 8.66 | LOSE | Wins: 0 | Time: 8.3m
+Ep 540 | RawRew: 12.07 | LOSE | Wins: 0 | Time: 8.4m
+Ep 544 | Loss: 0.0266 | Ent: 0.041
+Ep 550 | RawRew: 8.62 | LOSE | Wins: 0 | Time: 8.8m
+Ep 560 | RawRew: 12.42 | LOSE | Wins: 0 | Time: 8.9m
+Ep 570 | RawRew: 13.47 | LOSE | Wins: 0 | Time: 9.0m
+Ep 576 | Loss: 0.0396 | Ent: 0.041
+Ep 580 | RawRew: 8.46 | LOSE | Wins: 0 | Time: 9.3m
+Ep 590 | RawRew: 11.08 | LOSE | Wins: 0 | Time: 9.4m
+Ep 600 | RawRew: 10.17 | LOSE | Wins: 0 | Time: 9.5m
+
+=== [趋势报告] Ep 600 ===
+平均得分: 10.83
+当前运行胜场: 0/600 (0.00%)
+探索系数: 0.0402
+============================
+
+Ep 608 | Loss: -0.0105 | Ent: 0.040
+Ep 610 | RawRew: 10.53 | LOSE | Wins: 0 | Time: 9.6m
+Ep 620 | RawRew: 8.80 | LOSE | Wins: 0 | Time: 9.7m
+Ep 630 | RawRew: 15.97 | LOSE | Wins: 0 | Time: 9.8m
+Ep 640 | Loss: 0.0346 | Ent: 0.040
+Ep 640 | RawRew: 11.68 | LOSE | Wins: 0 | Time: 10.0m
+Ep 650 | RawRew: 8.47 | LOSE | Wins: 0 | Time: 10.1m
+Ep 660 | RawRew: 11.05 | LOSE | Wins: 0 | Time: 10.2m
+Ep 670 | RawRew: 9.70 | LOSE | Wins: 0 | Time: 10.3m
+Ep 672 | Loss: 0.0092 | Ent: 0.039
+Ep 680 | RawRew: 7.82 | LOSE | Wins: 0 | Time: 10.5m
+Ep 690 | RawRew: 11.81 | LOSE | Wins: 0 | Time: 10.6m
+Ep 700 | RawRew: 12.50 | LOSE | Wins: 0 | Time: 10.7m
+Ep 704 | Loss: 0.0104 | Ent: 0.039
+Ep 710 | RawRew: 11.06 | LOSE | Wins: 0 | Time: 11.4m
+Ep 720 | RawRew: 9.64 | LOSE | Wins: 0 | Time: 11.5m
+Ep 730 | RawRew: 11.27 | LOSE | Wins: 0 | Time: 11.6m
+Ep 736 | Loss: 0.0314 | Ent: 0.038
+Ep 740 | RawRew: 12.61 | LOSE | Wins: 0 | Time: 11.9m
+Ep 750 | RawRew: 8.50 | LOSE | Wins: 0 | Time: 12.0m
+Ep 760 | RawRew: 11.01 | LOSE | Wins: 0 | Time: 12.1m
+Ep 768 | Loss: 0.0293 | Ent: 0.037
+Ep 770 | RawRew: 10.05 | LOSE | Wins: 0 | Time: 12.5m
+Ep 780 | RawRew: 8.22 | LOSE | Wins: 0 | Time: 12.6m
+Ep 790 | RawRew: 12.50 | LOSE | Wins: 0 | Time: 12.7m
+Ep 800 | Loss: 0.0371 | Ent: 0.037
+Ep 800 | RawRew: 10.19 | LOSE | Wins: 0 | Time: 13.1m
+
+=== [趋势报告] Ep 800 ===
+平均得分: 11.06
+当前运行胜场: 0/800 (0.00%)
+探索系数: 0.0369
+============================
+
+Ep 810 | RawRew: 9.76 | LOSE | Wins: 0 | Time: 13.2m
+Ep 820 | RawRew: 10.66 | LOSE | Wins: 0 | Time: 13.3m
+Ep 830 | RawRew: 12.10 | LOSE | Wins: 0 | Time: 13.4m
+Ep 832 | Loss: 0.0211 | Ent: 0.036
+Ep 840 | RawRew: 11.00 | LOSE | Wins: 0 | Time: 13.8m
+Ep 850 | RawRew: 13.73 | LOSE | Wins: 0 | Time: 13.9m
+Ep 860 | RawRew: 11.03 | LOSE | Wins: 0 | Time: 14.0m
+Ep 864 | Loss: 0.0117 | Ent: 0.036
+Ep 870 | RawRew: 10.27 | LOSE | Wins: 0 | Time: 14.4m
+Ep 880 | RawRew: 12.49 | LOSE | Wins: 0 | Time: 14.5m
+Ep 890 | RawRew: 8.04 | LOSE | Wins: 0 | Time: 14.6m
+Ep 896 | Loss: 0.0089 | Ent: 0.035
+Ep 900 | RawRew: 12.99 | LOSE | Wins: 0 | Time: 15.0m
+Ep 910 | RawRew: 10.82 | LOSE | Wins: 0 | Time: 15.1m
+Ep 920 | RawRew: 14.06 | LOSE | Wins: 0 | Time: 15.2m
+Ep 928 | Loss: 0.0263 | Ent: 0.035
+Ep 930 | RawRew: 11.47 | LOSE | Wins: 0 | Time: 15.6m
+Ep 940 | RawRew: 8.71 | LOSE | Wins: 0 | Time: 15.7m
+Ep 950 | RawRew: 11.45 | LOSE | Wins: 0 | Time: 15.8m
+Ep 960 | Loss: 0.0347 | Ent: 0.034
+Ep 960 | RawRew: 11.41 | LOSE | Wins: 0 | Time: 16.2m
+Ep 970 | RawRew: 9.76 | LOSE | Wins: 0 | Time: 16.3m
+Ep 980 | RawRew: 10.88 | LOSE | Wins: 0 | Time: 16.5m
+Ep 990 | RawRew: 10.99 | LOSE | Wins: 0 | Time: 16.6m
+Ep 992 | Loss: 0.0329 | Ent: 0.034
+Ep 1000 | RawRew: 10.02 | LOSE | Wins: 0 | Time: 17.0m
+
+=== [趋势报告] Ep 1000 ===
+平均得分: 11.75
+当前运行胜场: 0/1000 (0.00%)
+探索系数: 0.0337
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 12.59
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 1010 | RawRew: 11.26 | LOSE | Wins: 0 | Time: 17.9m
+Ep 1020 | RawRew: 16.12 | LOSE | Wins: 0 | Time: 18.1m
+Ep 1024 | Loss: 0.0502 | Ent: 0.033
+Ep 1030 | RawRew: 12.81 | LOSE | Wins: 1 | Time: 19.6m
+Ep 1040 | RawRew: 12.70 | LOSE | Wins: 1 | Time: 19.7m
+Ep 1050 | RawRew: 11.54 | LOSE | Wins: 1 | Time: 19.8m
+Ep 1056 | Loss: 0.0616 | Ent: 0.033
+Ep 1060 | RawRew: 12.25 | LOSE | Wins: 1 | Time: 20.2m
+Ep 1070 | RawRew: 12.48 | LOSE | Wins: 1 | Time: 20.3m
+Ep 1080 | RawRew: 13.13 | LOSE | Wins: 1 | Time: 20.4m
+Ep 1088 | Loss: 0.0335 | Ent: 0.032
+Ep 1090 | RawRew: 12.85 | LOSE | Wins: 1 | Time: 20.7m
+Ep 1100 | RawRew: 10.50 | LOSE | Wins: 1 | Time: 20.8m
+Ep 1110 | RawRew: 11.64 | LOSE | Wins: 1 | Time: 20.9m
+Ep 1120 | Loss: 0.0253 | Ent: 0.032
+Ep 1120 | RawRew: 13.60 | LOSE | Wins: 1 | Time: 21.3m
+Ep 1130 | RawRew: 10.75 | LOSE | Wins: 1 | Time: 21.4m
+Ep 1140 | RawRew: 14.52 | LOSE | Wins: 1 | Time: 21.5m
+Ep 1150 | RawRew: 12.78 | LOSE | Wins: 2 | Time: 21.5m
+Ep 1152 | Loss: 0.0618 | Ent: 0.031
+Ep 1160 | RawRew: 12.45 | LOSE | Wins: 2 | Time: 21.9m
+Ep 1170 | RawRew: 9.08 | LOSE | Wins: 2 | Time: 22.0m
+Ep 1180 | RawRew: 13.01 | LOSE | Wins: 2 | Time: 22.1m
+Ep 1184 | Loss: 0.0343 | Ent: 0.031
+Ep 1190 | RawRew: 8.65 | LOSE | Wins: 2 | Time: 22.4m
+Ep 1200 | RawRew: 13.12 | LOSE | Wins: 2 | Time: 22.5m
+
+=== [趋势报告] Ep 1200 ===
+平均得分: 12.05
+当前运行胜场: 2/1200 (0.17%)
+探索系数: 0.0304
+============================
+
+Ep 1210 | RawRew: 9.35 | LOSE | Wins: 2 | Time: 22.6m
+Ep 1216 | Loss: 0.0314 | Ent: 0.030
+Ep 1220 | RawRew: 15.16 | LOSE | Wins: 2 | Time: 22.9m
+Ep 1230 | RawRew: 15.36 | LOSE | Wins: 2 | Time: 23.0m
+Ep 1240 | RawRew: 13.53 | LOSE | Wins: 2 | Time: 23.1m
+Ep 1248 | Loss: 0.0425 | Ent: 0.030
+Ep 1250 | RawRew: 16.67 | LOSE | Wins: 2 | Time: 23.5m
+Ep 1260 | RawRew: 10.78 | LOSE | Wins: 2 | Time: 23.6m
+Ep 1270 | RawRew: 12.50 | LOSE | Wins: 2 | Time: 23.7m
+Ep 1280 | Loss: 0.0461 | Ent: 0.029
+Ep 1280 | RawRew: 13.05 | LOSE | Wins: 2 | Time: 24.0m
+Ep 1290 | RawRew: 12.91 | LOSE | Wins: 2 | Time: 24.1m
+Ep 1300 | RawRew: 12.22 | LOSE | Wins: 2 | Time: 24.2m
+Ep 1310 | RawRew: 8.84 | LOSE | Wins: 2 | Time: 24.3m
+Ep 1312 | Loss: 0.0342 | Ent: 0.029
+Ep 1320 | RawRew: 15.50 | LOSE | Wins: 2 | Time: 24.7m
+Ep 1330 | RawRew: 11.68 | LOSE | Wins: 2 | Time: 24.8m
+Ep 1340 | RawRew: 9.02 | LOSE | Wins: 2 | Time: 24.9m
+Ep 1344 | Loss: 0.0265 | Ent: 0.028
+Ep 1350 | RawRew: 12.80 | LOSE | Wins: 3 | Time: 25.3m
+Ep 1360 | RawRew: 10.30 | LOSE | Wins: 3 | Time: 25.4m
+Ep 1370 | RawRew: 12.94 | LOSE | Wins: 3 | Time: 25.4m
+Ep 1376 | Loss: 0.0588 | Ent: 0.028
+Ep 1380 | RawRew: 11.80 | LOSE | Wins: 3 | Time: 25.8m
+Ep 1390 | RawRew: 10.54 | LOSE | Wins: 3 | Time: 25.9m
+Ep 1400 | RawRew: 13.46 | LOSE | Wins: 3 | Time: 26.0m
+
+=== [趋势报告] Ep 1400 ===
+平均得分: 12.25
+当前运行胜场: 3/1400 (0.21%)
+探索系数: 0.0271
+============================
+
+Ep 1408 | Loss: 0.0434 | Ent: 0.027
+Ep 1410 | RawRew: 11.92 | LOSE | Wins: 3 | Time: 26.4m
+Ep 1420 | RawRew: 9.23 | LOSE | Wins: 3 | Time: 26.6m
+Ep 1430 | RawRew: 12.46 | LOSE | Wins: 3 | Time: 26.6m
+Ep 1440 | Loss: 0.0331 | Ent: 0.026
+Ep 1440 | RawRew: 16.89 | LOSE | Wins: 3 | Time: 27.0m
+Ep 1450 | RawRew: 11.71 | LOSE | Wins: 3 | Time: 27.1m
+Ep 1460 | RawRew: 12.39 | LOSE | Wins: 3 | Time: 27.2m
+Ep 1470 | RawRew: 10.31 | LOSE | Wins: 3 | Time: 27.4m
+Ep 1472 | Loss: 0.0504 | Ent: 0.026
+Ep 1480 | RawRew: 10.20 | LOSE | Wins: 3 | Time: 27.7m
+Ep 1490 | RawRew: 9.47 | LOSE | Wins: 3 | Time: 27.8m
+Ep 1500 | RawRew: 15.99 | LOSE | Wins: 3 | Time: 27.9m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 2.0% | 平均得分: 12.74
+💾 模型已保存到: best_model.pt
+>>> 最佳模型已更新 @ Ep 1500
+    原因: 胜率提升 0.0% → 2.0%
+Ep 1504 | Loss: 0.0368 | Ent: 0.025
+Ep 1510 | RawRew: 12.20 | LOSE | Wins: 3 | Time: 29.0m
+Ep 1520 | RawRew: 18.22 | LOSE | Wins: 3 | Time: 29.1m
+Ep 1530 | RawRew: 10.97 | LOSE | Wins: 3 | Time: 29.2m
+Ep 1536 | Loss: 0.0349 | Ent: 0.025
+Ep 1540 | RawRew: 9.04 | LOSE | Wins: 3 | Time: 29.6m
+Ep 1550 | RawRew: 10.51 | LOSE | Wins: 3 | Time: 29.7m
+Ep 1560 | RawRew: 13.83 | LOSE | Wins: 3 | Time: 29.9m
+Ep 1568 | Loss: 0.0246 | Ent: 0.024
+Ep 1570 | RawRew: 12.86 | LOSE | Wins: 3 | Time: 30.3m
+Ep 1580 | RawRew: 16.14 | LOSE | Wins: 3 | Time: 30.4m
+Ep 1590 | RawRew: 12.36 | LOSE | Wins: 3 | Time: 30.5m
+Ep 1600 | Loss: 0.0312 | Ent: 0.024
+Ep 1600 | RawRew: 11.10 | LOSE | Wins: 3 | Time: 30.8m
+
+=== [趋势报告] Ep 1600 ===
+平均得分: 12.33
+当前运行胜场: 3/1600 (0.19%)
+探索系数: 0.0239
+============================
+
+Ep 1610 | RawRew: 13.17 | LOSE | Wins: 4 | Time: 30.9m
+Ep 1620 | RawRew: 13.05 | LOSE | Wins: 4 | Time: 31.0m
+Ep 1630 | RawRew: 12.06 | LOSE | Wins: 4 | Time: 31.1m
+Ep 1632 | Loss: 0.0397 | Ent: 0.023
+Ep 1640 | RawRew: 16.86 | LOSE | Wins: 4 | Time: 31.5m
+Ep 1650 | RawRew: 8.11 | LOSE | Wins: 4 | Time: 31.8m
+Ep 1660 | RawRew: 12.61 | LOSE | Wins: 4 | Time: 32.0m
+Ep 1664 | Loss: 0.0465 | Ent: 0.023
+Ep 1670 | RawRew: 15.34 | LOSE | Wins: 4 | Time: 32.3m
+Ep 1680 | RawRew: 12.25 | LOSE | Wins: 4 | Time: 32.4m
+Ep 1690 | RawRew: 14.55 | LOSE | Wins: 4 | Time: 32.6m
+Ep 1696 | Loss: 0.0215 | Ent: 0.022
+Ep 1700 | RawRew: 13.90 | LOSE | Wins: 4 | Time: 33.0m
+Ep 1710 | RawRew: 9.37 | LOSE | Wins: 4 | Time: 33.1m
+Ep 1720 | RawRew: 11.13 | LOSE | Wins: 4 | Time: 33.3m
+Ep 1728 | Loss: 0.0292 | Ent: 0.022
+Ep 1730 | RawRew: 13.59 | LOSE | Wins: 4 | Time: 33.7m
+Ep 1740 | RawRew: 12.34 | LOSE | Wins: 4 | Time: 33.8m
+Ep 1750 | RawRew: 10.76 | LOSE | Wins: 4 | Time: 34.0m
+Ep 1760 | Loss: 0.0300 | Ent: 0.021
+Ep 1760 | RawRew: 15.34 | LOSE | Wins: 4 | Time: 34.3m
+Ep 1770 | RawRew: 12.79 | LOSE | Wins: 4 | Time: 34.4m
+Ep 1780 | RawRew: 8.11 | LOSE | Wins: 4 | Time: 34.6m
+Ep 1790 | RawRew: 13.42 | LOSE | Wins: 4 | Time: 34.7m
+Ep 1792 | Loss: 0.0494 | Ent: 0.021
+Ep 1800 | RawRew: 13.78 | LOSE | Wins: 4 | Time: 35.1m
+
+=== [趋势报告] Ep 1800 ===
+平均得分: 12.76
+当前运行胜场: 4/1800 (0.22%)
+探索系数: 0.0206
+============================
+
+Ep 1810 | RawRew: 12.14 | LOSE | Wins: 4 | Time: 35.2m
+Ep 1820 | RawRew: 15.30 | LOSE | Wins: 4 | Time: 35.4m
+Ep 1824 | Loss: 0.0560 | Ent: 0.020
+Ep 1830 | RawRew: 14.43 | LOSE | Wins: 4 | Time: 35.8m
+Ep 1840 | RawRew: 11.42 | LOSE | Wins: 4 | Time: 36.0m
+Ep 1850 | RawRew: 14.53 | LOSE | Wins: 4 | Time: 36.1m
+Ep 1856 | Loss: 0.0433 | Ent: 0.020
+Ep 1860 | RawRew: 16.65 | LOSE | Wins: 4 | Time: 36.5m
+Ep 1870 | RawRew: 12.99 | LOSE | Wins: 4 | Time: 36.7m
+Ep 1880 | RawRew: 12.25 | LOSE | Wins: 4 | Time: 36.8m
+Ep 1888 | Loss: 0.0501 | Ent: 0.019
+Ep 1890 | RawRew: 15.06 | LOSE | Wins: 4 | Time: 37.2m
+Ep 1900 | RawRew: 15.92 | LOSE | Wins: 4 | Time: 37.4m
+Ep 1910 | RawRew: 12.27 | LOSE | Wins: 4 | Time: 37.5m
+Ep 1920 | Loss: 0.0363 | Ent: 0.019
+Ep 1920 | RawRew: 11.04 | LOSE | Wins: 4 | Time: 37.9m
+Ep 1930 | RawRew: 12.12 | LOSE | Wins: 4 | Time: 38.0m
+Ep 1940 | RawRew: 13.76 | LOSE | Wins: 4 | Time: 38.2m
+Ep 1950 | RawRew: 14.20 | LOSE | Wins: 4 | Time: 38.3m
+Ep 1952 | Loss: 0.0328 | Ent: 0.018
+Ep 1960 | RawRew: 14.85 | LOSE | Wins: 4 | Time: 38.7m
+Ep 1970 | RawRew: 8.58 | LOSE | Wins: 4 | Time: 38.9m
+Ep 1980 | RawRew: 11.98 | LOSE | Wins: 4 | Time: 39.0m
+Ep 1984 | Loss: 0.0472 | Ent: 0.018
+Ep 1990 | RawRew: 11.28 | LOSE | Wins: 4 | Time: 39.4m
+Ep 2000 | RawRew: 15.38 | LOSE | Wins: 4 | Time: 39.5m
+
+=== [趋势报告] Ep 2000 ===
+平均得分: 13.13
+当前运行胜场: 4/2000 (0.20%)
+探索系数: 0.0173
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 2.0% | 平均得分: 12.39
+>>> 胜率持平但得分未提升，保留原模型
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 2010 | RawRew: 12.23 | LOSE | Wins: 4 | Time: 40.5m
+Ep 2016 | Loss: 0.0553 | Ent: 0.017
+Ep 2020 | RawRew: 11.07 | LOSE | Wins: 4 | Time: 40.8m
+Ep 2030 | RawRew: 15.32 | LOSE | Wins: 4 | Time: 41.0m
+Ep 2040 | RawRew: 12.52 | LOSE | Wins: 4 | Time: 41.1m
+Ep 2048 | Loss: 0.0606 | Ent: 0.017
+Ep 2050 | RawRew: 17.35 | LOSE | Wins: 4 | Time: 41.5m
+Ep 2060 | RawRew: 16.85 | LOSE | Wins: 4 | Time: 41.7m
+Ep 2070 | RawRew: 16.68 | LOSE | Wins: 4 | Time: 41.8m
+Ep 2080 | Loss: 0.0634 | Ent: 0.016
+Ep 2080 | RawRew: 14.96 | LOSE | Wins: 4 | Time: 42.2m
+Ep 2090 | RawRew: 13.28 | LOSE | Wins: 4 | Time: 42.3m
+Ep 2100 | RawRew: 15.93 | LOSE | Wins: 4 | Time: 42.4m
+Ep 2110 | RawRew: 11.41 | LOSE | Wins: 4 | Time: 42.5m
+Ep 2112 | Loss: 0.0501 | Ent: 0.016
+Ep 2120 | RawRew: 13.69 | LOSE | Wins: 4 | Time: 42.9m
+Ep 2130 | RawRew: 10.34 | LOSE | Wins: 4 | Time: 43.0m
+Ep 2140 | RawRew: 11.95 | LOSE | Wins: 4 | Time: 43.2m
+Ep 2144 | Loss: 0.0549 | Ent: 0.015
+Ep 2150 | RawRew: 10.70 | LOSE | Wins: 4 | Time: 43.6m
+Ep 2160 | RawRew: 10.57 | LOSE | Wins: 4 | Time: 43.7m
+Ep 2170 | RawRew: 12.54 | LOSE | Wins: 4 | Time: 43.9m
+Ep 2176 | Loss: 0.0498 | Ent: 0.014
+Ep 2180 | RawRew: 14.55 | LOSE | Wins: 4 | Time: 44.3m
+Ep 2190 | RawRew: 8.56 | LOSE | Wins: 4 | Time: 44.4m
+Ep 2200 | RawRew: 15.90 | LOSE | Wins: 4 | Time: 44.5m
+
+=== [趋势报告] Ep 2200 ===
+平均得分: 12.84
+当前运行胜场: 4/2200 (0.18%)
+探索系数: 0.0141
+============================
+
+Ep 2208 | Loss: 0.0334 | Ent: 0.014
+Ep 2210 | RawRew: 11.27 | LOSE | Wins: 4 | Time: 45.0m
+Ep 2220 | RawRew: 15.14 | LOSE | Wins: 4 | Time: 45.2m
+Ep 2230 | RawRew: 13.49 | LOSE | Wins: 4 | Time: 45.3m
+Ep 2240 | Loss: 0.0388 | Ent: 0.013
+Ep 2240 | RawRew: 17.95 | LOSE | Wins: 4 | Time: 45.9m
+Ep 2250 | RawRew: 11.81 | LOSE | Wins: 4 | Time: 46.0m
+Ep 2260 | RawRew: 12.73 | LOSE | Wins: 4 | Time: 46.2m
+Ep 2270 | RawRew: 12.27 | LOSE | Wins: 4 | Time: 46.3m
+Ep 2272 | Loss: 0.0571 | Ent: 0.013
+Ep 2280 | RawRew: 14.82 | LOSE | Wins: 4 | Time: 46.7m
+Ep 2290 | RawRew: 11.59 | LOSE | Wins: 4 | Time: 46.9m
+Ep 2300 | RawRew: 14.44 | LOSE | Wins: 4 | Time: 47.0m
+Ep 2304 | Loss: 0.0560 | Ent: 0.012
+Ep 2310 | RawRew: 13.54 | LOSE | Wins: 4 | Time: 47.4m
+Ep 2320 | RawRew: 9.98 | LOSE | Wins: 4 | Time: 47.6m
+Ep 2330 | RawRew: 14.60 | LOSE | Wins: 4 | Time: 47.7m
+Ep 2336 | Loss: 0.0723 | Ent: 0.012
+Ep 2340 | RawRew: 12.59 | LOSE | Wins: 4 | Time: 48.1m
+Ep 2350 | RawRew: 14.02 | LOSE | Wins: 4 | Time: 48.2m
+Ep 2360 | RawRew: 16.29 | LOSE | Wins: 4 | Time: 48.4m
+Ep 2368 | Loss: 0.0482 | Ent: 0.011
+Ep 2370 | RawRew: 13.93 | LOSE | Wins: 4 | Time: 48.8m
+Ep 2380 | RawRew: 16.75 | LOSE | Wins: 4 | Time: 49.0m
+Ep 2390 | RawRew: 8.77 | LOSE | Wins: 4 | Time: 49.1m
+Ep 2400 | Loss: 0.0635 | Ent: 0.011
+Ep 2400 | RawRew: 16.91 | LOSE | Wins: 4 | Time: 49.5m
+
+=== [趋势报告] Ep 2400 ===
+平均得分: 13.40
+当前运行胜场: 4/2400 (0.17%)
+探索系数: 0.0108
+============================
+
+Ep 2410 | RawRew: 14.93 | LOSE | Wins: 5 | Time: 49.7m
+Ep 2420 | RawRew: 10.16 | LOSE | Wins: 5 | Time: 49.8m
+Ep 2430 | RawRew: 14.10 | LOSE | Wins: 5 | Time: 50.0m
+Ep 2432 | Loss: 0.0645 | Ent: 0.010
+Ep 2440 | RawRew: 13.69 | LOSE | Wins: 5 | Time: 50.4m
+Ep 2450 | RawRew: 8.93 | LOSE | Wins: 6 | Time: 50.5m
+Ep 2460 | RawRew: 8.82 | LOSE | Wins: 6 | Time: 50.6m
+Ep 2464 | Loss: 0.0914 | Ent: 0.010
+Ep 2470 | RawRew: 14.71 | LOSE | Wins: 6 | Time: 51.0m
+Ep 2480 | RawRew: 9.70 | LOSE | Wins: 6 | Time: 51.1m
+Ep 2490 | RawRew: 13.48 | LOSE | Wins: 6 | Time: 51.2m
+Ep 2496 | Loss: 0.0495 | Ent: 0.009
+Ep 2500 | RawRew: 17.03 | LOSE | Wins: 6 | Time: 51.7m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 13.26
+Ep 2510 | RawRew: 11.75 | LOSE | Wins: 6 | Time: 52.7m
+Ep 2520 | RawRew: 14.60 | LOSE | Wins: 6 | Time: 52.8m
+Ep 2528 | Loss: 0.0508 | Ent: 0.009
+Ep 2530 | RawRew: 11.14 | LOSE | Wins: 6 | Time: 53.2m
+Ep 2540 | RawRew: 10.69 | LOSE | Wins: 6 | Time: 53.4m
+Ep 2550 | RawRew: 11.55 | LOSE | Wins: 6 | Time: 53.5m
+Ep 2560 | Loss: 0.0446 | Ent: 0.008
+Ep 2560 | RawRew: 14.61 | LOSE | Wins: 6 | Time: 53.9m
+Ep 2570 | RawRew: 13.19 | LOSE | Wins: 6 | Time: 54.0m
+Ep 2580 | RawRew: 16.91 | LOSE | Wins: 6 | Time: 54.2m
+Ep 2590 | RawRew: 15.15 | LOSE | Wins: 6 | Time: 54.3m
+Ep 2592 | Loss: 0.0641 | Ent: 0.008
+Ep 2600 | RawRew: 15.27 | LOSE | Wins: 6 | Time: 54.7m
+
+=== [趋势报告] Ep 2600 ===
+平均得分: 13.00
+当前运行胜场: 6/2600 (0.23%)
+探索系数: 0.0075
+============================
+
+Ep 2610 | RawRew: 11.52 | LOSE | Wins: 6 | Time: 54.9m
+Ep 2620 | RawRew: 12.10 | LOSE | Wins: 6 | Time: 55.1m
+Ep 2624 | Loss: 0.0395 | Ent: 0.007
+Ep 2630 | RawRew: 12.02 | LOSE | Wins: 6 | Time: 55.5m
+Ep 2640 | RawRew: 12.23 | LOSE | Wins: 6 | Time: 55.6m
+Ep 2650 | RawRew: 9.53 | LOSE | Wins: 6 | Time: 55.8m
+Ep 2656 | Loss: 0.0333 | Ent: 0.007
+Ep 2660 | RawRew: 14.02 | LOSE | Wins: 6 | Time: 56.2m
+Ep 2670 | RawRew: 11.97 | LOSE | Wins: 6 | Time: 56.4m
+Ep 2680 | RawRew: 16.22 | LOSE | Wins: 6 | Time: 56.5m
+Ep 2688 | Loss: 0.0422 | Ent: 0.006
+Ep 2690 | RawRew: 11.99 | LOSE | Wins: 6 | Time: 56.9m
+Ep 2700 | RawRew: 16.62 | LOSE | Wins: 6 | Time: 57.1m
+Ep 2710 | RawRew: 16.51 | LOSE | Wins: 6 | Time: 57.3m
+Ep 2720 | Loss: 0.0485 | Ent: 0.006
+Ep 2720 | RawRew: 14.67 | LOSE | Wins: 6 | Time: 57.8m
+Ep 2730 | RawRew: 15.59 | LOSE | Wins: 6 | Time: 57.9m
+Ep 2740 | RawRew: 15.62 | LOSE | Wins: 6 | Time: 58.1m
+Ep 2750 | RawRew: 16.71 | LOSE | Wins: 6 | Time: 58.2m
+Ep 2752 | Loss: 0.0502 | Ent: 0.005
+Ep 2760 | RawRew: 12.79 | LOSE | Wins: 6 | Time: 58.8m
+Ep 2770 | RawRew: 14.86 | LOSE | Wins: 6 | Time: 59.0m
+Ep 2780 | RawRew: 14.43 | LOSE | Wins: 6 | Time: 59.2m
+Ep 2784 | Loss: 0.0477 | Ent: 0.005
+Ep 2790 | RawRew: 18.70 | LOSE | Wins: 6 | Time: 59.6m
+Ep 2800 | RawRew: 17.59 | LOSE | Wins: 6 | Time: 59.8m
+
+=== [趋势报告] Ep 2800 ===
+平均得分: 14.23
+当前运行胜场: 6/2800 (0.21%)
+探索系数: 0.0043
+============================
+
+Ep 2810 | RawRew: 10.75 | LOSE | Wins: 6 | Time: 59.9m
+Ep 2816 | Loss: 0.0528 | Ent: 0.004
+Ep 2820 | RawRew: 13.39 | LOSE | Wins: 6 | Time: 60.3m
+Ep 2830 | RawRew: 13.89 | LOSE | Wins: 6 | Time: 60.5m
+Ep 2840 | RawRew: 16.75 | LOSE | Wins: 6 | Time: 60.6m
+Ep 2848 | Loss: 0.0552 | Ent: 0.003
+Ep 2850 | RawRew: 14.71 | LOSE | Wins: 6 | Time: 61.1m
+Ep 2860 | RawRew: 12.33 | LOSE | Wins: 6 | Time: 61.2m
+Ep 2870 | RawRew: 14.81 | LOSE | Wins: 6 | Time: 61.4m
+Ep 2880 | Loss: 0.0731 | Ent: 0.003
+Ep 2880 | RawRew: 13.31 | LOSE | Wins: 8 | Time: 61.8m
+Ep 2890 | RawRew: 14.90 | LOSE | Wins: 8 | Time: 62.0m
+Ep 2900 | RawRew: 12.16 | LOSE | Wins: 8 | Time: 62.2m
+Ep 2910 | RawRew: 13.93 | LOSE | Wins: 8 | Time: 62.4m
+Ep 2912 | Loss: 0.0581 | Ent: 0.002
+Ep 2920 | RawRew: 12.58 | LOSE | Wins: 8 | Time: 62.8m
+Ep 2930 | RawRew: 8.84 | LOSE | Wins: 8 | Time: 62.9m
+Ep 2940 | RawRew: 10.73 | LOSE | Wins: 8 | Time: 63.1m
+Ep 2944 | Loss: 0.0611 | Ent: 0.002
+Ep 2950 | RawRew: 8.59 | LOSE | Wins: 8 | Time: 63.5m
+Ep 2960 | RawRew: 12.79 | LOSE | Wins: 8 | Time: 63.6m
+Ep 2970 | RawRew: 12.82 | LOSE | Wins: 8 | Time: 63.7m
+Ep 2976 | Loss: 0.0592 | Ent: 0.001
+Ep 2980 | RawRew: 11.19 | LOSE | Wins: 8 | Time: 64.1m
+Ep 2990 | RawRew: 13.12 | LOSE | Wins: 8 | Time: 64.2m
+Ep 3000 | RawRew: 15.68 | LOSE | Wins: 8 | Time: 64.4m
+
+=== [趋势报告] Ep 3000 ===
+平均得分: 14.11
+当前运行胜场: 8/3000 (0.27%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 12.61
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 3008 | Loss: 0.0605 | Ent: 0.001
+Ep 3010 | RawRew: 15.13 | LOSE | Wins: 8 | Time: 65.5m
+Ep 3020 | RawRew: 17.75 | LOSE | Wins: 8 | Time: 65.7m
+Ep 3030 | RawRew: 16.85 | LOSE | Wins: 8 | Time: 65.8m
+Ep 3040 | Loss: 0.0496 | Ent: 0.001
+Ep 3040 | RawRew: 15.57 | LOSE | Wins: 8 | Time: 66.2m
+Ep 3050 | RawRew: 14.16 | LOSE | Wins: 8 | Time: 66.4m
+Ep 3060 | RawRew: 16.31 | LOSE | Wins: 8 | Time: 66.5m
+Ep 3070 | RawRew: 14.45 | LOSE | Wins: 8 | Time: 66.6m
+Ep 3072 | Loss: 0.0527 | Ent: 0.001
+Ep 3080 | RawRew: 17.11 | LOSE | Wins: 8 | Time: 67.0m
+Ep 3090 | RawRew: 13.50 | LOSE | Wins: 8 | Time: 67.1m
+Ep 3100 | RawRew: 14.98 | LOSE | Wins: 8 | Time: 67.3m
+Ep 3104 | Loss: 0.0690 | Ent: 0.001
+Ep 3110 | RawRew: 17.49 | LOSE | Wins: 8 | Time: 67.7m
+Ep 3120 | RawRew: 16.28 | LOSE | Wins: 8 | Time: 67.8m
+Ep 3130 | RawRew: 16.49 | LOSE | Wins: 8 | Time: 68.0m
+Ep 3136 | Loss: 0.0630 | Ent: 0.001
+Ep 3140 | RawRew: 12.59 | LOSE | Wins: 8 | Time: 68.4m
+Ep 3150 | RawRew: 14.99 | LOSE | Wins: 9 | Time: 68.5m
+Ep 3160 | RawRew: 18.90 | LOSE | Wins: 9 | Time: 68.7m
+Ep 3168 | Loss: 0.0638 | Ent: 0.001
+Ep 3170 | RawRew: 15.93 | LOSE | Wins: 9 | Time: 69.1m
+Ep 3180 | RawRew: 15.72 | LOSE | Wins: 9 | Time: 69.2m
+Ep 3190 | RawRew: 18.71 | LOSE | Wins: 9 | Time: 69.4m
+Ep 3200 | Loss: 0.0692 | Ent: 0.001
+Ep 3200 | RawRew: 12.02 | LOSE | Wins: 10 | Time: 69.8m
+
+=== [趋势报告] Ep 3200 ===
+平均得分: 14.47
+当前运行胜场: 10/3200 (0.31%)
+探索系数: 0.0010
+============================
+
+Ep 3210 | RawRew: 16.66 | LOSE | Wins: 10 | Time: 69.9m
+Ep 3220 | RawRew: 10.37 | LOSE | Wins: 10 | Time: 70.0m
+Ep 3230 | RawRew: 10.86 | LOSE | Wins: 10 | Time: 70.3m
+Ep 3232 | Loss: 0.1075 | Ent: 0.001
+Ep 3240 | RawRew: 15.61 | LOSE | Wins: 10 | Time: 70.7m
+Ep 3250 | RawRew: 10.89 | LOSE | Wins: 10 | Time: 70.8m
+Ep 3260 | RawRew: 12.55 | LOSE | Wins: 10 | Time: 71.0m
+Ep 3264 | Loss: 0.0550 | Ent: 0.001
+Ep 3270 | RawRew: 16.30 | LOSE | Wins: 10 | Time: 71.4m
+Ep 3280 | RawRew: 14.37 | LOSE | Wins: 10 | Time: 71.6m
+Ep 3290 | RawRew: 13.52 | LOSE | Wins: 10 | Time: 71.7m
+Ep 3296 | Loss: 0.0622 | Ent: 0.001
+Ep 3300 | RawRew: 8.29 | LOSE | Wins: 10 | Time: 72.2m
+Ep 3310 | RawRew: 20.00 | WIN | Wins: 11 | Time: 72.3m
+Ep 3320 | RawRew: 10.95 | LOSE | Wins: 11 | Time: 72.5m
+Ep 3328 | Loss: 0.0534 | Ent: 0.001
+Ep 3330 | RawRew: 15.15 | LOSE | Wins: 11 | Time: 72.9m
+Ep 3340 | RawRew: 12.57 | LOSE | Wins: 11 | Time: 73.0m
+Ep 3350 | RawRew: 17.10 | LOSE | Wins: 11 | Time: 73.2m
+Ep 3360 | Loss: 0.0606 | Ent: 0.001
+Ep 3360 | RawRew: 15.67 | LOSE | Wins: 11 | Time: 73.7m
+Ep 3370 | RawRew: 20.05 | WIN | Wins: 12 | Time: 73.8m
+Ep 3380 | RawRew: 15.55 | LOSE | Wins: 12 | Time: 73.9m
+Ep 3390 | RawRew: 15.96 | LOSE | Wins: 12 | Time: 74.1m
+Ep 3392 | Loss: 0.0838 | Ent: 0.001
+Ep 3400 | RawRew: 13.57 | LOSE | Wins: 12 | Time: 74.5m
+
+=== [趋势报告] Ep 3400 ===
+平均得分: 14.03
+当前运行胜场: 12/3400 (0.35%)
+探索系数: 0.0010
+============================
+
+Ep 3410 | RawRew: 13.71 | LOSE | Wins: 12 | Time: 74.7m
+Ep 3420 | RawRew: 16.20 | LOSE | Wins: 13 | Time: 74.9m
+Ep 3424 | Loss: 0.0793 | Ent: 0.001
+Ep 3430 | RawRew: 14.60 | LOSE | Wins: 13 | Time: 75.3m
+Ep 3440 | RawRew: 17.07 | LOSE | Wins: 14 | Time: 75.5m
+Ep 3450 | RawRew: 15.50 | LOSE | Wins: 14 | Time: 75.6m
+Ep 3456 | Loss: 0.0570 | Ent: 0.001
+Ep 3460 | RawRew: 15.19 | LOSE | Wins: 14 | Time: 76.1m
+Ep 3470 | RawRew: 14.81 | LOSE | Wins: 14 | Time: 76.3m
+Ep 3480 | RawRew: 14.13 | LOSE | Wins: 14 | Time: 76.4m
+Ep 3488 | Loss: 0.0662 | Ent: 0.001
+Ep 3490 | RawRew: 14.50 | LOSE | Wins: 15 | Time: 76.8m
+Ep 3500 | RawRew: 10.23 | LOSE | Wins: 15 | Time: 77.0m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 13.70
+Ep 3510 | RawRew: 14.62 | LOSE | Wins: 15 | Time: 78.1m
+Ep 3520 | Loss: 0.0539 | Ent: 0.001
+Ep 3520 | RawRew: 14.58 | LOSE | Wins: 15 | Time: 78.5m
+Ep 3530 | RawRew: 10.65 | LOSE | Wins: 15 | Time: 78.7m
+Ep 3540 | RawRew: 14.42 | LOSE | Wins: 15 | Time: 78.8m
+Ep 3550 | RawRew: 12.27 | LOSE | Wins: 15 | Time: 79.0m
+Ep 3552 | Loss: 0.0622 | Ent: 0.001
+Ep 3560 | RawRew: 12.89 | LOSE | Wins: 15 | Time: 79.4m
+Ep 3570 | RawRew: 12.19 | LOSE | Wins: 16 | Time: 79.5m
+Ep 3580 | RawRew: 10.64 | LOSE | Wins: 17 | Time: 79.7m
+Ep 3584 | Loss: 0.0751 | Ent: 0.001
+Ep 3590 | RawRew: 14.21 | LOSE | Wins: 17 | Time: 80.1m
+Ep 3600 | RawRew: 15.43 | LOSE | Wins: 17 | Time: 80.3m
+
+=== [趋势报告] Ep 3600 ===
+平均得分: 14.63
+当前运行胜场: 17/3600 (0.47%)
+探索系数: 0.0010
+============================
+
+Ep 3610 | RawRew: 11.53 | LOSE | Wins: 17 | Time: 80.4m
+Ep 3616 | Loss: 0.0753 | Ent: 0.001
+Ep 3620 | RawRew: 12.00 | LOSE | Wins: 17 | Time: 80.9m
+Ep 3630 | RawRew: 12.87 | LOSE | Wins: 17 | Time: 81.0m
+Ep 3640 | RawRew: 9.78 | LOSE | Wins: 17 | Time: 81.1m
+Ep 3648 | Loss: 0.0637 | Ent: 0.001
+Ep 3650 | RawRew: 13.93 | LOSE | Wins: 17 | Time: 81.6m
+Ep 3660 | RawRew: 12.82 | LOSE | Wins: 17 | Time: 81.7m
+Ep 3670 | RawRew: 14.62 | LOSE | Wins: 17 | Time: 81.9m
+Ep 3680 | Loss: 0.0549 | Ent: 0.001
+Ep 3680 | RawRew: 18.44 | LOSE | Wins: 17 | Time: 82.3m
+Ep 3690 | RawRew: 14.15 | LOSE | Wins: 17 | Time: 82.6m
+Ep 3700 | RawRew: 15.69 | LOSE | Wins: 17 | Time: 82.8m
+Ep 3710 | RawRew: 14.84 | LOSE | Wins: 17 | Time: 82.9m
+Ep 3712 | Loss: 0.0551 | Ent: 0.001
+Ep 3720 | RawRew: 9.73 | LOSE | Wins: 17 | Time: 83.3m
+Ep 3730 | RawRew: 15.80 | LOSE | Wins: 17 | Time: 83.5m
+Ep 3740 | RawRew: 15.57 | LOSE | Wins: 17 | Time: 83.6m
+Ep 3744 | Loss: 0.0670 | Ent: 0.001
+Ep 3750 | RawRew: 12.93 | LOSE | Wins: 17 | Time: 84.0m
+Ep 3760 | RawRew: 16.89 | LOSE | Wins: 17 | Time: 84.2m
+Ep 3770 | RawRew: 18.04 | LOSE | Wins: 17 | Time: 84.4m
+Ep 3776 | Loss: 0.0652 | Ent: 0.001
+Ep 3780 | RawRew: 20.00 | WIN | Wins: 18 | Time: 84.8m
+Ep 3790 | RawRew: 16.00 | LOSE | Wins: 18 | Time: 84.9m
+Ep 3800 | RawRew: 11.46 | LOSE | Wins: 18 | Time: 85.0m
+
+=== [趋势报告] Ep 3800 ===
+平均得分: 14.05
+当前运行胜场: 18/3800 (0.47%)
+探索系数: 0.0010
+============================
+
+Ep 3808 | Loss: 0.0706 | Ent: 0.001
+Ep 3810 | RawRew: 13.95 | LOSE | Wins: 18 | Time: 85.5m
+Ep 3820 | RawRew: 16.05 | LOSE | Wins: 18 | Time: 85.6m
+Ep 3830 | RawRew: 17.76 | LOSE | Wins: 18 | Time: 85.8m
+Ep 3840 | Loss: 0.0695 | Ent: 0.001
+Ep 3840 | RawRew: 14.64 | LOSE | Wins: 18 | Time: 86.1m
+Ep 3850 | RawRew: 12.85 | LOSE | Wins: 18 | Time: 86.3m
+Ep 3860 | RawRew: 14.80 | LOSE | Wins: 18 | Time: 86.5m
+Ep 3870 | RawRew: 13.94 | LOSE | Wins: 18 | Time: 86.6m
+Ep 3872 | Loss: 0.0910 | Ent: 0.001
+Ep 3880 | RawRew: 19.43 | LOSE | Wins: 18 | Time: 87.1m
+Ep 3890 | RawRew: 11.20 | LOSE | Wins: 18 | Time: 87.3m
+Ep 3900 | RawRew: 11.50 | LOSE | Wins: 18 | Time: 87.5m
+Ep 3904 | Loss: 0.0731 | Ent: 0.001
+Ep 3910 | RawRew: 16.48 | LOSE | Wins: 18 | Time: 87.9m
+Ep 3920 | RawRew: 14.29 | LOSE | Wins: 18 | Time: 88.0m
+Ep 3930 | RawRew: 11.83 | LOSE | Wins: 20 | Time: 88.2m
+Ep 3936 | Loss: 0.0821 | Ent: 0.001
+Ep 3940 | RawRew: 11.81 | LOSE | Wins: 20 | Time: 88.6m
+Ep 3950 | RawRew: 11.11 | LOSE | Wins: 20 | Time: 88.7m
+Ep 3960 | RawRew: 17.71 | LOSE | Wins: 20 | Time: 88.9m
+Ep 3968 | Loss: 0.0859 | Ent: 0.001
+Ep 3970 | RawRew: 10.82 | LOSE | Wins: 20 | Time: 89.3m
+Ep 3980 | RawRew: 13.67 | LOSE | Wins: 20 | Time: 89.4m
+Ep 3990 | RawRew: 17.75 | LOSE | Wins: 21 | Time: 89.6m
+Ep 4000 | Loss: 0.0800 | Ent: 0.001
+Ep 4000 | RawRew: 13.55 | LOSE | Wins: 23 | Time: 90.0m
+
+=== [趋势报告] Ep 4000 ===
+平均得分: 14.42
+当前运行胜场: 23/4000 (0.57%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 13.84
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 4010 | RawRew: 9.83 | LOSE | Wins: 24 | Time: 91.0m
+Ep 4020 | RawRew: 16.54 | LOSE | Wins: 26 | Time: 91.2m
+Ep 4030 | RawRew: 15.51 | LOSE | Wins: 26 | Time: 91.4m
+Ep 4032 | Loss: 0.0840 | Ent: 0.001
+Ep 4040 | RawRew: 13.45 | LOSE | Wins: 27 | Time: 91.8m
+Ep 4050 | RawRew: 16.94 | LOSE | Wins: 27 | Time: 92.0m
+Ep 4060 | RawRew: 17.36 | LOSE | Wins: 28 | Time: 92.1m
+Ep 4064 | Loss: 0.0763 | Ent: 0.001
+Ep 4070 | RawRew: 13.60 | LOSE | Wins: 29 | Time: 92.5m
+Ep 4080 | RawRew: 16.56 | LOSE | Wins: 29 | Time: 92.7m
+Ep 4090 | RawRew: 13.36 | LOSE | Wins: 30 | Time: 92.8m
+Ep 4096 | Loss: 0.0837 | Ent: 0.001
+Ep 4100 | RawRew: 15.65 | LOSE | Wins: 30 | Time: 93.2m
+Ep 4110 | RawRew: 14.60 | LOSE | Wins: 30 | Time: 93.4m
+Ep 4120 | RawRew: 14.26 | LOSE | Wins: 30 | Time: 93.6m
+Ep 4128 | Loss: 0.0670 | Ent: 0.001
+Ep 4130 | RawRew: 13.30 | LOSE | Wins: 30 | Time: 94.0m
+Ep 4140 | RawRew: 16.51 | LOSE | Wins: 30 | Time: 94.1m
+Ep 4150 | RawRew: 15.97 | LOSE | Wins: 32 | Time: 94.3m
+Ep 4160 | Loss: 0.0999 | Ent: 0.001
+Ep 4160 | RawRew: 12.85 | LOSE | Wins: 33 | Time: 94.7m
+Ep 4170 | RawRew: 15.43 | LOSE | Wins: 33 | Time: 95.0m
+Ep 4180 | RawRew: 15.88 | LOSE | Wins: 33 | Time: 95.2m
+Ep 4190 | RawRew: 9.89 | LOSE | Wins: 33 | Time: 95.3m
+Ep 4192 | Loss: 0.0558 | Ent: 0.001
+Ep 4200 | RawRew: 18.33 | LOSE | Wins: 34 | Time: 95.7m
+
+=== [趋势报告] Ep 4200 ===
+平均得分: 14.78
+当前运行胜场: 34/4200 (0.81%)
+探索系数: 0.0010
+============================
+
+Ep 4210 | RawRew: 12.11 | LOSE | Wins: 35 | Time: 95.9m
+Ep 4220 | RawRew: 20.09 | WIN | Wins: 37 | Time: 96.0m
+Ep 4224 | Loss: 0.0791 | Ent: 0.001
+Ep 4230 | RawRew: 16.85 | LOSE | Wins: 37 | Time: 96.4m
+Ep 4240 | RawRew: 17.91 | LOSE | Wins: 38 | Time: 96.6m
+Ep 4250 | RawRew: 13.46 | LOSE | Wins: 38 | Time: 96.7m
+Ep 4256 | Loss: 0.0554 | Ent: 0.001
+Ep 4260 | RawRew: 14.07 | LOSE | Wins: 38 | Time: 97.2m
+Ep 4270 | RawRew: 17.88 | LOSE | Wins: 38 | Time: 97.3m
+Ep 4280 | RawRew: 15.18 | LOSE | Wins: 39 | Time: 97.6m
+Ep 4288 | Loss: 0.0642 | Ent: 0.001
+Ep 4290 | RawRew: 11.64 | LOSE | Wins: 40 | Time: 98.0m
+Ep 4300 | RawRew: 13.19 | LOSE | Wins: 41 | Time: 98.1m
+Ep 4310 | RawRew: 15.97 | LOSE | Wins: 41 | Time: 98.3m
+Ep 4320 | Loss: 0.0807 | Ent: 0.001
+Ep 4320 | RawRew: 13.08 | LOSE | Wins: 42 | Time: 98.7m
+Ep 4330 | RawRew: 14.65 | LOSE | Wins: 42 | Time: 98.9m
+Ep 4340 | RawRew: 17.61 | LOSE | Wins: 43 | Time: 99.0m
+Ep 4350 | RawRew: 13.39 | LOSE | Wins: 43 | Time: 99.2m
+Ep 4352 | Loss: 0.0633 | Ent: 0.001
+Ep 4360 | RawRew: 17.97 | LOSE | Wins: 44 | Time: 99.6m
+Ep 4370 | RawRew: 14.86 | LOSE | Wins: 44 | Time: 99.8m
+Ep 4380 | RawRew: 15.91 | LOSE | Wins: 45 | Time: 99.9m
+Ep 4384 | Loss: 0.0680 | Ent: 0.001
+Ep 4390 | RawRew: 9.74 | LOSE | Wins: 45 | Time: 100.3m
+Ep 4400 | RawRew: 8.29 | LOSE | Wins: 45 | Time: 100.5m
+
+=== [趋势报告] Ep 4400 ===
+平均得分: 14.82
+当前运行胜场: 45/4400 (1.02%)
+探索系数: 0.0010
+============================
+
+Ep 4410 | RawRew: 13.83 | LOSE | Wins: 45 | Time: 100.6m
+Ep 4416 | Loss: 0.0723 | Ent: 0.001
+Ep 4420 | RawRew: 13.66 | LOSE | Wins: 46 | Time: 101.0m
+Ep 4430 | RawRew: 20.00 | WIN | Wins: 49 | Time: 101.2m
+Ep 4440 | RawRew: 14.60 | LOSE | Wins: 49 | Time: 101.3m
+Ep 4448 | Loss: 0.0928 | Ent: 0.001
+Ep 4450 | RawRew: 13.18 | LOSE | Wins: 51 | Time: 101.7m
+Ep 4460 | RawRew: 14.08 | LOSE | Wins: 53 | Time: 101.9m
+Ep 4470 | RawRew: 17.39 | LOSE | Wins: 54 | Time: 102.1m
+Ep 4480 | Loss: 0.0624 | Ent: 0.001
+Ep 4480 | RawRew: 12.16 | LOSE | Wins: 54 | Time: 102.5m
+Ep 4490 | RawRew: 15.53 | LOSE | Wins: 54 | Time: 102.7m
+Ep 4500 | RawRew: 14.39 | LOSE | Wins: 56 | Time: 102.8m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 8.0% | 平均得分: 14.96
+💾 模型已保存到: best_model.pt
+>>> 最佳模型已更新 @ Ep 4500
+    原因: 胜率提升 2.0% → 8.0%
+Ep 4510 | RawRew: 12.99 | LOSE | Wins: 56 | Time: 103.9m
+Ep 4512 | Loss: 0.0669 | Ent: 0.001
+Ep 4520 | RawRew: 14.74 | LOSE | Wins: 57 | Time: 104.3m
+Ep 4530 | RawRew: 15.95 | LOSE | Wins: 57 | Time: 104.5m
+Ep 4540 | RawRew: 16.32 | LOSE | Wins: 57 | Time: 104.6m
+Ep 4544 | Loss: 0.0722 | Ent: 0.001
+Ep 4550 | RawRew: 16.42 | LOSE | Wins: 59 | Time: 105.1m
+Ep 4560 | RawRew: 15.71 | LOSE | Wins: 59 | Time: 105.2m
+Ep 4570 | RawRew: 16.56 | LOSE | Wins: 61 | Time: 105.4m
+Ep 4576 | Loss: 0.0979 | Ent: 0.001
+Ep 4580 | RawRew: 13.51 | LOSE | Wins: 61 | Time: 105.8m
+Ep 4590 | RawRew: 13.06 | LOSE | Wins: 62 | Time: 105.9m
+Ep 4600 | RawRew: 16.43 | LOSE | Wins: 63 | Time: 106.1m
+
+=== [趋势报告] Ep 4600 ===
+平均得分: 15.21
+当前运行胜场: 63/4600 (1.37%)
+探索系数: 0.0010
+============================
+
+Ep 4608 | Loss: 0.0796 | Ent: 0.001
+Ep 4610 | RawRew: 13.27 | LOSE | Wins: 64 | Time: 106.5m
+Ep 4620 | RawRew: 17.64 | LOSE | Wins: 64 | Time: 106.7m
+Ep 4630 | RawRew: 14.74 | LOSE | Wins: 64 | Time: 106.9m
+Ep 4640 | Loss: 0.1556 | Ent: 0.001
+Ep 4640 | RawRew: 13.96 | LOSE | Wins: 66 | Time: 107.3m
+Ep 4650 | RawRew: 14.34 | LOSE | Wins: 68 | Time: 107.5m
+Ep 4660 | RawRew: 14.65 | LOSE | Wins: 69 | Time: 107.7m
+Ep 4670 | RawRew: 14.14 | LOSE | Wins: 70 | Time: 107.8m
+Ep 4672 | Loss: 0.1007 | Ent: 0.001
+Ep 4680 | RawRew: 16.82 | LOSE | Wins: 71 | Time: 108.2m
+Ep 4690 | RawRew: 11.75 | LOSE | Wins: 72 | Time: 108.4m
+Ep 4700 | RawRew: 15.34 | LOSE | Wins: 74 | Time: 108.5m
+Ep 4704 | Loss: 0.0767 | Ent: 0.001
+Ep 4710 | RawRew: 13.80 | LOSE | Wins: 75 | Time: 109.0m
+Ep 4720 | RawRew: 10.13 | LOSE | Wins: 77 | Time: 109.1m
+Ep 4730 | RawRew: 19.17 | LOSE | Wins: 80 | Time: 109.2m
+Ep 4736 | Loss: 0.0974 | Ent: 0.001
+Ep 4740 | RawRew: 12.02 | LOSE | Wins: 81 | Time: 109.7m
+Ep 4750 | RawRew: 15.46 | LOSE | Wins: 82 | Time: 109.9m
+Ep 4760 | RawRew: 17.11 | LOSE | Wins: 82 | Time: 110.0m
+Ep 4768 | Loss: 0.0826 | Ent: 0.001
+Ep 4770 | RawRew: 11.86 | LOSE | Wins: 84 | Time: 110.4m
+Ep 4780 | RawRew: 13.86 | LOSE | Wins: 84 | Time: 110.6m
+Ep 4790 | RawRew: 16.26 | LOSE | Wins: 85 | Time: 110.8m
+Ep 4800 | Loss: 0.1018 | Ent: 0.001
+Ep 4800 | RawRew: 11.52 | LOSE | Wins: 85 | Time: 111.2m
+
+=== [趋势报告] Ep 4800 ===
+平均得分: 15.02
+当前运行胜场: 85/4800 (1.77%)
+探索系数: 0.0010
+============================
+
+Ep 4810 | RawRew: 15.81 | LOSE | Wins: 85 | Time: 111.3m
+Ep 4820 | RawRew: 11.65 | LOSE | Wins: 86 | Time: 111.5m
+Ep 4830 | RawRew: 16.73 | LOSE | Wins: 86 | Time: 111.6m
+Ep 4832 | Loss: 0.0839 | Ent: 0.001
+Ep 4840 | RawRew: 17.19 | LOSE | Wins: 87 | Time: 112.0m
+Ep 4850 | RawRew: 13.44 | LOSE | Wins: 88 | Time: 112.2m
+Ep 4860 | RawRew: 16.56 | LOSE | Wins: 88 | Time: 112.4m
+Ep 4864 | Loss: 0.0711 | Ent: 0.001
+Ep 4870 | RawRew: 13.47 | LOSE | Wins: 89 | Time: 112.7m
+Ep 4880 | RawRew: 20.13 | WIN | Wins: 91 | Time: 112.9m
+Ep 4890 | RawRew: 15.23 | LOSE | Wins: 91 | Time: 113.1m
+Ep 4896 | Loss: 0.0789 | Ent: 0.001
+Ep 4900 | RawRew: 15.48 | LOSE | Wins: 92 | Time: 113.5m
+Ep 4910 | RawRew: 18.16 | LOSE | Wins: 93 | Time: 113.7m
+Ep 4920 | RawRew: 17.11 | LOSE | Wins: 95 | Time: 113.8m
+Ep 4928 | Loss: 0.0837 | Ent: 0.001
+Ep 4930 | RawRew: 11.62 | LOSE | Wins: 95 | Time: 114.2m
+Ep 4940 | RawRew: 15.43 | LOSE | Wins: 97 | Time: 114.3m
+Ep 4950 | RawRew: 15.25 | LOSE | Wins: 98 | Time: 114.5m
+Ep 4960 | Loss: 0.0920 | Ent: 0.001
+Ep 4960 | RawRew: 15.15 | LOSE | Wins: 98 | Time: 114.9m
+Ep 4970 | RawRew: 17.68 | LOSE | Wins: 101 | Time: 115.1m
+Ep 4980 | RawRew: 20.00 | WIN | Wins: 104 | Time: 115.2m
+Ep 4990 | RawRew: 15.96 | LOSE | Wins: 105 | Time: 115.4m
+Ep 4992 | Loss: 0.0871 | Ent: 0.001
+Ep 5000 | RawRew: 7.86 | LOSE | Wins: 106 | Time: 115.8m
+
+=== [趋势报告] Ep 5000 ===
+平均得分: 15.24
+当前运行胜场: 106/5000 (2.12%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 4.0% | 平均得分: 13.26
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 5010 | RawRew: 17.99 | LOSE | Wins: 107 | Time: 116.8m
+Ep 5020 | RawRew: 11.07 | LOSE | Wins: 108 | Time: 117.0m
+Ep 5024 | Loss: 0.1022 | Ent: 0.001
+Ep 5030 | RawRew: 15.73 | LOSE | Wins: 109 | Time: 117.4m
+Ep 5040 | RawRew: 14.61 | LOSE | Wins: 109 | Time: 117.5m
+Ep 5050 | RawRew: 18.22 | LOSE | Wins: 109 | Time: 117.6m
+Ep 5056 | Loss: 0.1007 | Ent: 0.001
+Ep 5060 | RawRew: 20.04 | WIN | Wins: 112 | Time: 118.0m
+Ep 5070 | RawRew: 13.44 | LOSE | Wins: 115 | Time: 118.2m
+Ep 5080 | RawRew: 15.98 | LOSE | Wins: 115 | Time: 118.3m
+Ep 5088 | Loss: 0.0922 | Ent: 0.001
+Ep 5090 | RawRew: 14.83 | LOSE | Wins: 115 | Time: 118.8m
+Ep 5100 | RawRew: 20.00 | WIN | Wins: 117 | Time: 118.9m
+Ep 5110 | RawRew: 20.04 | WIN | Wins: 118 | Time: 119.1m
+Ep 5120 | Loss: 0.1177 | Ent: 0.001
+Ep 5120 | RawRew: 15.70 | LOSE | Wins: 119 | Time: 119.6m
+Ep 5130 | RawRew: 11.63 | LOSE | Wins: 120 | Time: 119.7m
+Ep 5140 | RawRew: 12.17 | LOSE | Wins: 120 | Time: 119.9m
+Ep 5150 | RawRew: 14.57 | LOSE | Wins: 121 | Time: 120.1m
+Ep 5152 | Loss: 0.1019 | Ent: 0.001
+Ep 5160 | RawRew: 14.95 | LOSE | Wins: 121 | Time: 120.4m
+Ep 5170 | RawRew: 15.80 | LOSE | Wins: 121 | Time: 120.6m
+Ep 5180 | RawRew: 14.26 | LOSE | Wins: 121 | Time: 120.7m
+Ep 5184 | Loss: 0.0971 | Ent: 0.001
+Ep 5190 | RawRew: 12.94 | LOSE | Wins: 121 | Time: 121.1m
+Ep 5200 | RawRew: 14.75 | LOSE | Wins: 121 | Time: 121.3m
+
+=== [趋势报告] Ep 5200 ===
+平均得分: 14.33
+当前运行胜场: 121/5200 (2.33%)
+探索系数: 0.0010
+============================
+
+Ep 5210 | RawRew: 15.47 | LOSE | Wins: 121 | Time: 121.4m
+Ep 5216 | Loss: 0.1266 | Ent: 0.001
+Ep 5220 | RawRew: 13.24 | LOSE | Wins: 122 | Time: 121.8m
+Ep 5230 | RawRew: 12.70 | LOSE | Wins: 123 | Time: 122.0m
+Ep 5240 | RawRew: 15.79 | LOSE | Wins: 123 | Time: 122.1m
+Ep 5248 | Loss: 0.0802 | Ent: 0.001
+Ep 5250 | RawRew: 11.88 | LOSE | Wins: 124 | Time: 122.5m
+Ep 5260 | RawRew: 16.19 | LOSE | Wins: 124 | Time: 122.7m
+Ep 5270 | RawRew: 15.68 | LOSE | Wins: 126 | Time: 122.8m
+Ep 5280 | Loss: 0.1108 | Ent: 0.001
+Ep 5280 | RawRew: 14.82 | LOSE | Wins: 126 | Time: 123.2m
+Ep 5290 | RawRew: 14.46 | LOSE | Wins: 127 | Time: 123.3m
+Ep 5300 | RawRew: 11.85 | LOSE | Wins: 127 | Time: 123.5m
+Ep 5310 | RawRew: 17.60 | LOSE | Wins: 130 | Time: 123.6m
+Ep 5312 | Loss: 0.0996 | Ent: 0.001
+Ep 5320 | RawRew: 18.69 | LOSE | Wins: 131 | Time: 124.1m
+Ep 5330 | RawRew: 13.96 | LOSE | Wins: 131 | Time: 124.2m
+Ep 5340 | RawRew: 17.60 | LOSE | Wins: 133 | Time: 124.3m
+Ep 5344 | Loss: 0.0904 | Ent: 0.001
+Ep 5350 | RawRew: 14.22 | LOSE | Wins: 135 | Time: 124.7m
+Ep 5360 | RawRew: 17.55 | LOSE | Wins: 136 | Time: 124.9m
+Ep 5370 | RawRew: 18.68 | LOSE | Wins: 137 | Time: 125.0m
+Ep 5376 | Loss: 0.1015 | Ent: 0.001
+Ep 5380 | RawRew: 18.43 | LOSE | Wins: 138 | Time: 125.4m
+Ep 5390 | RawRew: 15.29 | LOSE | Wins: 138 | Time: 125.6m
+Ep 5400 | RawRew: 20.00 | WIN | Wins: 141 | Time: 125.7m
+
+=== [趋势报告] Ep 5400 ===
+平均得分: 14.91
+当前运行胜场: 141/5400 (2.61%)
+探索系数: 0.0010
+============================
+
+Ep 5408 | Loss: 0.1133 | Ent: 0.001
+Ep 5410 | RawRew: 14.07 | LOSE | Wins: 142 | Time: 126.1m
+Ep 5420 | RawRew: 7.33 | LOSE | Wins: 142 | Time: 126.2m
+Ep 5430 | RawRew: 16.05 | LOSE | Wins: 143 | Time: 126.3m
+Ep 5440 | Loss: 0.1198 | Ent: 0.001
+Ep 5440 | RawRew: 15.98 | LOSE | Wins: 144 | Time: 126.7m
+Ep 5450 | RawRew: 12.88 | LOSE | Wins: 146 | Time: 126.9m
+Ep 5460 | RawRew: 17.90 | LOSE | Wins: 147 | Time: 127.0m
+Ep 5470 | RawRew: 12.83 | LOSE | Wins: 149 | Time: 127.1m
+Ep 5472 | Loss: 0.1369 | Ent: 0.001
+Ep 5480 | RawRew: 17.82 | LOSE | Wins: 152 | Time: 127.5m
+Ep 5490 | RawRew: 14.43 | LOSE | Wins: 153 | Time: 127.6m
+Ep 5500 | RawRew: 16.68 | LOSE | Wins: 154 | Time: 127.8m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 18.0% | 平均得分: 14.85
+💾 模型已保存到: best_model.pt
+>>> 最佳模型已更新 @ Ep 5500
+    原因: 胜率提升 8.0% → 18.0%
+Ep 5504 | Loss: 0.1081 | Ent: 0.001
+Ep 5510 | RawRew: 13.09 | LOSE | Wins: 157 | Time: 129.0m
+Ep 5520 | RawRew: 17.56 | LOSE | Wins: 158 | Time: 129.2m
+Ep 5530 | RawRew: 15.44 | LOSE | Wins: 159 | Time: 129.3m
+Ep 5536 | Loss: 0.1139 | Ent: 0.001
+Ep 5540 | RawRew: 17.00 | LOSE | Wins: 162 | Time: 129.7m
+Ep 5550 | RawRew: 11.02 | LOSE | Wins: 162 | Time: 129.9m
+Ep 5560 | RawRew: 12.25 | LOSE | Wins: 164 | Time: 130.0m
+Ep 5568 | Loss: 0.0986 | Ent: 0.001
+Ep 5570 | RawRew: 17.93 | LOSE | Wins: 165 | Time: 130.4m
+Ep 5580 | RawRew: 11.26 | LOSE | Wins: 166 | Time: 130.5m
+Ep 5590 | RawRew: 18.22 | LOSE | Wins: 168 | Time: 130.7m
+Ep 5600 | Loss: 0.0932 | Ent: 0.001
+Ep 5600 | RawRew: 11.20 | LOSE | Wins: 169 | Time: 131.0m
+
+=== [趋势报告] Ep 5600 ===
+平均得分: 15.15
+当前运行胜场: 169/5600 (3.02%)
+探索系数: 0.0010
+============================
+
+Ep 5610 | RawRew: 10.96 | LOSE | Wins: 169 | Time: 131.2m
+Ep 5620 | RawRew: 15.01 | LOSE | Wins: 171 | Time: 131.3m
+Ep 5630 | RawRew: 11.80 | LOSE | Wins: 173 | Time: 131.5m
+Ep 5632 | Loss: 0.1202 | Ent: 0.001
+Ep 5640 | RawRew: 16.28 | LOSE | Wins: 174 | Time: 131.9m
+Ep 5650 | RawRew: 8.20 | LOSE | Wins: 174 | Time: 132.0m
+Ep 5660 | RawRew: 14.84 | LOSE | Wins: 175 | Time: 132.2m
+Ep 5664 | Loss: 0.1105 | Ent: 0.001
+Ep 5670 | RawRew: 13.55 | LOSE | Wins: 175 | Time: 132.6m
+Ep 5680 | RawRew: 14.29 | LOSE | Wins: 176 | Time: 132.8m
+Ep 5690 | RawRew: 16.20 | LOSE | Wins: 176 | Time: 133.0m
+Ep 5696 | Loss: 0.1192 | Ent: 0.001
+Ep 5700 | RawRew: 14.58 | LOSE | Wins: 176 | Time: 133.4m
+Ep 5710 | RawRew: 15.44 | LOSE | Wins: 177 | Time: 133.5m
+Ep 5720 | RawRew: 13.16 | LOSE | Wins: 179 | Time: 133.7m
+Ep 5728 | Loss: 0.1142 | Ent: 0.001
+Ep 5730 | RawRew: 12.27 | LOSE | Wins: 180 | Time: 134.0m
+Ep 5740 | RawRew: 16.59 | LOSE | Wins: 183 | Time: 134.2m
+Ep 5750 | RawRew: 18.22 | LOSE | Wins: 184 | Time: 134.3m
+Ep 5760 | Loss: 0.1301 | Ent: 0.001
+Ep 5760 | RawRew: 13.14 | LOSE | Wins: 187 | Time: 134.7m
+Ep 5770 | RawRew: 15.81 | LOSE | Wins: 190 | Time: 134.9m
+Ep 5780 | RawRew: 13.63 | LOSE | Wins: 191 | Time: 135.0m
+Ep 5790 | RawRew: 20.27 | WIN | Wins: 193 | Time: 135.2m
+Ep 5792 | Loss: 0.1193 | Ent: 0.001
+Ep 5800 | RawRew: 16.84 | LOSE | Wins: 193 | Time: 135.6m
+
+=== [趋势报告] Ep 5800 ===
+平均得分: 14.80
+当前运行胜场: 193/5800 (3.33%)
+探索系数: 0.0010
+============================
+
+Ep 5810 | RawRew: 14.28 | LOSE | Wins: 193 | Time: 135.7m
+Ep 5820 | RawRew: 16.37 | LOSE | Wins: 195 | Time: 135.9m
+Ep 5824 | Loss: 0.0981 | Ent: 0.001
+Ep 5830 | RawRew: 14.19 | LOSE | Wins: 196 | Time: 136.3m
+Ep 5840 | RawRew: 15.38 | LOSE | Wins: 198 | Time: 136.4m
+Ep 5850 | RawRew: 20.02 | WIN | Wins: 200 | Time: 136.5m
+Ep 5856 | Loss: 0.1077 | Ent: 0.001
+Ep 5860 | RawRew: 16.16 | LOSE | Wins: 201 | Time: 136.9m
+Ep 5870 | RawRew: 20.92 | WIN | Wins: 203 | Time: 137.1m
+Ep 5880 | RawRew: 12.36 | LOSE | Wins: 204 | Time: 137.2m
+Ep 5888 | Loss: 0.1067 | Ent: 0.001
+Ep 5890 | RawRew: 16.89 | LOSE | Wins: 205 | Time: 137.6m
+Ep 5900 | RawRew: 20.13 | WIN | Wins: 207 | Time: 137.7m
+Ep 5910 | RawRew: 17.59 | LOSE | Wins: 208 | Time: 137.9m
+Ep 5920 | Loss: 0.1086 | Ent: 0.001
+Ep 5920 | RawRew: 11.84 | LOSE | Wins: 210 | Time: 138.3m
+Ep 5930 | RawRew: 15.28 | LOSE | Wins: 211 | Time: 138.4m
+Ep 5940 | RawRew: 14.29 | LOSE | Wins: 212 | Time: 138.5m
+Ep 5950 | RawRew: 9.32 | LOSE | Wins: 212 | Time: 138.7m
+Ep 5952 | Loss: 0.1211 | Ent: 0.001
+Ep 5960 | RawRew: 14.24 | LOSE | Wins: 213 | Time: 139.0m
+Ep 5970 | RawRew: 20.04 | WIN | Wins: 214 | Time: 139.2m
+Ep 5980 | RawRew: 13.98 | LOSE | Wins: 214 | Time: 139.3m
+Ep 5984 | Loss: 0.1061 | Ent: 0.001
+Ep 5990 | RawRew: 11.17 | LOSE | Wins: 214 | Time: 139.8m
+Ep 6000 | RawRew: 11.95 | LOSE | Wins: 215 | Time: 140.0m
+
+=== [趋势报告] Ep 6000 ===
+平均得分: 14.78
+当前运行胜场: 215/6000 (3.58%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 8.0% | 平均得分: 13.38
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 6010 | RawRew: 11.36 | LOSE | Wins: 216 | Time: 140.9m
+Ep 6016 | Loss: 0.1243 | Ent: 0.001
+Ep 6020 | RawRew: 13.71 | LOSE | Wins: 217 | Time: 141.2m
+Ep 6030 | RawRew: 14.03 | LOSE | Wins: 218 | Time: 141.4m
+Ep 6040 | RawRew: 14.62 | LOSE | Wins: 218 | Time: 141.5m
+Ep 6048 | Loss: 0.0894 | Ent: 0.001
+Ep 6050 | RawRew: 17.96 | LOSE | Wins: 218 | Time: 141.9m
+Ep 6060 | RawRew: 12.47 | LOSE | Wins: 219 | Time: 142.1m
+Ep 6070 | RawRew: 13.01 | LOSE | Wins: 220 | Time: 142.2m
+Ep 6080 | Loss: 0.0959 | Ent: 0.001
+Ep 6080 | RawRew: 12.52 | LOSE | Wins: 220 | Time: 142.6m
+Ep 6090 | RawRew: 16.40 | LOSE | Wins: 220 | Time: 142.7m
+Ep 6100 | RawRew: 12.57 | LOSE | Wins: 220 | Time: 142.9m
+Ep 6110 | RawRew: 14.77 | LOSE | Wins: 220 | Time: 143.0m
+Ep 6112 | Loss: 0.1137 | Ent: 0.001
+Ep 6120 | RawRew: 13.09 | LOSE | Wins: 220 | Time: 143.4m
+Ep 6130 | RawRew: 9.74 | LOSE | Wins: 220 | Time: 143.6m
+Ep 6140 | RawRew: 11.38 | LOSE | Wins: 220 | Time: 143.7m
+Ep 6144 | Loss: 0.0967 | Ent: 0.001
+Ep 6150 | RawRew: 13.90 | LOSE | Wins: 220 | Time: 144.1m
+Ep 6160 | RawRew: 14.64 | LOSE | Wins: 220 | Time: 144.3m
+Ep 6170 | RawRew: 12.01 | LOSE | Wins: 222 | Time: 144.4m
+Ep 6176 | Loss: 0.0958 | Ent: 0.001
+Ep 6180 | RawRew: 9.55 | LOSE | Wins: 222 | Time: 144.8m
+Ep 6190 | RawRew: 18.24 | LOSE | Wins: 222 | Time: 144.9m
+Ep 6200 | RawRew: 13.87 | LOSE | Wins: 223 | Time: 145.1m
+
+=== [趋势报告] Ep 6200 ===
+平均得分: 13.77
+当前运行胜场: 223/6200 (3.60%)
+探索系数: 0.0010
+============================
+
+Ep 6208 | Loss: 0.1111 | Ent: 0.001
+Ep 6210 | RawRew: 15.27 | LOSE | Wins: 224 | Time: 145.5m
+Ep 6220 | RawRew: 12.16 | LOSE | Wins: 224 | Time: 145.7m
+Ep 6230 | RawRew: 9.69 | LOSE | Wins: 224 | Time: 145.9m
+Ep 6240 | Loss: 0.1063 | Ent: 0.001
+Ep 6240 | RawRew: 12.79 | LOSE | Wins: 224 | Time: 146.4m
+Ep 6250 | RawRew: 14.37 | LOSE | Wins: 225 | Time: 146.5m
+Ep 6260 | RawRew: 12.52 | LOSE | Wins: 225 | Time: 146.7m
+Ep 6270 | RawRew: 13.60 | LOSE | Wins: 227 | Time: 146.8m
+Ep 6272 | Loss: 0.1060 | Ent: 0.001
+Ep 6280 | RawRew: 14.16 | LOSE | Wins: 227 | Time: 147.2m
+Ep 6290 | RawRew: 10.37 | LOSE | Wins: 227 | Time: 147.4m
+Ep 6300 | RawRew: 7.67 | LOSE | Wins: 228 | Time: 147.6m
+Ep 6304 | Loss: 0.1038 | Ent: 0.001
+Ep 6310 | RawRew: 18.11 | LOSE | Wins: 229 | Time: 148.0m
+Ep 6320 | RawRew: 8.12 | LOSE | Wins: 230 | Time: 148.1m
+Ep 6330 | RawRew: 11.43 | LOSE | Wins: 230 | Time: 148.3m
+Ep 6336 | Loss: 0.0984 | Ent: 0.001
+Ep 6340 | RawRew: 12.72 | LOSE | Wins: 230 | Time: 148.6m
+Ep 6350 | RawRew: 16.26 | LOSE | Wins: 230 | Time: 148.8m
+Ep 6360 | RawRew: 9.63 | LOSE | Wins: 230 | Time: 148.9m
+Ep 6368 | Loss: 0.0729 | Ent: 0.001
+Ep 6370 | RawRew: 15.08 | LOSE | Wins: 230 | Time: 149.3m
+Ep 6380 | RawRew: 14.14 | LOSE | Wins: 230 | Time: 149.5m
+Ep 6390 | RawRew: 14.91 | LOSE | Wins: 230 | Time: 149.6m
+Ep 6400 | Loss: 0.0820 | Ent: 0.001
+Ep 6400 | RawRew: 12.93 | LOSE | Wins: 230 | Time: 150.0m
+
+=== [趋势报告] Ep 6400 ===
+平均得分: 13.78
+当前运行胜场: 230/6400 (3.59%)
+探索系数: 0.0010
+============================
+
+Ep 6410 | RawRew: 17.42 | LOSE | Wins: 230 | Time: 150.2m
+Ep 6420 | RawRew: 18.04 | LOSE | Wins: 231 | Time: 150.3m
+Ep 6430 | RawRew: 12.73 | LOSE | Wins: 231 | Time: 150.5m
+Ep 6432 | Loss: 0.0729 | Ent: 0.001
+Ep 6440 | RawRew: 13.23 | LOSE | Wins: 231 | Time: 150.9m
+Ep 6450 | RawRew: 15.97 | LOSE | Wins: 232 | Time: 151.0m
+Ep 6460 | RawRew: 15.60 | LOSE | Wins: 233 | Time: 151.2m
+Ep 6464 | Loss: 0.1235 | Ent: 0.001
+Ep 6470 | RawRew: 10.22 | LOSE | Wins: 233 | Time: 151.6m
+Ep 6480 | RawRew: 11.66 | LOSE | Wins: 234 | Time: 151.7m
+Ep 6490 | RawRew: 16.11 | LOSE | Wins: 234 | Time: 151.9m
+Ep 6496 | Loss: 0.1050 | Ent: 0.001
+Ep 6500 | RawRew: 20.00 | WIN | Wins: 236 | Time: 152.3m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 12.20
+Ep 6510 | RawRew: 10.79 | LOSE | Wins: 236 | Time: 153.2m
+Ep 6520 | RawRew: 15.16 | LOSE | Wins: 237 | Time: 153.3m
+Ep 6528 | Loss: 0.0918 | Ent: 0.001
+Ep 6530 | RawRew: 10.00 | LOSE | Wins: 237 | Time: 153.7m
+Ep 6540 | RawRew: 14.61 | LOSE | Wins: 237 | Time: 153.9m
+Ep 6550 | RawRew: 11.67 | LOSE | Wins: 237 | Time: 154.1m
+Ep 6560 | Loss: 0.0908 | Ent: 0.001
+Ep 6560 | RawRew: 10.79 | LOSE | Wins: 237 | Time: 154.5m
+Ep 6570 | RawRew: 14.15 | LOSE | Wins: 237 | Time: 154.6m
+Ep 6580 | RawRew: 17.44 | LOSE | Wins: 238 | Time: 154.8m
+Ep 6590 | RawRew: 12.97 | LOSE | Wins: 238 | Time: 154.9m
+Ep 6592 | Loss: 0.0851 | Ent: 0.001
+Ep 6600 | RawRew: 14.68 | LOSE | Wins: 238 | Time: 155.3m
+
+=== [趋势报告] Ep 6600 ===
+平均得分: 13.50
+当前运行胜场: 238/6600 (3.61%)
+探索系数: 0.0010
+============================
+
+Ep 6610 | RawRew: 11.55 | LOSE | Wins: 239 | Time: 155.4m
+Ep 6620 | RawRew: 15.19 | LOSE | Wins: 239 | Time: 155.6m
+Ep 6624 | Loss: 0.0807 | Ent: 0.001
+Ep 6630 | RawRew: 15.09 | LOSE | Wins: 239 | Time: 156.0m
+Ep 6640 | RawRew: 9.07 | LOSE | Wins: 240 | Time: 156.1m
+Ep 6650 | RawRew: 14.69 | LOSE | Wins: 240 | Time: 156.3m
+Ep 6656 | Loss: 0.0868 | Ent: 0.001
+Ep 6660 | RawRew: 15.04 | LOSE | Wins: 240 | Time: 156.7m
+Ep 6670 | RawRew: 12.90 | LOSE | Wins: 240 | Time: 156.9m
+Ep 6680 | RawRew: 15.78 | LOSE | Wins: 240 | Time: 157.0m
+Ep 6688 | Loss: 0.0935 | Ent: 0.001
+Ep 6690 | RawRew: 12.74 | LOSE | Wins: 241 | Time: 157.4m
+Ep 6700 | RawRew: 7.04 | LOSE | Wins: 241 | Time: 157.6m
+Ep 6710 | RawRew: 10.65 | LOSE | Wins: 242 | Time: 157.7m
+Ep 6720 | Loss: 0.0839 | Ent: 0.001
+Ep 6720 | RawRew: 12.37 | LOSE | Wins: 242 | Time: 158.1m
+Ep 6730 | RawRew: 12.16 | LOSE | Wins: 242 | Time: 158.3m
+Ep 6740 | RawRew: 9.71 | LOSE | Wins: 242 | Time: 158.4m
+Ep 6750 | RawRew: 12.98 | LOSE | Wins: 242 | Time: 158.5m
+Ep 6752 | Loss: 0.0849 | Ent: 0.001
+Ep 6760 | RawRew: 13.77 | LOSE | Wins: 242 | Time: 159.1m
+Ep 6770 | RawRew: 12.61 | LOSE | Wins: 242 | Time: 159.2m
+Ep 6780 | RawRew: 12.59 | LOSE | Wins: 242 | Time: 159.4m
+Ep 6784 | Loss: 0.0912 | Ent: 0.001
+Ep 6790 | RawRew: 11.64 | LOSE | Wins: 243 | Time: 159.8m
+Ep 6800 | RawRew: 12.62 | LOSE | Wins: 243 | Time: 159.9m
+
+=== [趋势报告] Ep 6800 ===
+平均得分: 12.99
+当前运行胜场: 243/6800 (3.57%)
+探索系数: 0.0010
+============================
+
+Ep 6810 | RawRew: 10.33 | LOSE | Wins: 243 | Time: 160.1m
+Ep 6816 | Loss: 0.0825 | Ent: 0.001
+Ep 6820 | RawRew: 17.21 | LOSE | Wins: 243 | Time: 160.5m
+Ep 6830 | RawRew: 16.81 | LOSE | Wins: 244 | Time: 160.6m
+Ep 6840 | RawRew: 12.30 | LOSE | Wins: 244 | Time: 160.8m
+Ep 6848 | Loss: 0.0750 | Ent: 0.001
+Ep 6850 | RawRew: 13.78 | LOSE | Wins: 245 | Time: 161.2m
+Ep 6860 | RawRew: 13.38 | LOSE | Wins: 245 | Time: 161.3m
+Ep 6870 | RawRew: 15.19 | LOSE | Wins: 245 | Time: 161.5m
+Ep 6880 | Loss: 0.0920 | Ent: 0.001
+Ep 6880 | RawRew: 10.12 | LOSE | Wins: 245 | Time: 161.9m
+Ep 6890 | RawRew: 12.41 | LOSE | Wins: 245 | Time: 162.0m
+Ep 6900 | RawRew: 10.63 | LOSE | Wins: 245 | Time: 162.1m
+Ep 6910 | RawRew: 13.55 | LOSE | Wins: 245 | Time: 162.3m
+Ep 6912 | Loss: 0.0748 | Ent: 0.001
+Ep 6920 | RawRew: 14.68 | LOSE | Wins: 245 | Time: 162.7m
+Ep 6930 | RawRew: 17.48 | LOSE | Wins: 245 | Time: 162.9m
+Ep 6940 | RawRew: 9.75 | LOSE | Wins: 246 | Time: 163.0m
+Ep 6944 | Loss: 0.0979 | Ent: 0.001
+Ep 6950 | RawRew: 10.65 | LOSE | Wins: 246 | Time: 163.4m
+Ep 6960 | RawRew: 11.74 | LOSE | Wins: 246 | Time: 163.5m
+Ep 6970 | RawRew: 13.60 | LOSE | Wins: 246 | Time: 163.7m
+Ep 6976 | Loss: 0.1037 | Ent: 0.001
+Ep 6980 | RawRew: 18.99 | LOSE | Wins: 246 | Time: 164.1m
+Ep 6990 | RawRew: 13.08 | LOSE | Wins: 247 | Time: 164.2m
+Ep 7000 | RawRew: 10.87 | LOSE | Wins: 247 | Time: 164.3m
+
+=== [趋势报告] Ep 7000 ===
+平均得分: 12.84
+当前运行胜场: 247/7000 (3.53%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 2.0% | 平均得分: 11.17
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 7008 | Loss: 0.0922 | Ent: 0.001
+Ep 7010 | RawRew: 9.73 | LOSE | Wins: 247 | Time: 165.3m
+Ep 7020 | RawRew: 9.77 | LOSE | Wins: 247 | Time: 165.4m
+Ep 7030 | RawRew: 11.21 | LOSE | Wins: 247 | Time: 165.6m
+Ep 7040 | Loss: 0.0817 | Ent: 0.001
+Ep 7040 | RawRew: 12.07 | LOSE | Wins: 247 | Time: 166.0m
+Ep 7050 | RawRew: 9.67 | LOSE | Wins: 247 | Time: 166.1m
+Ep 7060 | RawRew: 13.15 | LOSE | Wins: 247 | Time: 166.2m
+Ep 7070 | RawRew: 13.08 | LOSE | Wins: 247 | Time: 166.4m
+Ep 7072 | Loss: 0.0833 | Ent: 0.001
+Ep 7080 | RawRew: 12.81 | LOSE | Wins: 247 | Time: 166.8m
+Ep 7090 | RawRew: 12.97 | LOSE | Wins: 247 | Time: 166.9m
+Ep 7100 | RawRew: 15.82 | LOSE | Wins: 247 | Time: 167.0m
+Ep 7104 | Loss: 0.0810 | Ent: 0.001
+Ep 7110 | RawRew: 14.02 | LOSE | Wins: 247 | Time: 167.4m
+Ep 7120 | RawRew: 11.33 | LOSE | Wins: 247 | Time: 167.5m
+Ep 7130 | RawRew: 11.11 | LOSE | Wins: 248 | Time: 167.7m
+Ep 7136 | Loss: 0.0750 | Ent: 0.001
+Ep 7140 | RawRew: 20.02 | WIN | Wins: 249 | Time: 168.1m
+Ep 7150 | RawRew: 9.17 | LOSE | Wins: 249 | Time: 168.2m
+Ep 7160 | RawRew: 13.51 | LOSE | Wins: 249 | Time: 168.3m
+Ep 7168 | Loss: 0.0898 | Ent: 0.001
+Ep 7170 | RawRew: 15.86 | LOSE | Wins: 249 | Time: 168.7m
+Ep 7180 | RawRew: 11.39 | LOSE | Wins: 249 | Time: 168.9m
+Ep 7190 | RawRew: 11.72 | LOSE | Wins: 249 | Time: 169.0m
+Ep 7200 | Loss: 0.0741 | Ent: 0.001
+Ep 7200 | RawRew: 12.09 | LOSE | Wins: 249 | Time: 169.4m
+
+=== [趋势报告] Ep 7200 ===
+平均得分: 12.05
+当前运行胜场: 249/7200 (3.46%)
+探索系数: 0.0010
+============================
+
+Ep 7210 | RawRew: 13.51 | LOSE | Wins: 249 | Time: 169.5m
+Ep 7220 | RawRew: 15.67 | LOSE | Wins: 249 | Time: 169.7m
+Ep 7230 | RawRew: 12.79 | LOSE | Wins: 249 | Time: 169.8m
+Ep 7232 | Loss: 0.0841 | Ent: 0.001
+Ep 7240 | RawRew: 11.98 | LOSE | Wins: 249 | Time: 170.2m
+Ep 7250 | RawRew: 8.96 | LOSE | Wins: 249 | Time: 170.4m
+Ep 7260 | RawRew: 16.17 | LOSE | Wins: 249 | Time: 170.5m
+Ep 7264 | Loss: 0.0965 | Ent: 0.001
+Ep 7270 | RawRew: 13.92 | LOSE | Wins: 249 | Time: 170.9m
+Ep 7280 | RawRew: 13.50 | LOSE | Wins: 249 | Time: 171.1m
+Ep 7290 | RawRew: 11.20 | LOSE | Wins: 249 | Time: 171.2m
+Ep 7296 | Loss: 0.0937 | Ent: 0.001
+Ep 7300 | RawRew: 13.01 | LOSE | Wins: 250 | Time: 171.6m
+Ep 7310 | RawRew: 9.10 | LOSE | Wins: 250 | Time: 171.7m
+Ep 7320 | RawRew: 11.32 | LOSE | Wins: 250 | Time: 171.9m
+Ep 7328 | Loss: 0.0761 | Ent: 0.001
+Ep 7330 | RawRew: 11.46 | LOSE | Wins: 250 | Time: 172.2m
+Ep 7340 | RawRew: 9.93 | LOSE | Wins: 251 | Time: 172.4m
+Ep 7350 | RawRew: 10.93 | LOSE | Wins: 251 | Time: 172.5m
+Ep 7360 | Loss: 0.1286 | Ent: 0.001
+Ep 7360 | RawRew: 10.11 | LOSE | Wins: 251 | Time: 173.0m
+Ep 7370 | RawRew: 15.72 | LOSE | Wins: 251 | Time: 173.1m
+Ep 7380 | RawRew: 9.13 | LOSE | Wins: 251 | Time: 173.3m
+Ep 7390 | RawRew: 12.34 | LOSE | Wins: 251 | Time: 173.4m
+Ep 7392 | Loss: 0.0829 | Ent: 0.001
+Ep 7400 | RawRew: 10.30 | LOSE | Wins: 251 | Time: 173.8m
+
+=== [趋势报告] Ep 7400 ===
+平均得分: 11.84
+当前运行胜场: 251/7400 (3.39%)
+探索系数: 0.0010
+============================
+
+Ep 7410 | RawRew: 14.07 | LOSE | Wins: 251 | Time: 173.9m
+Ep 7420 | RawRew: 14.01 | LOSE | Wins: 251 | Time: 174.0m
+Ep 7424 | Loss: 0.0770 | Ent: 0.001
+Ep 7430 | RawRew: 9.83 | LOSE | Wins: 251 | Time: 174.4m
+Ep 7440 | RawRew: 12.11 | LOSE | Wins: 251 | Time: 174.5m
+Ep 7450 | RawRew: 9.60 | LOSE | Wins: 251 | Time: 174.7m
+Ep 7456 | Loss: 0.0746 | Ent: 0.001
+Ep 7460 | RawRew: 14.51 | LOSE | Wins: 251 | Time: 175.1m
+Ep 7470 | RawRew: 11.40 | LOSE | Wins: 251 | Time: 175.2m
+Ep 7480 | RawRew: 9.86 | LOSE | Wins: 251 | Time: 175.3m
+Ep 7488 | Loss: 0.0779 | Ent: 0.001
+Ep 7490 | RawRew: 13.24 | LOSE | Wins: 251 | Time: 175.7m
+Ep 7500 | RawRew: 9.33 | LOSE | Wins: 251 | Time: 175.9m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.99
+Ep 7510 | RawRew: 11.27 | LOSE | Wins: 251 | Time: 176.8m
+Ep 7520 | Loss: 0.0738 | Ent: 0.001
+Ep 7520 | RawRew: 11.28 | LOSE | Wins: 251 | Time: 177.1m
+Ep 7530 | RawRew: 8.29 | LOSE | Wins: 251 | Time: 177.3m
+Ep 7540 | RawRew: 7.41 | LOSE | Wins: 251 | Time: 177.4m
+Ep 7550 | RawRew: 11.47 | LOSE | Wins: 251 | Time: 177.5m
+Ep 7552 | Loss: 0.0689 | Ent: 0.001
+Ep 7560 | RawRew: 13.54 | LOSE | Wins: 251 | Time: 177.9m
+Ep 7570 | RawRew: 8.63 | LOSE | Wins: 251 | Time: 178.0m
+Ep 7580 | RawRew: 8.35 | LOSE | Wins: 251 | Time: 178.2m
+Ep 7584 | Loss: 0.0851 | Ent: 0.001
+Ep 7590 | RawRew: 8.16 | LOSE | Wins: 252 | Time: 178.6m
+Ep 7600 | RawRew: 8.08 | LOSE | Wins: 252 | Time: 178.7m
+
+=== [趋势报告] Ep 7600 ===
+平均得分: 11.52
+当前运行胜场: 252/7600 (3.32%)
+探索系数: 0.0010
+============================
+
+Ep 7610 | RawRew: 14.75 | LOSE | Wins: 252 | Time: 178.8m
+Ep 7616 | Loss: 0.0787 | Ent: 0.001
+Ep 7620 | RawRew: 14.09 | LOSE | Wins: 252 | Time: 179.2m
+Ep 7630 | RawRew: 11.19 | LOSE | Wins: 252 | Time: 179.4m
+Ep 7640 | RawRew: 8.25 | LOSE | Wins: 252 | Time: 179.5m
+Ep 7648 | Loss: 0.0823 | Ent: 0.001
+Ep 7650 | RawRew: 9.55 | LOSE | Wins: 252 | Time: 179.9m
+Ep 7660 | RawRew: 12.64 | LOSE | Wins: 252 | Time: 180.0m
+Ep 7670 | RawRew: 11.72 | LOSE | Wins: 252 | Time: 180.2m
+Ep 7680 | Loss: 0.1089 | Ent: 0.001
+Ep 7680 | RawRew: 20.17 | WIN | Wins: 253 | Time: 180.5m
+Ep 7690 | RawRew: 16.03 | LOSE | Wins: 253 | Time: 180.6m
+Ep 7700 | RawRew: 13.70 | LOSE | Wins: 253 | Time: 180.8m
+Ep 7710 | RawRew: 11.26 | LOSE | Wins: 253 | Time: 180.9m
+Ep 7712 | Loss: 0.0818 | Ent: 0.001
+Ep 7720 | RawRew: 17.57 | LOSE | Wins: 253 | Time: 181.3m
+Ep 7730 | RawRew: 9.77 | LOSE | Wins: 253 | Time: 181.5m
+Ep 7740 | RawRew: 7.51 | LOSE | Wins: 253 | Time: 181.6m
+Ep 7744 | Loss: 0.0836 | Ent: 0.001
+Ep 7750 | RawRew: 14.95 | LOSE | Wins: 253 | Time: 182.0m
+Ep 7760 | RawRew: 11.64 | LOSE | Wins: 253 | Time: 182.1m
+Ep 7770 | RawRew: 10.52 | LOSE | Wins: 253 | Time: 182.3m
+Ep 7776 | Loss: 0.1112 | Ent: 0.001
+Ep 7780 | RawRew: 12.68 | LOSE | Wins: 253 | Time: 182.7m
+Ep 7790 | RawRew: 10.66 | LOSE | Wins: 253 | Time: 182.9m
+Ep 7800 | RawRew: 13.86 | LOSE | Wins: 253 | Time: 183.0m
+
+=== [趋势报告] Ep 7800 ===
+平均得分: 11.62
+当前运行胜场: 253/7800 (3.24%)
+探索系数: 0.0010
+============================
+
+Ep 7808 | Loss: 0.0710 | Ent: 0.001
+Ep 7810 | RawRew: 15.81 | LOSE | Wins: 253 | Time: 183.4m
+Ep 7820 | RawRew: 13.17 | LOSE | Wins: 253 | Time: 183.6m
+Ep 7830 | RawRew: 12.29 | LOSE | Wins: 253 | Time: 183.7m
+Ep 7840 | Loss: 0.0577 | Ent: 0.001
+Ep 7840 | RawRew: 12.19 | LOSE | Wins: 253 | Time: 184.1m
+Ep 7850 | RawRew: 10.81 | LOSE | Wins: 253 | Time: 184.3m
+Ep 7860 | RawRew: 14.93 | LOSE | Wins: 253 | Time: 184.4m
+Ep 7870 | RawRew: 7.81 | LOSE | Wins: 253 | Time: 184.6m
+Ep 7872 | Loss: 0.0625 | Ent: 0.001
+Ep 7880 | RawRew: 10.63 | LOSE | Wins: 253 | Time: 185.0m
+Ep 7890 | RawRew: 7.14 | LOSE | Wins: 253 | Time: 185.1m
+Ep 7900 | RawRew: 8.72 | LOSE | Wins: 253 | Time: 185.3m
+Ep 7904 | Loss: 0.0690 | Ent: 0.001
+Ep 7910 | RawRew: 12.51 | LOSE | Wins: 253 | Time: 185.7m
+Ep 7920 | RawRew: 10.79 | LOSE | Wins: 253 | Time: 185.8m
+Ep 7930 | RawRew: 7.60 | LOSE | Wins: 253 | Time: 186.0m
+Ep 7936 | Loss: 0.1140 | Ent: 0.001
+Ep 7940 | RawRew: 8.57 | LOSE | Wins: 253 | Time: 186.4m
+Ep 7950 | RawRew: 10.12 | LOSE | Wins: 253 | Time: 186.6m
+Ep 7960 | RawRew: 10.56 | LOSE | Wins: 253 | Time: 186.7m
+Ep 7968 | Loss: 0.0599 | Ent: 0.001
+Ep 7970 | RawRew: 11.32 | LOSE | Wins: 253 | Time: 187.1m
+Ep 7980 | RawRew: 7.81 | LOSE | Wins: 253 | Time: 187.2m
+Ep 7990 | RawRew: 13.56 | LOSE | Wins: 254 | Time: 187.4m
+Ep 8000 | Loss: 0.0660 | Ent: 0.001
+Ep 8000 | RawRew: 10.40 | LOSE | Wins: 254 | Time: 187.8m
+
+=== [趋势报告] Ep 8000 ===
+平均得分: 10.86
+当前运行胜场: 254/8000 (3.17%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.42
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 8010 | RawRew: 11.32 | LOSE | Wins: 254 | Time: 188.7m
+Ep 8020 | RawRew: 11.00 | LOSE | Wins: 254 | Time: 188.8m
+Ep 8030 | RawRew: 11.34 | LOSE | Wins: 254 | Time: 189.0m
+Ep 8032 | Loss: 0.0732 | Ent: 0.001
+Ep 8040 | RawRew: 13.28 | LOSE | Wins: 254 | Time: 189.3m
+Ep 8050 | RawRew: 12.90 | LOSE | Wins: 254 | Time: 189.5m
+Ep 8060 | RawRew: 11.28 | LOSE | Wins: 254 | Time: 189.6m
+Ep 8064 | Loss: 0.0602 | Ent: 0.001
+Ep 8070 | RawRew: 11.50 | LOSE | Wins: 254 | Time: 190.1m
+Ep 8080 | RawRew: 13.89 | LOSE | Wins: 254 | Time: 190.2m
+Ep 8090 | RawRew: 11.22 | LOSE | Wins: 255 | Time: 190.4m
+Ep 8096 | Loss: 0.0868 | Ent: 0.001
+Ep 8100 | RawRew: 12.29 | LOSE | Wins: 255 | Time: 190.8m
+Ep 8110 | RawRew: 10.97 | LOSE | Wins: 255 | Time: 190.9m
+Ep 8120 | RawRew: 10.29 | LOSE | Wins: 255 | Time: 191.1m
+Ep 8128 | Loss: 0.0559 | Ent: 0.001
+Ep 8130 | RawRew: 10.79 | LOSE | Wins: 255 | Time: 191.5m
+Ep 8140 | RawRew: 6.21 | LOSE | Wins: 255 | Time: 191.6m
+Ep 8150 | RawRew: 6.78 | LOSE | Wins: 255 | Time: 191.7m
+Ep 8160 | Loss: 0.0652 | Ent: 0.001
+Ep 8160 | RawRew: 13.00 | LOSE | Wins: 255 | Time: 192.1m
+Ep 8170 | RawRew: 10.73 | LOSE | Wins: 255 | Time: 192.3m
+Ep 8180 | RawRew: 11.55 | LOSE | Wins: 255 | Time: 192.4m
+Ep 8190 | RawRew: 7.31 | LOSE | Wins: 255 | Time: 192.5m
+Ep 8192 | Loss: 0.0712 | Ent: 0.001
+Ep 8200 | RawRew: 11.57 | LOSE | Wins: 255 | Time: 192.9m
+
+=== [趋势报告] Ep 8200 ===
+平均得分: 11.30
+当前运行胜场: 255/8200 (3.11%)
+探索系数: 0.0010
+============================
+
+Ep 8210 | RawRew: 7.26 | LOSE | Wins: 255 | Time: 193.1m
+Ep 8220 | RawRew: 10.96 | LOSE | Wins: 255 | Time: 193.2m
+Ep 8224 | Loss: 0.0710 | Ent: 0.001
+Ep 8230 | RawRew: 12.98 | LOSE | Wins: 255 | Time: 193.6m
+Ep 8240 | RawRew: 11.54 | LOSE | Wins: 255 | Time: 193.8m
+Ep 8250 | RawRew: 12.29 | LOSE | Wins: 255 | Time: 194.0m
+Ep 8256 | Loss: 0.0623 | Ent: 0.001
+Ep 8260 | RawRew: 9.12 | LOSE | Wins: 255 | Time: 194.4m
+Ep 8270 | RawRew: 12.68 | LOSE | Wins: 255 | Time: 194.5m
+Ep 8280 | RawRew: 11.43 | LOSE | Wins: 255 | Time: 194.7m
+Ep 8288 | Loss: 0.0541 | Ent: 0.001
+Ep 8290 | RawRew: 9.93 | LOSE | Wins: 255 | Time: 195.1m
+Ep 8300 | RawRew: 9.05 | LOSE | Wins: 255 | Time: 195.2m
+Ep 8310 | RawRew: 11.34 | LOSE | Wins: 255 | Time: 195.4m
+Ep 8320 | Loss: 0.0698 | Ent: 0.001
+Ep 8320 | RawRew: 15.29 | LOSE | Wins: 255 | Time: 195.8m
+Ep 8330 | RawRew: 10.07 | LOSE | Wins: 255 | Time: 195.9m
+Ep 8340 | RawRew: 9.32 | LOSE | Wins: 255 | Time: 196.0m
+Ep 8350 | RawRew: 10.44 | LOSE | Wins: 255 | Time: 196.2m
+Ep 8352 | Loss: 0.0752 | Ent: 0.001
+Ep 8360 | RawRew: 6.63 | LOSE | Wins: 255 | Time: 196.6m
+Ep 8370 | RawRew: 12.28 | LOSE | Wins: 255 | Time: 196.7m
+Ep 8380 | RawRew: 8.00 | LOSE | Wins: 255 | Time: 196.9m
+Ep 8384 | Loss: 0.0573 | Ent: 0.001
+Ep 8390 | RawRew: 8.90 | LOSE | Wins: 255 | Time: 197.3m
+Ep 8400 | RawRew: 14.17 | LOSE | Wins: 255 | Time: 197.4m
+
+=== [趋势报告] Ep 8400 ===
+平均得分: 10.78
+当前运行胜场: 255/8400 (3.04%)
+探索系数: 0.0010
+============================
+
+Ep 8410 | RawRew: 13.94 | LOSE | Wins: 255 | Time: 197.6m
+Ep 8416 | Loss: 0.0675 | Ent: 0.001
+Ep 8420 | RawRew: 9.97 | LOSE | Wins: 255 | Time: 198.0m
+Ep 8430 | RawRew: 11.49 | LOSE | Wins: 255 | Time: 198.1m
+Ep 8440 | RawRew: 11.39 | LOSE | Wins: 255 | Time: 198.3m
+Ep 8448 | Loss: 0.0625 | Ent: 0.001
+Ep 8450 | RawRew: 10.22 | LOSE | Wins: 255 | Time: 198.6m
+Ep 8460 | RawRew: 9.09 | LOSE | Wins: 256 | Time: 198.9m
+Ep 8470 | RawRew: 12.67 | LOSE | Wins: 256 | Time: 199.1m
+Ep 8480 | Loss: 0.0956 | Ent: 0.001
+Ep 8480 | RawRew: 14.28 | LOSE | Wins: 256 | Time: 199.5m
+Ep 8490 | RawRew: 10.91 | LOSE | Wins: 256 | Time: 199.7m
+Ep 8500 | RawRew: 12.65 | LOSE | Wins: 256 | Time: 199.9m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.90
+Ep 8510 | RawRew: 11.66 | LOSE | Wins: 256 | Time: 200.7m
+Ep 8512 | Loss: 0.0726 | Ent: 0.001
+Ep 8520 | RawRew: 10.85 | LOSE | Wins: 256 | Time: 201.1m
+Ep 8530 | RawRew: 13.03 | LOSE | Wins: 256 | Time: 201.2m
+Ep 8540 | RawRew: 10.22 | LOSE | Wins: 256 | Time: 201.4m
+Ep 8544 | Loss: 0.0846 | Ent: 0.001
+Ep 8550 | RawRew: 10.38 | LOSE | Wins: 256 | Time: 201.8m
+Ep 8560 | RawRew: 11.86 | LOSE | Wins: 256 | Time: 202.0m
+Ep 8570 | RawRew: 10.02 | LOSE | Wins: 256 | Time: 202.1m
+Ep 8576 | Loss: 0.0628 | Ent: 0.001
+Ep 8580 | RawRew: 12.95 | LOSE | Wins: 256 | Time: 202.5m
+Ep 8590 | RawRew: 15.09 | LOSE | Wins: 256 | Time: 202.6m
+Ep 8600 | RawRew: 14.71 | LOSE | Wins: 256 | Time: 202.8m
+
+=== [趋势报告] Ep 8600 ===
+平均得分: 11.26
+当前运行胜场: 256/8600 (2.98%)
+探索系数: 0.0010
+============================
+
+Ep 8608 | Loss: 0.0630 | Ent: 0.001
+Ep 8610 | RawRew: 13.53 | LOSE | Wins: 256 | Time: 203.2m
+Ep 8620 | RawRew: 11.45 | LOSE | Wins: 256 | Time: 203.3m
+Ep 8630 | RawRew: 13.32 | LOSE | Wins: 256 | Time: 203.5m
+Ep 8640 | Loss: 0.0667 | Ent: 0.001
+Ep 8640 | RawRew: 11.26 | LOSE | Wins: 256 | Time: 203.9m
+Ep 8650 | RawRew: 7.42 | LOSE | Wins: 256 | Time: 204.0m
+Ep 8660 | RawRew: 12.68 | LOSE | Wins: 256 | Time: 204.2m
+Ep 8670 | RawRew: 13.00 | LOSE | Wins: 256 | Time: 204.3m
+Ep 8672 | Loss: 0.0653 | Ent: 0.001
+Ep 8680 | RawRew: 11.74 | LOSE | Wins: 257 | Time: 204.7m
+Ep 8690 | RawRew: 11.41 | LOSE | Wins: 257 | Time: 204.8m
+Ep 8700 | RawRew: 10.76 | LOSE | Wins: 257 | Time: 205.0m
+Ep 8704 | Loss: 0.0887 | Ent: 0.001
+Ep 8710 | RawRew: 10.03 | LOSE | Wins: 257 | Time: 205.4m
+Ep 8720 | RawRew: 11.18 | LOSE | Wins: 257 | Time: 205.6m
+Ep 8730 | RawRew: 15.05 | LOSE | Wins: 257 | Time: 205.7m
+Ep 8736 | Loss: 0.0711 | Ent: 0.001
+Ep 8740 | RawRew: 9.35 | LOSE | Wins: 257 | Time: 206.1m
+Ep 8750 | RawRew: 13.00 | LOSE | Wins: 257 | Time: 206.2m
+Ep 8760 | RawRew: 12.15 | LOSE | Wins: 257 | Time: 206.4m
+Ep 8768 | Loss: 0.0687 | Ent: 0.001
+Ep 8770 | RawRew: 10.41 | LOSE | Wins: 257 | Time: 206.8m
+Ep 8780 | RawRew: 8.44 | LOSE | Wins: 257 | Time: 206.9m
+Ep 8790 | RawRew: 15.58 | LOSE | Wins: 257 | Time: 207.1m
+Ep 8800 | Loss: 0.0716 | Ent: 0.001
+Ep 8800 | RawRew: 10.56 | LOSE | Wins: 257 | Time: 207.4m
+
+=== [趋势报告] Ep 8800 ===
+平均得分: 11.29
+当前运行胜场: 257/8800 (2.92%)
+探索系数: 0.0010
+============================
+
+Ep 8810 | RawRew: 15.30 | LOSE | Wins: 257 | Time: 207.6m
+Ep 8820 | RawRew: 12.75 | LOSE | Wins: 257 | Time: 207.7m
+Ep 8830 | RawRew: 7.29 | LOSE | Wins: 257 | Time: 207.9m
+Ep 8832 | Loss: 0.0553 | Ent: 0.001
+Ep 8840 | RawRew: 10.77 | LOSE | Wins: 257 | Time: 208.3m
+Ep 8850 | RawRew: 15.22 | LOSE | Wins: 257 | Time: 208.4m
+Ep 8860 | RawRew: 13.77 | LOSE | Wins: 257 | Time: 208.6m
+Ep 8864 | Loss: 0.0650 | Ent: 0.001
+Ep 8870 | RawRew: 15.00 | LOSE | Wins: 257 | Time: 209.0m
+Ep 8880 | RawRew: 14.52 | LOSE | Wins: 257 | Time: 209.1m
+Ep 8890 | RawRew: 11.86 | LOSE | Wins: 257 | Time: 209.3m
+Ep 8896 | Loss: 0.0607 | Ent: 0.001
+Ep 8900 | RawRew: 10.72 | LOSE | Wins: 257 | Time: 209.7m
+Ep 8910 | RawRew: 10.77 | LOSE | Wins: 257 | Time: 209.9m
+Ep 8920 | RawRew: 14.25 | LOSE | Wins: 257 | Time: 210.0m
+Ep 8928 | Loss: 0.0698 | Ent: 0.001
+Ep 8930 | RawRew: 14.23 | LOSE | Wins: 257 | Time: 210.4m
+Ep 8940 | RawRew: 6.09 | LOSE | Wins: 257 | Time: 210.5m
+Ep 8950 | RawRew: 13.10 | LOSE | Wins: 257 | Time: 210.7m
+Ep 8960 | Loss: 0.0837 | Ent: 0.001
+Ep 8960 | RawRew: 9.75 | LOSE | Wins: 257 | Time: 211.1m
+Ep 8970 | RawRew: 13.72 | LOSE | Wins: 257 | Time: 211.2m
+Ep 8980 | RawRew: 11.17 | LOSE | Wins: 257 | Time: 211.3m
+Ep 8990 | RawRew: 13.82 | LOSE | Wins: 257 | Time: 211.6m
+Ep 8992 | Loss: 0.0733 | Ent: 0.001
+Ep 9000 | RawRew: 13.66 | LOSE | Wins: 257 | Time: 212.0m
+
+=== [趋势报告] Ep 9000 ===
+平均得分: 11.42
+当前运行胜场: 257/9000 (2.86%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.40
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 9010 | RawRew: 11.59 | LOSE | Wins: 257 | Time: 213.0m
+Ep 9020 | RawRew: 9.18 | LOSE | Wins: 257 | Time: 213.1m
+Ep 9024 | Loss: 0.0672 | Ent: 0.001
+Ep 9030 | RawRew: 9.41 | LOSE | Wins: 257 | Time: 213.5m
+Ep 9040 | RawRew: 13.62 | LOSE | Wins: 257 | Time: 213.7m
+Ep 9050 | RawRew: 12.27 | LOSE | Wins: 257 | Time: 213.8m
+Ep 9056 | Loss: 0.0595 | Ent: 0.001
+Ep 9060 | RawRew: 8.50 | LOSE | Wins: 257 | Time: 214.2m
+Ep 9070 | RawRew: 8.02 | LOSE | Wins: 257 | Time: 214.4m
+Ep 9080 | RawRew: 9.88 | LOSE | Wins: 257 | Time: 214.5m
+Ep 9088 | Loss: 0.0573 | Ent: 0.001
+Ep 9090 | RawRew: 9.21 | LOSE | Wins: 257 | Time: 214.9m
+Ep 9100 | RawRew: 12.47 | LOSE | Wins: 257 | Time: 215.1m
+Ep 9110 | RawRew: 13.92 | LOSE | Wins: 257 | Time: 215.2m
+Ep 9120 | Loss: 0.0510 | Ent: 0.001
+Ep 9120 | RawRew: 9.97 | LOSE | Wins: 257 | Time: 215.6m
+Ep 9130 | RawRew: 9.70 | LOSE | Wins: 257 | Time: 215.8m
+Ep 9140 | RawRew: 8.11 | LOSE | Wins: 257 | Time: 215.9m
+Ep 9150 | RawRew: 9.87 | LOSE | Wins: 257 | Time: 216.1m
+Ep 9152 | Loss: 0.0703 | Ent: 0.001
+Ep 9160 | RawRew: 13.51 | LOSE | Wins: 257 | Time: 216.5m
+Ep 9170 | RawRew: 11.07 | LOSE | Wins: 257 | Time: 216.7m
+Ep 9180 | RawRew: 5.22 | LOSE | Wins: 257 | Time: 216.8m
+Ep 9184 | Loss: 0.0622 | Ent: 0.001
+Ep 9190 | RawRew: 13.03 | LOSE | Wins: 257 | Time: 217.2m
+Ep 9200 | RawRew: 15.19 | LOSE | Wins: 257 | Time: 217.4m
+
+=== [趋势报告] Ep 9200 ===
+平均得分: 10.95
+当前运行胜场: 257/9200 (2.79%)
+探索系数: 0.0010
+============================
+
+Ep 9210 | RawRew: 6.52 | LOSE | Wins: 257 | Time: 217.5m
+Ep 9216 | Loss: 0.0702 | Ent: 0.001
+Ep 9220 | RawRew: 9.86 | LOSE | Wins: 257 | Time: 217.9m
+Ep 9230 | RawRew: 11.55 | LOSE | Wins: 257 | Time: 218.1m
+Ep 9240 | RawRew: 11.63 | LOSE | Wins: 257 | Time: 218.2m
+Ep 9248 | Loss: 0.0759 | Ent: 0.001
+Ep 9250 | RawRew: 13.72 | LOSE | Wins: 257 | Time: 218.7m
+Ep 9260 | RawRew: 10.17 | LOSE | Wins: 257 | Time: 218.8m
+Ep 9270 | RawRew: 7.66 | LOSE | Wins: 257 | Time: 218.9m
+Ep 9280 | Loss: 0.0799 | Ent: 0.001
+Ep 9280 | RawRew: 11.57 | LOSE | Wins: 257 | Time: 219.4m
+Ep 9290 | RawRew: 11.49 | LOSE | Wins: 257 | Time: 219.5m
+Ep 9300 | RawRew: 10.99 | LOSE | Wins: 257 | Time: 219.6m
+Ep 9310 | RawRew: 12.49 | LOSE | Wins: 257 | Time: 219.8m
+Ep 9312 | Loss: 0.0909 | Ent: 0.001
+Ep 9320 | RawRew: 13.33 | LOSE | Wins: 257 | Time: 220.2m
+Ep 9330 | RawRew: 11.59 | LOSE | Wins: 257 | Time: 220.3m
+Ep 9340 | RawRew: 11.49 | LOSE | Wins: 257 | Time: 220.5m
+Ep 9344 | Loss: 0.0697 | Ent: 0.001
+Ep 9350 | RawRew: 12.53 | LOSE | Wins: 257 | Time: 220.9m
+Ep 9360 | RawRew: 8.49 | LOSE | Wins: 257 | Time: 221.0m
+Ep 9370 | RawRew: 9.78 | LOSE | Wins: 257 | Time: 221.2m
+Ep 9376 | Loss: 0.1051 | Ent: 0.001
+Ep 9380 | RawRew: 8.35 | LOSE | Wins: 257 | Time: 221.6m
+Ep 9390 | RawRew: 6.67 | LOSE | Wins: 257 | Time: 221.7m
+Ep 9400 | RawRew: 11.45 | LOSE | Wins: 257 | Time: 221.8m
+
+=== [趋势报告] Ep 9400 ===
+平均得分: 10.76
+当前运行胜场: 257/9400 (2.73%)
+探索系数: 0.0010
+============================
+
+Ep 9408 | Loss: 0.0894 | Ent: 0.001
+Ep 9410 | RawRew: 8.20 | LOSE | Wins: 257 | Time: 222.2m
+Ep 9420 | RawRew: 13.10 | LOSE | Wins: 257 | Time: 222.4m
+Ep 9430 | RawRew: 12.37 | LOSE | Wins: 257 | Time: 222.5m
+Ep 9440 | Loss: 0.0807 | Ent: 0.001
+Ep 9440 | RawRew: 9.16 | LOSE | Wins: 257 | Time: 222.9m
+Ep 9450 | RawRew: 8.54 | LOSE | Wins: 257 | Time: 223.0m
+Ep 9460 | RawRew: 8.56 | LOSE | Wins: 257 | Time: 223.2m
+Ep 9470 | RawRew: 13.19 | LOSE | Wins: 257 | Time: 223.3m
+Ep 9472 | Loss: 0.0744 | Ent: 0.001
+Ep 9480 | RawRew: 10.68 | LOSE | Wins: 257 | Time: 223.8m
+Ep 9490 | RawRew: 9.50 | LOSE | Wins: 257 | Time: 223.9m
+Ep 9500 | RawRew: 12.04 | LOSE | Wins: 257 | Time: 224.1m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.09
+Ep 9504 | Loss: 0.0709 | Ent: 0.001
+Ep 9510 | RawRew: 16.90 | LOSE | Wins: 257 | Time: 225.3m
+Ep 9520 | RawRew: 9.56 | LOSE | Wins: 257 | Time: 225.4m
+Ep 9530 | RawRew: 7.69 | LOSE | Wins: 257 | Time: 225.5m
+Ep 9536 | Loss: 0.0774 | Ent: 0.001
+Ep 9540 | RawRew: 11.40 | LOSE | Wins: 257 | Time: 225.9m
+Ep 9550 | RawRew: 9.10 | LOSE | Wins: 257 | Time: 226.1m
+Ep 9560 | RawRew: 13.64 | LOSE | Wins: 257 | Time: 226.2m
+Ep 9568 | Loss: 0.0813 | Ent: 0.001
+Ep 9570 | RawRew: 12.13 | LOSE | Wins: 257 | Time: 226.6m
+Ep 9580 | RawRew: 12.38 | LOSE | Wins: 257 | Time: 226.8m
+Ep 9590 | RawRew: 13.98 | LOSE | Wins: 257 | Time: 226.9m
+Ep 9600 | Loss: 0.0741 | Ent: 0.001
+Ep 9600 | RawRew: 12.54 | LOSE | Wins: 257 | Time: 227.3m
+
+=== [趋势报告] Ep 9600 ===
+平均得分: 10.93
+当前运行胜场: 257/9600 (2.68%)
+探索系数: 0.0010
+============================
+
+Ep 9610 | RawRew: 8.58 | LOSE | Wins: 257 | Time: 227.5m
+Ep 9620 | RawRew: 8.04 | LOSE | Wins: 257 | Time: 227.6m
+Ep 9630 | RawRew: 10.17 | LOSE | Wins: 257 | Time: 227.7m
+Ep 9632 | Loss: 0.0834 | Ent: 0.001
+Ep 9640 | RawRew: 8.05 | LOSE | Wins: 257 | Time: 228.1m
+Ep 9650 | RawRew: 11.29 | LOSE | Wins: 257 | Time: 228.3m
+Ep 9660 | RawRew: 9.89 | LOSE | Wins: 257 | Time: 228.4m
+Ep 9664 | Loss: 0.0663 | Ent: 0.001
+Ep 9670 | RawRew: 12.03 | LOSE | Wins: 257 | Time: 228.8m
+Ep 9680 | RawRew: 10.88 | LOSE | Wins: 257 | Time: 228.9m
+Ep 9690 | RawRew: 9.71 | LOSE | Wins: 257 | Time: 229.1m
+Ep 9696 | Loss: 0.0659 | Ent: 0.001
+Ep 9700 | RawRew: 12.80 | LOSE | Wins: 257 | Time: 229.4m
+Ep 9710 | RawRew: 15.46 | LOSE | Wins: 257 | Time: 229.6m
+Ep 9720 | RawRew: 7.34 | LOSE | Wins: 257 | Time: 229.7m
+Ep 9728 | Loss: 0.0758 | Ent: 0.001
+Ep 9730 | RawRew: 7.17 | LOSE | Wins: 257 | Time: 230.1m
+Ep 9740 | RawRew: 9.53 | LOSE | Wins: 257 | Time: 230.2m
+Ep 9750 | RawRew: 5.25 | LOSE | Wins: 257 | Time: 230.4m
+Ep 9760 | Loss: 0.0879 | Ent: 0.001
+Ep 9760 | RawRew: 11.32 | LOSE | Wins: 257 | Time: 230.8m
+Ep 9770 | RawRew: 11.92 | LOSE | Wins: 257 | Time: 230.9m
+Ep 9780 | RawRew: 11.47 | LOSE | Wins: 257 | Time: 231.1m
+Ep 9790 | RawRew: 8.69 | LOSE | Wins: 257 | Time: 231.2m
+Ep 9792 | Loss: 0.0696 | Ent: 0.001
+Ep 9800 | RawRew: 12.77 | LOSE | Wins: 257 | Time: 231.7m
+
+=== [趋势报告] Ep 9800 ===
+平均得分: 10.50
+当前运行胜场: 257/9800 (2.62%)
+探索系数: 0.0010
+============================
+
+Ep 9810 | RawRew: 14.99 | LOSE | Wins: 257 | Time: 231.8m
+Ep 9820 | RawRew: 8.01 | LOSE | Wins: 257 | Time: 232.0m
+Ep 9824 | Loss: 0.0650 | Ent: 0.001
+Ep 9830 | RawRew: 10.96 | LOSE | Wins: 257 | Time: 232.4m
+Ep 9840 | RawRew: 13.82 | LOSE | Wins: 257 | Time: 232.5m
+Ep 9850 | RawRew: 11.61 | LOSE | Wins: 257 | Time: 232.6m
+Ep 9856 | Loss: 0.0868 | Ent: 0.001
+Ep 9860 | RawRew: 9.71 | LOSE | Wins: 257 | Time: 233.0m
+Ep 9870 | RawRew: 11.36 | LOSE | Wins: 257 | Time: 233.2m
+Ep 9880 | RawRew: 5.75 | LOSE | Wins: 257 | Time: 233.3m
+Ep 9888 | Loss: 0.0848 | Ent: 0.001
+Ep 9890 | RawRew: 14.93 | LOSE | Wins: 257 | Time: 233.7m
+Ep 9900 | RawRew: 11.79 | LOSE | Wins: 257 | Time: 233.8m
+Ep 9910 | RawRew: 10.31 | LOSE | Wins: 257 | Time: 234.0m
+Ep 9920 | Loss: 0.0755 | Ent: 0.001
+Ep 9920 | RawRew: 11.86 | LOSE | Wins: 257 | Time: 234.4m
+Ep 9930 | RawRew: 12.26 | LOSE | Wins: 257 | Time: 234.5m
+Ep 9940 | RawRew: 14.02 | LOSE | Wins: 257 | Time: 234.6m
+Ep 9950 | RawRew: 6.36 | LOSE | Wins: 257 | Time: 234.8m
+Ep 9952 | Loss: 0.0807 | Ent: 0.001
+Ep 9960 | RawRew: 11.10 | LOSE | Wins: 257 | Time: 235.1m
+Ep 9970 | RawRew: 5.01 | LOSE | Wins: 257 | Time: 235.3m
+Ep 9980 | RawRew: 8.76 | LOSE | Wins: 257 | Time: 235.4m
+Ep 9984 | Loss: 0.0996 | Ent: 0.001
+Ep 9990 | RawRew: 13.02 | LOSE | Wins: 257 | Time: 235.8m
+Ep 10000 | RawRew: 13.51 | LOSE | Wins: 257 | Time: 236.0m
+
+=== [趋势报告] Ep 10000 ===
+平均得分: 10.80
+当前运行胜场: 257/10000 (2.57%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.94
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 10010 | RawRew: 9.69 | LOSE | Wins: 257 | Time: 236.8m
+Ep 10016 | Loss: 0.0896 | Ent: 0.001
+Ep 10020 | RawRew: 11.51 | LOSE | Wins: 257 | Time: 237.3m
+Ep 10030 | RawRew: 13.07 | LOSE | Wins: 257 | Time: 237.5m
+Ep 10040 | RawRew: 13.98 | LOSE | Wins: 257 | Time: 237.6m
+Ep 10048 | Loss: 0.0775 | Ent: 0.001
+Ep 10050 | RawRew: 13.61 | LOSE | Wins: 257 | Time: 238.0m
+Ep 10060 | RawRew: 9.70 | LOSE | Wins: 257 | Time: 238.2m
+Ep 10070 | RawRew: 8.28 | LOSE | Wins: 257 | Time: 238.3m
+Ep 10080 | Loss: 0.0586 | Ent: 0.001
+Ep 10080 | RawRew: 10.67 | LOSE | Wins: 257 | Time: 238.7m
+Ep 10090 | RawRew: 11.16 | LOSE | Wins: 257 | Time: 238.8m
+Ep 10100 | RawRew: 7.49 | LOSE | Wins: 257 | Time: 239.0m
+Ep 10110 | RawRew: 7.67 | LOSE | Wins: 257 | Time: 239.1m
+Ep 10112 | Loss: 0.0837 | Ent: 0.001
+Ep 10120 | RawRew: 14.50 | LOSE | Wins: 257 | Time: 239.5m
+Ep 10130 | RawRew: 7.14 | LOSE | Wins: 257 | Time: 239.7m
+Ep 10140 | RawRew: 10.72 | LOSE | Wins: 257 | Time: 239.8m
+Ep 10144 | Loss: 0.0777 | Ent: 0.001
+Ep 10150 | RawRew: 11.96 | LOSE | Wins: 257 | Time: 240.2m
+Ep 10160 | RawRew: 8.64 | LOSE | Wins: 257 | Time: 240.3m
+Ep 10170 | RawRew: 14.34 | LOSE | Wins: 257 | Time: 240.5m
+Ep 10176 | Loss: 0.0728 | Ent: 0.001
+Ep 10180 | RawRew: 14.21 | LOSE | Wins: 257 | Time: 240.8m
+Ep 10190 | RawRew: 9.02 | LOSE | Wins: 257 | Time: 241.0m
+Ep 10200 | RawRew: 10.00 | LOSE | Wins: 257 | Time: 241.1m
+
+=== [趋势报告] Ep 10200 ===
+平均得分: 11.12
+当前运行胜场: 257/10200 (2.52%)
+探索系数: 0.0010
+============================
+
+Ep 10208 | Loss: 0.0730 | Ent: 0.001
+Ep 10210 | RawRew: 11.56 | LOSE | Wins: 257 | Time: 241.5m
+Ep 10220 | RawRew: 13.26 | LOSE | Wins: 257 | Time: 241.7m
+Ep 10230 | RawRew: 6.54 | LOSE | Wins: 257 | Time: 241.9m
+Ep 10240 | Loss: 0.0615 | Ent: 0.001
+Ep 10240 | RawRew: 8.09 | LOSE | Wins: 257 | Time: 242.2m
+Ep 10250 | RawRew: 10.96 | LOSE | Wins: 257 | Time: 242.4m
+Ep 10260 | RawRew: 11.04 | LOSE | Wins: 257 | Time: 242.5m
+Ep 10270 | RawRew: 10.94 | LOSE | Wins: 257 | Time: 242.7m
+Ep 10272 | Loss: 0.0788 | Ent: 0.001
+Ep 10280 | RawRew: 6.90 | LOSE | Wins: 257 | Time: 243.0m
+Ep 10290 | RawRew: 11.67 | LOSE | Wins: 257 | Time: 243.2m
+Ep 10300 | RawRew: 13.76 | LOSE | Wins: 257 | Time: 243.4m
+Ep 10304 | Loss: 0.0596 | Ent: 0.001
+Ep 10310 | RawRew: 12.05 | LOSE | Wins: 257 | Time: 243.7m
+Ep 10320 | RawRew: 6.65 | LOSE | Wins: 257 | Time: 243.9m
+Ep 10330 | RawRew: 14.79 | LOSE | Wins: 257 | Time: 244.0m
+Ep 10336 | Loss: 0.0741 | Ent: 0.001
+Ep 10340 | RawRew: 8.27 | LOSE | Wins: 257 | Time: 244.4m
+Ep 10350 | RawRew: 11.08 | LOSE | Wins: 257 | Time: 244.5m
+Ep 10360 | RawRew: 9.77 | LOSE | Wins: 257 | Time: 244.7m
+Ep 10368 | Loss: 0.0916 | Ent: 0.001
+Ep 10370 | RawRew: 14.40 | LOSE | Wins: 257 | Time: 245.1m
+Ep 10380 | RawRew: 11.69 | LOSE | Wins: 257 | Time: 245.2m
+Ep 10390 | RawRew: 9.98 | LOSE | Wins: 257 | Time: 245.4m
+Ep 10400 | Loss: 0.0779 | Ent: 0.001
+Ep 10400 | RawRew: 11.84 | LOSE | Wins: 257 | Time: 245.8m
+
+=== [趋势报告] Ep 10400 ===
+平均得分: 11.46
+当前运行胜场: 257/10400 (2.47%)
+探索系数: 0.0010
+============================
+
+Ep 10410 | RawRew: 13.91 | LOSE | Wins: 257 | Time: 245.9m
+Ep 10420 | RawRew: 11.26 | LOSE | Wins: 257 | Time: 246.0m
+Ep 10430 | RawRew: 13.12 | LOSE | Wins: 257 | Time: 246.2m
+Ep 10432 | Loss: 0.0858 | Ent: 0.001
+Ep 10440 | RawRew: 8.21 | LOSE | Wins: 257 | Time: 246.6m
+Ep 10450 | RawRew: 13.79 | LOSE | Wins: 257 | Time: 246.7m
+Ep 10460 | RawRew: 13.16 | LOSE | Wins: 257 | Time: 246.9m
+Ep 10464 | Loss: 0.0731 | Ent: 0.001
+Ep 10470 | RawRew: 11.90 | LOSE | Wins: 257 | Time: 247.3m
+Ep 10480 | RawRew: 6.31 | LOSE | Wins: 257 | Time: 247.4m
+Ep 10490 | RawRew: 11.34 | LOSE | Wins: 257 | Time: 247.6m
+Ep 10496 | Loss: 0.1076 | Ent: 0.001
+Ep 10500 | RawRew: 10.20 | LOSE | Wins: 257 | Time: 248.0m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.71
+Ep 10510 | RawRew: 11.71 | LOSE | Wins: 257 | Time: 248.8m
+Ep 10520 | RawRew: 9.57 | LOSE | Wins: 257 | Time: 248.9m
+Ep 10528 | Loss: 0.0652 | Ent: 0.001
+Ep 10530 | RawRew: 11.28 | LOSE | Wins: 257 | Time: 249.3m
+Ep 10540 | RawRew: 12.64 | LOSE | Wins: 257 | Time: 249.5m
+Ep 10550 | RawRew: 7.89 | LOSE | Wins: 257 | Time: 249.6m
+Ep 10560 | Loss: 0.0836 | Ent: 0.001
+Ep 10560 | RawRew: 12.20 | LOSE | Wins: 257 | Time: 250.0m
+Ep 10570 | RawRew: 8.79 | LOSE | Wins: 257 | Time: 250.1m
+Ep 10580 | RawRew: 8.47 | LOSE | Wins: 257 | Time: 250.4m
+Ep 10590 | RawRew: 5.33 | LOSE | Wins: 257 | Time: 250.5m
+Ep 10592 | Loss: 0.1019 | Ent: 0.001
+Ep 10600 | RawRew: 8.95 | LOSE | Wins: 257 | Time: 250.9m
+
+=== [趋势报告] Ep 10600 ===
+平均得分: 11.39
+当前运行胜场: 257/10600 (2.42%)
+探索系数: 0.0010
+============================
+
+Ep 10610 | RawRew: 14.16 | LOSE | Wins: 257 | Time: 251.1m
+Ep 10620 | RawRew: 9.87 | LOSE | Wins: 257 | Time: 251.3m
+Ep 10624 | Loss: 0.0697 | Ent: 0.001
+Ep 10630 | RawRew: 9.93 | LOSE | Wins: 257 | Time: 251.7m
+Ep 10640 | RawRew: 9.30 | LOSE | Wins: 257 | Time: 251.8m
+Ep 10650 | RawRew: 13.79 | LOSE | Wins: 257 | Time: 251.9m
+Ep 10656 | Loss: 0.0613 | Ent: 0.001
+Ep 10660 | RawRew: 15.25 | LOSE | Wins: 257 | Time: 252.3m
+Ep 10670 | RawRew: 12.23 | LOSE | Wins: 257 | Time: 252.5m
+Ep 10680 | RawRew: 11.30 | LOSE | Wins: 257 | Time: 252.6m
+Ep 10688 | Loss: 0.0750 | Ent: 0.001
+Ep 10690 | RawRew: 7.46 | LOSE | Wins: 257 | Time: 253.0m
+Ep 10700 | RawRew: 11.98 | LOSE | Wins: 257 | Time: 253.1m
+Ep 10710 | RawRew: 12.86 | LOSE | Wins: 257 | Time: 253.3m
+Ep 10720 | Loss: 0.0986 | Ent: 0.001
+Ep 10720 | RawRew: 9.55 | LOSE | Wins: 257 | Time: 253.7m
+Ep 10730 | RawRew: 10.31 | LOSE | Wins: 257 | Time: 253.9m
+Ep 10740 | RawRew: 8.53 | LOSE | Wins: 257 | Time: 254.0m
+Ep 10750 | RawRew: 6.41 | LOSE | Wins: 257 | Time: 254.1m
+Ep 10752 | Loss: 0.0761 | Ent: 0.001
+Ep 10760 | RawRew: 13.34 | LOSE | Wins: 257 | Time: 254.5m
+Ep 10770 | RawRew: 10.36 | LOSE | Wins: 257 | Time: 254.6m
+Ep 10780 | RawRew: 17.10 | LOSE | Wins: 257 | Time: 254.8m
+Ep 10784 | Loss: 0.0678 | Ent: 0.001
+Ep 10790 | RawRew: 9.61 | LOSE | Wins: 257 | Time: 255.2m
+Ep 10800 | RawRew: 7.04 | LOSE | Wins: 257 | Time: 255.3m
+
+=== [趋势报告] Ep 10800 ===
+平均得分: 11.14
+当前运行胜场: 257/10800 (2.38%)
+探索系数: 0.0010
+============================
+
+Ep 10810 | RawRew: 11.90 | LOSE | Wins: 257 | Time: 255.5m
+Ep 10816 | Loss: 0.0702 | Ent: 0.001
+Ep 10820 | RawRew: 14.66 | LOSE | Wins: 257 | Time: 255.9m
+Ep 10830 | RawRew: 13.28 | LOSE | Wins: 257 | Time: 256.0m
+Ep 10840 | RawRew: 10.96 | LOSE | Wins: 257 | Time: 256.1m
+Ep 10848 | Loss: 0.0763 | Ent: 0.001
+Ep 10850 | RawRew: 12.56 | LOSE | Wins: 257 | Time: 256.5m
+Ep 10860 | RawRew: 13.21 | LOSE | Wins: 257 | Time: 256.6m
+Ep 10870 | RawRew: 13.54 | LOSE | Wins: 257 | Time: 256.8m
+Ep 10880 | Loss: 0.0560 | Ent: 0.001
+Ep 10880 | RawRew: 13.10 | LOSE | Wins: 257 | Time: 257.2m
+Ep 10890 | RawRew: 10.13 | LOSE | Wins: 257 | Time: 257.3m
+Ep 10900 | RawRew: 11.05 | LOSE | Wins: 257 | Time: 257.5m
+Ep 10910 | RawRew: 9.54 | LOSE | Wins: 257 | Time: 257.7m
+Ep 10912 | Loss: 0.0757 | Ent: 0.001
+Ep 10920 | RawRew: 11.90 | LOSE | Wins: 257 | Time: 258.1m
+Ep 10930 | RawRew: 10.09 | LOSE | Wins: 257 | Time: 258.2m
+Ep 10940 | RawRew: 10.33 | LOSE | Wins: 257 | Time: 258.4m
+Ep 10944 | Loss: 0.0745 | Ent: 0.001
+Ep 10950 | RawRew: 9.83 | LOSE | Wins: 257 | Time: 258.7m
+Ep 10960 | RawRew: 12.22 | LOSE | Wins: 257 | Time: 258.9m
+Ep 10970 | RawRew: 9.40 | LOSE | Wins: 257 | Time: 259.0m
+Ep 10976 | Loss: 0.0994 | Ent: 0.001
+Ep 10980 | RawRew: 9.55 | LOSE | Wins: 257 | Time: 259.4m
+Ep 10990 | RawRew: 9.43 | LOSE | Wins: 257 | Time: 259.5m
+Ep 11000 | RawRew: 7.99 | LOSE | Wins: 257 | Time: 259.7m
+
+=== [趋势报告] Ep 11000 ===
+平均得分: 11.65
+当前运行胜场: 257/11000 (2.34%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.46
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 11008 | Loss: 0.0805 | Ent: 0.001
+Ep 11010 | RawRew: 10.03 | LOSE | Wins: 257 | Time: 260.7m
+Ep 11020 | RawRew: 10.63 | LOSE | Wins: 257 | Time: 260.9m
+Ep 11030 | RawRew: 12.05 | LOSE | Wins: 257 | Time: 261.0m
+Ep 11040 | Loss: 0.0766 | Ent: 0.001
+Ep 11040 | RawRew: 14.24 | LOSE | Wins: 257 | Time: 261.4m
+Ep 11050 | RawRew: 7.65 | LOSE | Wins: 257 | Time: 261.5m
+Ep 11060 | RawRew: 14.26 | LOSE | Wins: 257 | Time: 261.7m
+Ep 11070 | RawRew: 16.14 | LOSE | Wins: 257 | Time: 261.9m
+Ep 11072 | Loss: 0.0681 | Ent: 0.001
+Ep 11080 | RawRew: 11.12 | LOSE | Wins: 257 | Time: 262.2m
+Ep 11090 | RawRew: 7.68 | LOSE | Wins: 257 | Time: 262.4m
+Ep 11100 | RawRew: 16.20 | LOSE | Wins: 257 | Time: 262.5m
+Ep 11104 | Loss: 0.0620 | Ent: 0.001
+Ep 11110 | RawRew: 8.70 | LOSE | Wins: 257 | Time: 262.9m
+Ep 11120 | RawRew: 12.66 | LOSE | Wins: 257 | Time: 263.1m
+Ep 11130 | RawRew: 11.85 | LOSE | Wins: 257 | Time: 263.2m
+Ep 11136 | Loss: 0.0699 | Ent: 0.001
+Ep 11140 | RawRew: 9.46 | LOSE | Wins: 257 | Time: 263.6m
+Ep 11150 | RawRew: 9.01 | LOSE | Wins: 257 | Time: 263.9m
+Ep 11160 | RawRew: 11.74 | LOSE | Wins: 257 | Time: 264.0m
+Ep 11168 | Loss: 0.1549 | Ent: 0.001
+Ep 11170 | RawRew: 10.60 | LOSE | Wins: 257 | Time: 264.4m
+Ep 11180 | RawRew: 9.00 | LOSE | Wins: 257 | Time: 264.5m
+Ep 11190 | RawRew: 9.10 | LOSE | Wins: 257 | Time: 264.7m
+Ep 11200 | Loss: 0.0642 | Ent: 0.001
+Ep 11200 | RawRew: 11.36 | LOSE | Wins: 257 | Time: 265.1m
+
+=== [趋势报告] Ep 11200 ===
+平均得分: 10.96
+当前运行胜场: 257/11200 (2.29%)
+探索系数: 0.0010
+============================
+
+Ep 11210 | RawRew: 10.59 | LOSE | Wins: 257 | Time: 265.2m
+Ep 11220 | RawRew: 12.72 | LOSE | Wins: 257 | Time: 265.4m
+Ep 11230 | RawRew: 12.53 | LOSE | Wins: 257 | Time: 265.5m
+Ep 11232 | Loss: 0.0625 | Ent: 0.001
+Ep 11240 | RawRew: 13.15 | LOSE | Wins: 257 | Time: 265.9m
+Ep 11250 | RawRew: 7.79 | LOSE | Wins: 257 | Time: 266.1m
+Ep 11260 | RawRew: 10.44 | LOSE | Wins: 257 | Time: 266.2m
+Ep 11264 | Loss: 0.0577 | Ent: 0.001
+Ep 11270 | RawRew: 8.31 | LOSE | Wins: 257 | Time: 266.6m
+Ep 11280 | RawRew: 5.37 | LOSE | Wins: 257 | Time: 266.8m
+Ep 11290 | RawRew: 14.80 | LOSE | Wins: 257 | Time: 267.0m
+Ep 11296 | Loss: 0.0666 | Ent: 0.001
+Ep 11300 | RawRew: 12.68 | LOSE | Wins: 257 | Time: 267.3m
+Ep 11310 | RawRew: 11.00 | LOSE | Wins: 257 | Time: 267.5m
+Ep 11320 | RawRew: 8.06 | LOSE | Wins: 257 | Time: 267.6m
+Ep 11328 | Loss: 0.0570 | Ent: 0.001
+Ep 11330 | RawRew: 11.01 | LOSE | Wins: 257 | Time: 268.0m
+Ep 11340 | RawRew: 6.83 | LOSE | Wins: 257 | Time: 268.1m
+Ep 11350 | RawRew: 10.39 | LOSE | Wins: 257 | Time: 268.2m
+Ep 11360 | Loss: 0.0827 | Ent: 0.001
+Ep 11360 | RawRew: 11.25 | LOSE | Wins: 257 | Time: 268.6m
+Ep 11370 | RawRew: 10.55 | LOSE | Wins: 257 | Time: 268.7m
+Ep 11380 | RawRew: 13.23 | LOSE | Wins: 257 | Time: 268.9m
+Ep 11390 | RawRew: 11.40 | LOSE | Wins: 257 | Time: 269.0m
+Ep 11392 | Loss: 0.0797 | Ent: 0.001
+Ep 11400 | RawRew: 8.72 | LOSE | Wins: 257 | Time: 269.4m
+
+=== [趋势报告] Ep 11400 ===
+平均得分: 11.20
+当前运行胜场: 257/11400 (2.25%)
+探索系数: 0.0010
+============================
+
+Ep 11410 | RawRew: 8.19 | LOSE | Wins: 257 | Time: 269.5m
+Ep 11420 | RawRew: 14.10 | LOSE | Wins: 257 | Time: 269.6m
+Ep 11424 | Loss: 0.0704 | Ent: 0.001
+Ep 11430 | RawRew: 12.60 | LOSE | Wins: 257 | Time: 270.0m
+Ep 11440 | RawRew: 11.81 | LOSE | Wins: 257 | Time: 270.1m
+Ep 11450 | RawRew: 9.74 | LOSE | Wins: 257 | Time: 270.3m
+Ep 11456 | Loss: 0.0866 | Ent: 0.001
+Ep 11460 | RawRew: 9.05 | LOSE | Wins: 257 | Time: 270.6m
+Ep 11470 | RawRew: 12.48 | LOSE | Wins: 257 | Time: 270.7m
+Ep 11480 | RawRew: 9.90 | LOSE | Wins: 257 | Time: 270.8m
+Ep 11488 | Loss: 0.0874 | Ent: 0.001
+Ep 11490 | RawRew: 10.69 | LOSE | Wins: 257 | Time: 271.2m
+Ep 11500 | RawRew: 8.55 | LOSE | Wins: 257 | Time: 271.4m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.88
+Ep 11510 | RawRew: 11.49 | LOSE | Wins: 257 | Time: 272.1m
+Ep 11520 | Loss: 0.0528 | Ent: 0.001
+Ep 11520 | RawRew: 9.76 | LOSE | Wins: 257 | Time: 272.6m
+Ep 11530 | RawRew: 12.18 | LOSE | Wins: 257 | Time: 272.7m
+Ep 11540 | RawRew: 7.36 | LOSE | Wins: 257 | Time: 272.8m
+Ep 11550 | RawRew: 10.41 | LOSE | Wins: 257 | Time: 273.0m
+Ep 11552 | Loss: 0.0686 | Ent: 0.001
+Ep 11560 | RawRew: 7.83 | LOSE | Wins: 257 | Time: 273.3m
+Ep 11570 | RawRew: 14.18 | LOSE | Wins: 257 | Time: 273.5m
+Ep 11580 | RawRew: 15.02 | LOSE | Wins: 257 | Time: 273.6m
+Ep 11584 | Loss: 0.0776 | Ent: 0.001
+Ep 11590 | RawRew: 7.86 | LOSE | Wins: 257 | Time: 274.0m
+Ep 11600 | RawRew: 8.25 | LOSE | Wins: 257 | Time: 274.1m
+
+=== [趋势报告] Ep 11600 ===
+平均得分: 10.58
+当前运行胜场: 257/11600 (2.22%)
+探索系数: 0.0010
+============================
+
+Ep 11610 | RawRew: 9.32 | LOSE | Wins: 257 | Time: 274.3m
+Ep 11616 | Loss: 0.0708 | Ent: 0.001
+Ep 11620 | RawRew: 13.28 | LOSE | Wins: 257 | Time: 274.6m
+Ep 11630 | RawRew: 8.06 | LOSE | Wins: 257 | Time: 274.8m
+Ep 11640 | RawRew: 7.60 | LOSE | Wins: 257 | Time: 274.9m
+Ep 11648 | Loss: 0.0713 | Ent: 0.001
+Ep 11650 | RawRew: 9.23 | LOSE | Wins: 257 | Time: 275.2m
+Ep 11660 | RawRew: 10.83 | LOSE | Wins: 257 | Time: 275.4m
+Ep 11670 | RawRew: 5.74 | LOSE | Wins: 257 | Time: 275.5m
+Ep 11680 | Loss: 0.0575 | Ent: 0.001
+Ep 11680 | RawRew: 7.69 | LOSE | Wins: 257 | Time: 275.9m
+Ep 11690 | RawRew: 12.11 | LOSE | Wins: 257 | Time: 276.0m
+Ep 11700 | RawRew: 11.55 | LOSE | Wins: 257 | Time: 276.2m
+Ep 11710 | RawRew: 12.27 | LOSE | Wins: 257 | Time: 276.3m
+Ep 11712 | Loss: 0.0707 | Ent: 0.001
+Ep 11720 | RawRew: 10.26 | LOSE | Wins: 257 | Time: 276.6m
+Ep 11730 | RawRew: 8.78 | LOSE | Wins: 257 | Time: 276.8m
+Ep 11740 | RawRew: 6.45 | LOSE | Wins: 257 | Time: 276.9m
+Ep 11744 | Loss: 0.0724 | Ent: 0.001
+Ep 11750 | RawRew: 13.33 | LOSE | Wins: 257 | Time: 277.3m
+Ep 11760 | RawRew: 9.95 | LOSE | Wins: 257 | Time: 277.5m
+Ep 11770 | RawRew: 9.57 | LOSE | Wins: 257 | Time: 277.7m
+Ep 11776 | Loss: 0.0787 | Ent: 0.001
+Ep 11780 | RawRew: 10.29 | LOSE | Wins: 257 | Time: 278.1m
+Ep 11790 | RawRew: 9.61 | LOSE | Wins: 257 | Time: 278.2m
+Ep 11800 | RawRew: 8.23 | LOSE | Wins: 257 | Time: 278.3m
+
+=== [趋势报告] Ep 11800 ===
+平均得分: 10.20
+当前运行胜场: 257/11800 (2.18%)
+探索系数: 0.0010
+============================
+
+Ep 11808 | Loss: 0.0718 | Ent: 0.001
+Ep 11810 | RawRew: 13.86 | LOSE | Wins: 257 | Time: 278.7m
+Ep 11820 | RawRew: 8.86 | LOSE | Wins: 257 | Time: 278.8m
+Ep 11830 | RawRew: 10.48 | LOSE | Wins: 257 | Time: 279.0m
+Ep 11840 | Loss: 0.0844 | Ent: 0.001
+Ep 11840 | RawRew: 9.29 | LOSE | Wins: 257 | Time: 279.4m
+Ep 11850 | RawRew: 11.18 | LOSE | Wins: 257 | Time: 279.5m
+Ep 11860 | RawRew: 12.15 | LOSE | Wins: 257 | Time: 279.6m
+Ep 11870 | RawRew: 8.16 | LOSE | Wins: 257 | Time: 279.7m
+Ep 11872 | Loss: 0.0752 | Ent: 0.001
+Ep 11880 | RawRew: 8.87 | LOSE | Wins: 257 | Time: 280.1m
+Ep 11890 | RawRew: 8.33 | LOSE | Wins: 257 | Time: 280.2m
+Ep 11900 | RawRew: 10.73 | LOSE | Wins: 257 | Time: 280.3m
+Ep 11904 | Loss: 0.0682 | Ent: 0.001
+Ep 11910 | RawRew: 12.31 | LOSE | Wins: 257 | Time: 280.7m
+Ep 11920 | RawRew: 11.52 | LOSE | Wins: 257 | Time: 280.8m
+Ep 11930 | RawRew: 8.78 | LOSE | Wins: 257 | Time: 281.0m
+Ep 11936 | Loss: 0.0566 | Ent: 0.001
+Ep 11940 | RawRew: 11.64 | LOSE | Wins: 257 | Time: 281.4m
+Ep 11950 | RawRew: 14.31 | LOSE | Wins: 257 | Time: 281.5m
+Ep 11960 | RawRew: 8.98 | LOSE | Wins: 257 | Time: 281.7m
+Ep 11968 | Loss: 0.0698 | Ent: 0.001
+Ep 11970 | RawRew: 10.86 | LOSE | Wins: 257 | Time: 282.0m
+Ep 11980 | RawRew: 9.82 | LOSE | Wins: 257 | Time: 282.2m
+Ep 11990 | RawRew: 8.97 | LOSE | Wins: 257 | Time: 282.3m
+Ep 12000 | Loss: 0.0484 | Ent: 0.001
+Ep 12000 | RawRew: 11.59 | LOSE | Wins: 257 | Time: 282.7m
+
+=== [趋势报告] Ep 12000 ===
+平均得分: 10.38
+当前运行胜场: 257/12000 (2.14%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.60
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 12010 | RawRew: 8.94 | LOSE | Wins: 257 | Time: 283.6m
+Ep 12020 | RawRew: 10.38 | LOSE | Wins: 257 | Time: 283.7m
+Ep 12030 | RawRew: 6.03 | LOSE | Wins: 257 | Time: 283.8m
+Ep 12032 | Loss: 0.0726 | Ent: 0.001
+Ep 12040 | RawRew: 11.33 | LOSE | Wins: 257 | Time: 284.2m
+Ep 12050 | RawRew: 8.40 | LOSE | Wins: 257 | Time: 284.3m
+Ep 12060 | RawRew: 6.65 | LOSE | Wins: 257 | Time: 284.5m
+Ep 12064 | Loss: 0.0852 | Ent: 0.001
+Ep 12070 | RawRew: 17.12 | LOSE | Wins: 257 | Time: 284.9m
+Ep 12080 | RawRew: 9.93 | LOSE | Wins: 257 | Time: 285.0m
+Ep 12090 | RawRew: 9.48 | LOSE | Wins: 257 | Time: 285.2m
+Ep 12096 | Loss: 0.0637 | Ent: 0.001
+Ep 12100 | RawRew: 8.39 | LOSE | Wins: 257 | Time: 285.6m
+Ep 12110 | RawRew: 9.08 | LOSE | Wins: 257 | Time: 285.7m
+Ep 12120 | RawRew: 14.39 | LOSE | Wins: 257 | Time: 285.9m
+Ep 12128 | Loss: 0.0672 | Ent: 0.001
+Ep 12130 | RawRew: 11.56 | LOSE | Wins: 257 | Time: 286.2m
+Ep 12140 | RawRew: 9.45 | LOSE | Wins: 257 | Time: 286.4m
+Ep 12150 | RawRew: 9.41 | LOSE | Wins: 257 | Time: 286.5m
+Ep 12160 | Loss: 0.0900 | Ent: 0.001
+Ep 12160 | RawRew: 7.95 | LOSE | Wins: 257 | Time: 286.9m
+Ep 12170 | RawRew: 8.92 | LOSE | Wins: 257 | Time: 287.0m
+Ep 12180 | RawRew: 12.92 | LOSE | Wins: 257 | Time: 287.2m
+Ep 12190 | RawRew: 16.09 | LOSE | Wins: 257 | Time: 287.3m
+Ep 12192 | Loss: 0.0989 | Ent: 0.001
+Ep 12200 | RawRew: 5.48 | LOSE | Wins: 257 | Time: 287.7m
+
+=== [趋势报告] Ep 12200 ===
+平均得分: 10.56
+当前运行胜场: 257/12200 (2.11%)
+探索系数: 0.0010
+============================
+
+Ep 12210 | RawRew: 11.83 | LOSE | Wins: 257 | Time: 287.9m
+Ep 12220 | RawRew: 9.47 | LOSE | Wins: 257 | Time: 288.0m
+Ep 12224 | Loss: 0.0735 | Ent: 0.001
+Ep 12230 | RawRew: 12.02 | LOSE | Wins: 257 | Time: 288.4m
+Ep 12240 | RawRew: 8.73 | LOSE | Wins: 257 | Time: 288.5m
+Ep 12250 | RawRew: 8.26 | LOSE | Wins: 257 | Time: 288.6m
+Ep 12256 | Loss: 0.0663 | Ent: 0.001
+Ep 12260 | RawRew: 13.56 | LOSE | Wins: 257 | Time: 289.1m
+Ep 12270 | RawRew: 6.34 | LOSE | Wins: 257 | Time: 289.2m
+Ep 12280 | RawRew: 9.44 | LOSE | Wins: 257 | Time: 289.3m
+Ep 12288 | Loss: 0.0783 | Ent: 0.001
+Ep 12290 | RawRew: 12.77 | LOSE | Wins: 257 | Time: 289.8m
+Ep 12300 | RawRew: 10.00 | LOSE | Wins: 257 | Time: 289.9m
+Ep 12310 | RawRew: 14.82 | LOSE | Wins: 257 | Time: 290.0m
+Ep 12320 | Loss: 0.0743 | Ent: 0.001
+Ep 12320 | RawRew: 10.93 | LOSE | Wins: 257 | Time: 290.4m
+Ep 12330 | RawRew: 8.66 | LOSE | Wins: 257 | Time: 290.5m
+Ep 12340 | RawRew: 14.97 | LOSE | Wins: 257 | Time: 290.7m
+Ep 12350 | RawRew: 7.33 | LOSE | Wins: 257 | Time: 290.8m
+Ep 12352 | Loss: 0.0562 | Ent: 0.001
+Ep 12360 | RawRew: 6.29 | LOSE | Wins: 257 | Time: 291.2m
+Ep 12370 | RawRew: 7.17 | LOSE | Wins: 257 | Time: 291.5m
+Ep 12380 | RawRew: 10.19 | LOSE | Wins: 257 | Time: 291.6m
+Ep 12384 | Loss: 0.0737 | Ent: 0.001
+Ep 12390 | RawRew: 9.68 | LOSE | Wins: 257 | Time: 292.0m
+Ep 12400 | RawRew: 5.90 | LOSE | Wins: 257 | Time: 292.1m
+
+=== [趋势报告] Ep 12400 ===
+平均得分: 10.04
+当前运行胜场: 257/12400 (2.07%)
+探索系数: 0.0010
+============================
+
+Ep 12410 | RawRew: 9.03 | LOSE | Wins: 257 | Time: 292.2m
+Ep 12416 | Loss: 0.0577 | Ent: 0.001
+Ep 12420 | RawRew: 7.15 | LOSE | Wins: 257 | Time: 292.6m
+Ep 12430 | RawRew: 8.35 | LOSE | Wins: 257 | Time: 292.8m
+Ep 12440 | RawRew: 13.29 | LOSE | Wins: 257 | Time: 292.9m
+Ep 12448 | Loss: 0.0619 | Ent: 0.001
+Ep 12450 | RawRew: 8.48 | LOSE | Wins: 257 | Time: 293.3m
+Ep 12460 | RawRew: 6.67 | LOSE | Wins: 257 | Time: 293.4m
+Ep 12470 | RawRew: 6.28 | LOSE | Wins: 257 | Time: 293.5m
+Ep 12480 | Loss: 0.0704 | Ent: 0.001
+Ep 12480 | RawRew: 8.77 | LOSE | Wins: 257 | Time: 293.9m
+Ep 12490 | RawRew: 8.77 | LOSE | Wins: 257 | Time: 294.0m
+Ep 12500 | RawRew: 12.51 | LOSE | Wins: 257 | Time: 294.2m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.06
+Ep 12510 | RawRew: 8.25 | LOSE | Wins: 257 | Time: 295.0m
+Ep 12512 | Loss: 0.0515 | Ent: 0.001
+Ep 12520 | RawRew: 10.61 | LOSE | Wins: 257 | Time: 295.3m
+Ep 12530 | RawRew: 7.59 | LOSE | Wins: 257 | Time: 295.5m
+Ep 12540 | RawRew: 11.45 | LOSE | Wins: 257 | Time: 295.6m
+Ep 12544 | Loss: 0.0715 | Ent: 0.001
+Ep 12550 | RawRew: 15.21 | LOSE | Wins: 257 | Time: 296.0m
+Ep 12560 | RawRew: 11.05 | LOSE | Wins: 257 | Time: 296.1m
+Ep 12570 | RawRew: 8.73 | LOSE | Wins: 257 | Time: 296.3m
+Ep 12576 | Loss: 0.0687 | Ent: 0.001
+Ep 12580 | RawRew: 10.39 | LOSE | Wins: 257 | Time: 296.6m
+Ep 12590 | RawRew: 5.61 | LOSE | Wins: 257 | Time: 296.8m
+Ep 12600 | RawRew: 13.94 | LOSE | Wins: 257 | Time: 296.9m
+
+=== [趋势报告] Ep 12600 ===
+平均得分: 9.99
+当前运行胜场: 257/12600 (2.04%)
+探索系数: 0.0010
+============================
+
+Ep 12608 | Loss: 0.0546 | Ent: 0.001
+Ep 12610 | RawRew: 8.26 | LOSE | Wins: 257 | Time: 297.3m
+Ep 12620 | RawRew: 10.79 | LOSE | Wins: 257 | Time: 297.5m
+Ep 12630 | RawRew: 7.68 | LOSE | Wins: 257 | Time: 297.6m
+Ep 12640 | Loss: 0.0542 | Ent: 0.001
+Ep 12640 | RawRew: 8.70 | LOSE | Wins: 257 | Time: 298.0m
+Ep 12650 | RawRew: 8.69 | LOSE | Wins: 257 | Time: 298.1m
+Ep 12660 | RawRew: 8.88 | LOSE | Wins: 257 | Time: 298.2m
+Ep 12670 | RawRew: 4.74 | LOSE | Wins: 257 | Time: 298.4m
+Ep 12672 | Loss: 0.0533 | Ent: 0.001
+Ep 12680 | RawRew: 9.74 | LOSE | Wins: 257 | Time: 298.8m
+Ep 12690 | RawRew: 13.41 | LOSE | Wins: 257 | Time: 298.9m
+Ep 12700 | RawRew: 10.28 | LOSE | Wins: 257 | Time: 299.0m
+Ep 12704 | Loss: 0.0618 | Ent: 0.001
+Ep 12710 | RawRew: 9.81 | LOSE | Wins: 257 | Time: 299.4m
+Ep 12720 | RawRew: 11.14 | LOSE | Wins: 257 | Time: 299.6m
+Ep 12730 | RawRew: 7.27 | LOSE | Wins: 257 | Time: 299.7m
+Ep 12736 | Loss: 0.0473 | Ent: 0.001
+Ep 12740 | RawRew: 8.74 | LOSE | Wins: 257 | Time: 300.1m
+Ep 12750 | RawRew: 5.43 | LOSE | Wins: 257 | Time: 300.2m
+Ep 12760 | RawRew: 13.16 | LOSE | Wins: 257 | Time: 300.4m
+Ep 12768 | Loss: 0.0772 | Ent: 0.001
+Ep 12770 | RawRew: 5.92 | LOSE | Wins: 257 | Time: 300.7m
+Ep 12780 | RawRew: 9.26 | LOSE | Wins: 257 | Time: 300.8m
+Ep 12790 | RawRew: 9.95 | LOSE | Wins: 257 | Time: 301.0m
+Ep 12800 | Loss: 0.0722 | Ent: 0.001
+Ep 12800 | RawRew: 12.11 | LOSE | Wins: 257 | Time: 301.4m
+
+=== [趋势报告] Ep 12800 ===
+平均得分: 10.11
+当前运行胜场: 257/12800 (2.01%)
+探索系数: 0.0010
+============================
+
+Ep 12810 | RawRew: 12.99 | LOSE | Wins: 257 | Time: 301.5m
+Ep 12820 | RawRew: 7.77 | LOSE | Wins: 257 | Time: 301.6m
+Ep 12830 | RawRew: 5.55 | LOSE | Wins: 257 | Time: 301.8m
+Ep 12832 | Loss: 0.0754 | Ent: 0.001
+Ep 12840 | RawRew: 6.99 | LOSE | Wins: 257 | Time: 302.2m
+Ep 12850 | RawRew: 9.44 | LOSE | Wins: 257 | Time: 302.3m
+Ep 12860 | RawRew: 11.61 | LOSE | Wins: 257 | Time: 302.5m
+Ep 12864 | Loss: 0.0635 | Ent: 0.001
+Ep 12870 | RawRew: 9.29 | LOSE | Wins: 257 | Time: 302.9m
+Ep 12880 | RawRew: 12.97 | LOSE | Wins: 257 | Time: 303.1m
+Ep 12890 | RawRew: 11.40 | LOSE | Wins: 257 | Time: 303.2m
+Ep 12896 | Loss: 0.0616 | Ent: 0.001
+Ep 12900 | RawRew: 13.90 | LOSE | Wins: 257 | Time: 303.6m
+Ep 12910 | RawRew: 8.89 | LOSE | Wins: 257 | Time: 303.8m
+Ep 12920 | RawRew: 9.86 | LOSE | Wins: 257 | Time: 303.9m
+Ep 12928 | Loss: 0.0762 | Ent: 0.001
+Ep 12930 | RawRew: 15.36 | LOSE | Wins: 257 | Time: 304.3m
+Ep 12940 | RawRew: 7.38 | LOSE | Wins: 257 | Time: 304.4m
+Ep 12950 | RawRew: 13.57 | LOSE | Wins: 257 | Time: 304.6m
+Ep 12960 | Loss: 0.0784 | Ent: 0.001
+Ep 12960 | RawRew: 7.04 | LOSE | Wins: 257 | Time: 305.0m
+Ep 12970 | RawRew: 11.42 | LOSE | Wins: 257 | Time: 305.1m
+Ep 12980 | RawRew: 8.94 | LOSE | Wins: 257 | Time: 305.4m
+Ep 12990 | RawRew: 9.92 | LOSE | Wins: 257 | Time: 305.5m
+Ep 12992 | Loss: 0.0543 | Ent: 0.001
+Ep 13000 | RawRew: 11.12 | LOSE | Wins: 257 | Time: 305.9m
+
+=== [趋势报告] Ep 13000 ===
+平均得分: 10.63
+当前运行胜场: 257/13000 (1.98%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 10.16
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 13010 | RawRew: 6.39 | LOSE | Wins: 257 | Time: 306.8m
+Ep 13020 | RawRew: 14.70 | LOSE | Wins: 257 | Time: 306.9m
+Ep 13024 | Loss: 0.0768 | Ent: 0.001
+Ep 13030 | RawRew: 8.37 | LOSE | Wins: 257 | Time: 307.3m
+Ep 13040 | RawRew: 8.58 | LOSE | Wins: 257 | Time: 307.4m
+Ep 13050 | RawRew: 8.29 | LOSE | Wins: 257 | Time: 307.6m
+Ep 13056 | Loss: 0.0699 | Ent: 0.001
+Ep 13060 | RawRew: 8.18 | LOSE | Wins: 257 | Time: 308.0m
+Ep 13070 | RawRew: 11.89 | LOSE | Wins: 257 | Time: 308.1m
+Ep 13080 | RawRew: 12.51 | LOSE | Wins: 257 | Time: 308.3m
+Ep 13088 | Loss: 0.0699 | Ent: 0.001
+Ep 13090 | RawRew: 10.81 | LOSE | Wins: 257 | Time: 308.7m
+Ep 13100 | RawRew: 7.31 | LOSE | Wins: 257 | Time: 308.8m
+Ep 13110 | RawRew: 13.65 | LOSE | Wins: 257 | Time: 309.0m
+Ep 13120 | Loss: 0.0629 | Ent: 0.001
+Ep 13120 | RawRew: 9.60 | LOSE | Wins: 257 | Time: 309.4m
+Ep 13130 | RawRew: 9.59 | LOSE | Wins: 257 | Time: 309.5m
+Ep 13140 | RawRew: 10.47 | LOSE | Wins: 257 | Time: 309.6m
+Ep 13150 | RawRew: 11.98 | LOSE | Wins: 257 | Time: 309.7m
+Ep 13152 | Loss: 0.0551 | Ent: 0.001
+Ep 13160 | RawRew: 10.70 | LOSE | Wins: 257 | Time: 310.1m
+Ep 13170 | RawRew: 10.14 | LOSE | Wins: 257 | Time: 310.2m
+Ep 13180 | RawRew: 9.74 | LOSE | Wins: 257 | Time: 310.4m
+Ep 13184 | Loss: 0.0670 | Ent: 0.001
+Ep 13190 | RawRew: 8.48 | LOSE | Wins: 257 | Time: 310.7m
+Ep 13200 | RawRew: 11.70 | LOSE | Wins: 257 | Time: 310.9m
+
+=== [趋势报告] Ep 13200 ===
+平均得分: 10.51
+当前运行胜场: 257/13200 (1.95%)
+探索系数: 0.0010
+============================
+
+Ep 13210 | RawRew: 7.04 | LOSE | Wins: 257 | Time: 311.0m
+Ep 13216 | Loss: 0.0705 | Ent: 0.001
+Ep 13220 | RawRew: 10.96 | LOSE | Wins: 257 | Time: 311.4m
+Ep 13230 | RawRew: 9.89 | LOSE | Wins: 257 | Time: 311.6m
+Ep 13240 | RawRew: 10.92 | LOSE | Wins: 257 | Time: 311.7m
+Ep 13248 | Loss: 0.0594 | Ent: 0.001
+Ep 13250 | RawRew: 11.23 | LOSE | Wins: 257 | Time: 312.1m
+Ep 13260 | RawRew: 9.22 | LOSE | Wins: 257 | Time: 312.2m
+Ep 13270 | RawRew: 14.77 | LOSE | Wins: 257 | Time: 312.3m
+Ep 13280 | Loss: 0.0671 | Ent: 0.001
+Ep 13280 | RawRew: 6.06 | LOSE | Wins: 257 | Time: 312.7m
+Ep 13290 | RawRew: 6.94 | LOSE | Wins: 257 | Time: 312.8m
+Ep 13300 | RawRew: 10.15 | LOSE | Wins: 257 | Time: 312.9m
+Ep 13310 | RawRew: 10.51 | LOSE | Wins: 257 | Time: 313.0m
+Ep 13312 | Loss: 0.0513 | Ent: 0.001
+Ep 13320 | RawRew: 7.82 | LOSE | Wins: 257 | Time: 313.5m
+Ep 13330 | RawRew: 9.76 | LOSE | Wins: 257 | Time: 313.6m
+Ep 13340 | RawRew: 11.74 | LOSE | Wins: 257 | Time: 313.7m
+Ep 13344 | Loss: 0.0471 | Ent: 0.001
+Ep 13350 | RawRew: 14.80 | LOSE | Wins: 257 | Time: 314.1m
+Ep 13360 | RawRew: 8.18 | LOSE | Wins: 257 | Time: 314.3m
+Ep 13370 | RawRew: 13.45 | LOSE | Wins: 257 | Time: 314.4m
+Ep 13376 | Loss: 0.0528 | Ent: 0.001
+Ep 13380 | RawRew: 11.45 | LOSE | Wins: 257 | Time: 314.8m
+Ep 13390 | RawRew: 9.96 | LOSE | Wins: 257 | Time: 315.0m
+Ep 13400 | RawRew: 10.99 | LOSE | Wins: 257 | Time: 315.1m
+
+=== [趋势报告] Ep 13400 ===
+平均得分: 10.19
+当前运行胜场: 257/13400 (1.92%)
+探索系数: 0.0010
+============================
+
+Ep 13408 | Loss: 0.0571 | Ent: 0.001
+Ep 13410 | RawRew: 10.18 | LOSE | Wins: 257 | Time: 315.5m
+Ep 13420 | RawRew: 7.95 | LOSE | Wins: 257 | Time: 315.6m
+Ep 13430 | RawRew: 11.07 | LOSE | Wins: 257 | Time: 315.8m
+Ep 13440 | Loss: 0.0556 | Ent: 0.001
+Ep 13440 | RawRew: 7.45 | LOSE | Wins: 257 | Time: 316.1m
+Ep 13450 | RawRew: 8.22 | LOSE | Wins: 257 | Time: 316.2m
+Ep 13460 | RawRew: 7.42 | LOSE | Wins: 257 | Time: 316.3m
+Ep 13470 | RawRew: 7.52 | LOSE | Wins: 257 | Time: 316.5m
+Ep 13472 | Loss: 0.0548 | Ent: 0.001
+Ep 13480 | RawRew: 11.21 | LOSE | Wins: 257 | Time: 316.9m
+Ep 13490 | RawRew: 9.18 | LOSE | Wins: 257 | Time: 317.0m
+Ep 13500 | RawRew: 10.84 | LOSE | Wins: 257 | Time: 317.1m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.26
+Ep 13504 | Loss: 0.0441 | Ent: 0.001
+Ep 13510 | RawRew: 8.05 | LOSE | Wins: 257 | Time: 318.1m
+Ep 13520 | RawRew: 10.24 | LOSE | Wins: 257 | Time: 318.2m
+Ep 13530 | RawRew: 12.06 | LOSE | Wins: 257 | Time: 318.3m
+Ep 13536 | Loss: 0.0585 | Ent: 0.001
+Ep 13540 | RawRew: 9.69 | LOSE | Wins: 257 | Time: 318.9m
+Ep 13550 | RawRew: 8.39 | LOSE | Wins: 257 | Time: 319.0m
+Ep 13560 | RawRew: 14.22 | LOSE | Wins: 257 | Time: 319.1m
+Ep 13568 | Loss: 0.0496 | Ent: 0.001
+Ep 13570 | RawRew: 8.89 | LOSE | Wins: 257 | Time: 319.5m
+Ep 13580 | RawRew: 9.28 | LOSE | Wins: 257 | Time: 319.6m
+Ep 13590 | RawRew: 9.72 | LOSE | Wins: 257 | Time: 319.8m
+Ep 13600 | Loss: 0.0383 | Ent: 0.001
+Ep 13600 | RawRew: 12.75 | LOSE | Wins: 257 | Time: 320.2m
+
+=== [趋势报告] Ep 13600 ===
+平均得分: 9.87
+当前运行胜场: 257/13600 (1.89%)
+探索系数: 0.0010
+============================
+
+Ep 13610 | RawRew: 5.73 | LOSE | Wins: 257 | Time: 320.3m
+Ep 13620 | RawRew: 10.60 | LOSE | Wins: 257 | Time: 320.5m
+Ep 13630 | RawRew: 10.42 | LOSE | Wins: 257 | Time: 320.6m
+Ep 13632 | Loss: 0.0530 | Ent: 0.001
+Ep 13640 | RawRew: 10.02 | LOSE | Wins: 257 | Time: 321.0m
+Ep 13650 | RawRew: 10.83 | LOSE | Wins: 257 | Time: 321.1m
+Ep 13660 | RawRew: 10.84 | LOSE | Wins: 257 | Time: 321.2m
+Ep 13664 | Loss: 0.0528 | Ent: 0.001
+Ep 13670 | RawRew: 10.38 | LOSE | Wins: 257 | Time: 321.6m
+Ep 13680 | RawRew: 9.70 | LOSE | Wins: 257 | Time: 321.7m
+Ep 13690 | RawRew: 12.61 | LOSE | Wins: 257 | Time: 321.9m
+Ep 13696 | Loss: 0.0707 | Ent: 0.001
+Ep 13700 | RawRew: 6.96 | LOSE | Wins: 257 | Time: 322.2m
+Ep 13710 | RawRew: 6.65 | LOSE | Wins: 257 | Time: 322.4m
+Ep 13720 | RawRew: 6.84 | LOSE | Wins: 257 | Time: 322.5m
+Ep 13728 | Loss: 0.0437 | Ent: 0.001
+Ep 13730 | RawRew: 11.20 | LOSE | Wins: 257 | Time: 322.9m
+Ep 13740 | RawRew: 8.66 | LOSE | Wins: 257 | Time: 323.0m
+Ep 13750 | RawRew: 9.04 | LOSE | Wins: 257 | Time: 323.1m
+Ep 13760 | Loss: 0.0559 | Ent: 0.001
+Ep 13760 | RawRew: 6.21 | LOSE | Wins: 257 | Time: 323.5m
+Ep 13770 | RawRew: 8.39 | LOSE | Wins: 257 | Time: 323.6m
+Ep 13780 | RawRew: 8.36 | LOSE | Wins: 257 | Time: 323.8m
+Ep 13790 | RawRew: 5.21 | LOSE | Wins: 257 | Time: 323.9m
+Ep 13792 | Loss: 0.0485 | Ent: 0.001
+Ep 13800 | RawRew: 7.59 | LOSE | Wins: 257 | Time: 324.2m
+
+=== [趋势报告] Ep 13800 ===
+平均得分: 9.53
+当前运行胜场: 257/13800 (1.86%)
+探索系数: 0.0010
+============================
+
+Ep 13810 | RawRew: 8.93 | LOSE | Wins: 257 | Time: 324.4m
+Ep 13820 | RawRew: 11.67 | LOSE | Wins: 257 | Time: 324.5m
+Ep 13824 | Loss: 0.0708 | Ent: 0.001
+Ep 13830 | RawRew: 8.84 | LOSE | Wins: 257 | Time: 324.9m
+Ep 13840 | RawRew: 7.85 | LOSE | Wins: 257 | Time: 325.0m
+Ep 13850 | RawRew: 7.39 | LOSE | Wins: 257 | Time: 325.2m
+Ep 13856 | Loss: 0.0599 | Ent: 0.001
+Ep 13860 | RawRew: 8.75 | LOSE | Wins: 257 | Time: 325.6m
+Ep 13870 | RawRew: 12.83 | LOSE | Wins: 257 | Time: 325.7m
+Ep 13880 | RawRew: 11.15 | LOSE | Wins: 257 | Time: 325.8m
+Ep 13888 | Loss: 0.0574 | Ent: 0.001
+Ep 13890 | RawRew: 7.94 | LOSE | Wins: 257 | Time: 326.2m
+Ep 13900 | RawRew: 12.63 | LOSE | Wins: 257 | Time: 326.4m
+Ep 13910 | RawRew: 8.51 | LOSE | Wins: 257 | Time: 326.5m
+Ep 13920 | Loss: 0.0356 | Ent: 0.001
+Ep 13920 | RawRew: 11.20 | LOSE | Wins: 257 | Time: 326.9m
+Ep 13930 | RawRew: 10.45 | LOSE | Wins: 257 | Time: 327.0m
+Ep 13940 | RawRew: 9.68 | LOSE | Wins: 257 | Time: 327.2m
+Ep 13950 | RawRew: 12.12 | LOSE | Wins: 257 | Time: 327.3m
+Ep 13952 | Loss: 0.0478 | Ent: 0.001
+Ep 13960 | RawRew: 8.42 | LOSE | Wins: 257 | Time: 327.7m
+Ep 13970 | RawRew: 12.01 | LOSE | Wins: 257 | Time: 327.9m
+Ep 13980 | RawRew: 12.78 | LOSE | Wins: 257 | Time: 328.0m
+Ep 13984 | Loss: 0.0447 | Ent: 0.001
+Ep 13990 | RawRew: 10.14 | LOSE | Wins: 257 | Time: 328.4m
+Ep 14000 | RawRew: 10.87 | LOSE | Wins: 257 | Time: 328.5m
+
+=== [趋势报告] Ep 14000 ===
+平均得分: 9.87
+当前运行胜场: 257/14000 (1.84%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.76
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+Ep 14010 | RawRew: 8.88 | LOSE | Wins: 257 | Time: 329.3m
+Ep 14016 | Loss: 0.0413 | Ent: 0.001
+Ep 14020 | RawRew: 9.05 | LOSE | Wins: 257 | Time: 329.7m
+Ep 14030 | RawRew: 7.96 | LOSE | Wins: 257 | Time: 329.8m
+Ep 14040 | RawRew: 12.45 | LOSE | Wins: 257 | Time: 329.9m
+Ep 14048 | Loss: 0.0439 | Ent: 0.001
+Ep 14050 | RawRew: 6.58 | LOSE | Wins: 257 | Time: 330.3m
+Ep 14060 | RawRew: 13.68 | LOSE | Wins: 257 | Time: 330.4m
+Ep 14070 | RawRew: 9.53 | LOSE | Wins: 257 | Time: 330.5m
+Ep 14080 | Loss: 0.0603 | Ent: 0.001
+Ep 14080 | RawRew: 7.43 | LOSE | Wins: 257 | Time: 330.9m
+Ep 14090 | RawRew: 11.69 | LOSE | Wins: 257 | Time: 331.0m
+Ep 14100 | RawRew: 12.09 | LOSE | Wins: 257 | Time: 331.2m
+Ep 14110 | RawRew: 10.77 | LOSE | Wins: 257 | Time: 331.3m
+Ep 14112 | Loss: 0.0555 | Ent: 0.001
+Ep 14120 | RawRew: 10.36 | LOSE | Wins: 257 | Time: 331.7m
+Ep 14130 | RawRew: 9.17 | LOSE | Wins: 257 | Time: 331.8m
+Ep 14140 | RawRew: 8.51 | LOSE | Wins: 257 | Time: 332.0m
+Ep 14144 | Loss: 0.0563 | Ent: 0.001
+Ep 14150 | RawRew: 11.39 | LOSE | Wins: 257 | Time: 332.3m
+Ep 14160 | RawRew: 10.42 | LOSE | Wins: 257 | Time: 332.5m
+Ep 14170 | RawRew: 8.05 | LOSE | Wins: 257 | Time: 332.6m
+Ep 14176 | Loss: 0.0484 | Ent: 0.001
+Ep 14180 | RawRew: 9.76 | LOSE | Wins: 257 | Time: 333.1m
+Ep 14190 | RawRew: 9.57 | LOSE | Wins: 257 | Time: 333.3m
+Ep 14200 | RawRew: 6.84 | LOSE | Wins: 257 | Time: 333.4m
+
+=== [趋势报告] Ep 14200 ===
+平均得分: 9.68
+当前运行胜场: 257/14200 (1.81%)
+探索系数: 0.0010
+============================
+
+Ep 14208 | Loss: 0.0677 | Ent: 0.001
+Ep 14210 | RawRew: 11.64 | LOSE | Wins: 257 | Time: 333.8m
+Ep 14220 | RawRew: 11.68 | LOSE | Wins: 257 | Time: 333.9m
+Ep 14230 | RawRew: 11.03 | LOSE | Wins: 257 | Time: 334.1m
+Ep 14240 | Loss: 0.0603 | Ent: 0.001
+Ep 14240 | RawRew: 10.51 | LOSE | Wins: 257 | Time: 334.4m
+Ep 14250 | RawRew: 11.26 | LOSE | Wins: 257 | Time: 334.6m
+Ep 14260 | RawRew: 13.63 | LOSE | Wins: 257 | Time: 334.7m
+Ep 14270 | RawRew: 12.08 | LOSE | Wins: 257 | Time: 334.8m
+Ep 14272 | Loss: 0.0354 | Ent: 0.001
+Ep 14280 | RawRew: 7.82 | LOSE | Wins: 257 | Time: 335.2m
+Ep 14290 | RawRew: 7.60 | LOSE | Wins: 257 | Time: 335.3m
+Ep 14300 | RawRew: 10.10 | LOSE | Wins: 257 | Time: 335.5m
+Ep 14304 | Loss: 0.0521 | Ent: 0.001
+Ep 14310 | RawRew: 7.45 | LOSE | Wins: 257 | Time: 335.8m
+Ep 14320 | RawRew: 8.40 | LOSE | Wins: 257 | Time: 336.0m
+Ep 14330 | RawRew: 8.77 | LOSE | Wins: 257 | Time: 336.1m
+Ep 14336 | Loss: 0.0483 | Ent: 0.001
+Ep 14340 | RawRew: 11.60 | LOSE | Wins: 257 | Time: 336.5m
+Ep 14350 | RawRew: 11.08 | LOSE | Wins: 257 | Time: 336.6m
+Ep 14360 | RawRew: 7.68 | LOSE | Wins: 257 | Time: 336.7m
+Ep 14368 | Loss: 0.0369 | Ent: 0.001
+Ep 14370 | RawRew: 9.64 | LOSE | Wins: 257 | Time: 337.1m
+Ep 14380 | RawRew: 9.09 | LOSE | Wins: 257 | Time: 337.2m
+Ep 14390 | RawRew: 7.78 | LOSE | Wins: 257 | Time: 337.4m
+Ep 14400 | Loss: 0.0516 | Ent: 0.001
+Ep 14400 | RawRew: 4.51 | LOSE | Wins: 257 | Time: 337.8m
+
+=== [趋势报告] Ep 14400 ===
+平均得分: 9.78
+当前运行胜场: 257/14400 (1.78%)
+探索系数: 0.0010
+============================
+
+Ep 14410 | RawRew: 11.24 | LOSE | Wins: 257 | Time: 337.9m
+Ep 14420 | RawRew: 9.22 | LOSE | Wins: 257 | Time: 338.0m
+Ep 14430 | RawRew: 8.98 | LOSE | Wins: 257 | Time: 338.2m
+Ep 14432 | Loss: 0.0495 | Ent: 0.001
+Ep 14440 | RawRew: 10.93 | LOSE | Wins: 257 | Time: 338.6m
+Ep 14450 | RawRew: 15.23 | LOSE | Wins: 257 | Time: 338.7m
+Ep 14460 | RawRew: 7.67 | LOSE | Wins: 257 | Time: 338.8m
+Ep 14464 | Loss: 0.0543 | Ent: 0.001
+Ep 14470 | RawRew: 8.35 | LOSE | Wins: 257 | Time: 339.2m
+Ep 14480 | RawRew: 9.92 | LOSE | Wins: 257 | Time: 339.3m
+Ep 14490 | RawRew: 10.14 | LOSE | Wins: 257 | Time: 339.4m
+Ep 14496 | Loss: 0.0549 | Ent: 0.001
+Ep 14500 | RawRew: 11.72 | LOSE | Wins: 257 | Time: 339.8m
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.36
+Ep 14510 | RawRew: 11.21 | LOSE | Wins: 257 | Time: 340.6m
+Ep 14520 | RawRew: 6.59 | LOSE | Wins: 257 | Time: 340.7m
+Ep 14528 | Loss: 0.0401 | Ent: 0.001
+Ep 14530 | RawRew: 8.23 | LOSE | Wins: 257 | Time: 341.1m
+Ep 14540 | RawRew: 11.82 | LOSE | Wins: 257 | Time: 341.2m
+Ep 14550 | RawRew: 14.04 | LOSE | Wins: 257 | Time: 341.4m
+Ep 14560 | Loss: 0.0526 | Ent: 0.001
+Ep 14560 | RawRew: 11.42 | LOSE | Wins: 257 | Time: 341.8m
+Ep 14570 | RawRew: 9.39 | LOSE | Wins: 257 | Time: 341.9m
+Ep 14580 | RawRew: 8.70 | LOSE | Wins: 257 | Time: 342.1m
+Ep 14590 | RawRew: 8.90 | LOSE | Wins: 257 | Time: 342.2m
+Ep 14592 | Loss: 0.0351 | Ent: 0.001
+Ep 14600 | RawRew: 8.32 | LOSE | Wins: 257 | Time: 342.6m
+
+=== [趋势报告] Ep 14600 ===
+平均得分: 9.71
+当前运行胜场: 257/14600 (1.76%)
+探索系数: 0.0010
+============================
+
+Ep 14610 | RawRew: 8.47 | LOSE | Wins: 257 | Time: 342.7m
+Ep 14620 | RawRew: 6.61 | LOSE | Wins: 257 | Time: 342.9m
+Ep 14624 | Loss: 0.0483 | Ent: 0.001
+Ep 14630 | RawRew: 10.59 | LOSE | Wins: 257 | Time: 343.2m
+Ep 14640 | RawRew: 9.21 | LOSE | Wins: 257 | Time: 343.4m
+Ep 14650 | RawRew: 9.61 | LOSE | Wins: 257 | Time: 343.5m
+Ep 14656 | Loss: 0.0471 | Ent: 0.001
+Ep 14660 | RawRew: 8.20 | LOSE | Wins: 257 | Time: 343.9m
+Ep 14670 | RawRew: 9.08 | LOSE | Wins: 257 | Time: 344.0m
+Ep 14680 | RawRew: 8.95 | LOSE | Wins: 257 | Time: 344.2m
+Ep 14688 | Loss: 0.0462 | Ent: 0.001
+Ep 14690 | RawRew: 8.50 | LOSE | Wins: 257 | Time: 344.6m
+Ep 14700 | RawRew: 11.44 | LOSE | Wins: 257 | Time: 344.7m
+Ep 14710 | RawRew: 7.76 | LOSE | Wins: 257 | Time: 344.9m
+Ep 14720 | Loss: 0.0499 | Ent: 0.001
+Ep 14720 | RawRew: 13.83 | LOSE | Wins: 257 | Time: 345.3m
+Ep 14730 | RawRew: 8.44 | LOSE | Wins: 257 | Time: 345.4m
+Ep 14740 | RawRew: 8.20 | LOSE | Wins: 257 | Time: 345.5m
+Ep 14750 | RawRew: 9.30 | LOSE | Wins: 257 | Time: 345.6m
+Ep 14752 | Loss: 0.0436 | Ent: 0.001
+Ep 14760 | RawRew: 9.12 | LOSE | Wins: 257 | Time: 346.0m
+Ep 14770 | RawRew: 9.94 | LOSE | Wins: 257 | Time: 346.1m
+Ep 14780 | RawRew: 9.88 | LOSE | Wins: 257 | Time: 346.3m
+Ep 14784 | Loss: 0.0529 | Ent: 0.001
+Ep 14790 | RawRew: 10.69 | LOSE | Wins: 257 | Time: 346.6m
+Ep 14800 | RawRew: 11.28 | LOSE | Wins: 257 | Time: 346.7m
+
+=== [趋势报告] Ep 14800 ===
+平均得分: 9.69
+当前运行胜场: 257/14800 (1.74%)
+探索系数: 0.0010
+============================
+
+Ep 14810 | RawRew: 6.77 | LOSE | Wins: 257 | Time: 347.0m
+Ep 14816 | Loss: 0.0926 | Ent: 0.001
+Ep 14820 | RawRew: 9.82 | LOSE | Wins: 257 | Time: 347.4m
+Ep 14830 | RawRew: 10.47 | LOSE | Wins: 257 | Time: 347.5m
+Ep 14840 | RawRew: 10.14 | LOSE | Wins: 257 | Time: 347.7m
+Ep 14848 | Loss: 0.0386 | Ent: 0.001
+Ep 14850 | RawRew: 9.61 | LOSE | Wins: 257 | Time: 348.1m
+Ep 14860 | RawRew: 11.07 | LOSE | Wins: 257 | Time: 348.2m
+Ep 14870 | RawRew: 7.28 | LOSE | Wins: 257 | Time: 348.4m
+Ep 14880 | Loss: 0.0442 | Ent: 0.001
+Ep 14880 | RawRew: 8.09 | LOSE | Wins: 257 | Time: 348.8m
+Ep 14890 | RawRew: 7.44 | LOSE | Wins: 257 | Time: 348.9m
+Ep 14900 | RawRew: 10.68 | LOSE | Wins: 257 | Time: 349.0m
+Ep 14910 | RawRew: 7.17 | LOSE | Wins: 257 | Time: 349.2m
+Ep 14912 | Loss: 0.0533 | Ent: 0.001
+Ep 14920 | RawRew: 8.84 | LOSE | Wins: 257 | Time: 349.5m
+Ep 14930 | RawRew: 9.14 | LOSE | Wins: 257 | Time: 349.7m
+Ep 14940 | RawRew: 12.32 | LOSE | Wins: 257 | Time: 349.8m
+Ep 14944 | Loss: 0.0539 | Ent: 0.001
+Ep 14950 | RawRew: 8.81 | LOSE | Wins: 257 | Time: 350.2m
+Ep 14960 | RawRew: 8.51 | LOSE | Wins: 257 | Time: 350.4m
+Ep 14970 | RawRew: 10.42 | LOSE | Wins: 257 | Time: 350.5m
+Ep 14976 | Loss: 0.0524 | Ent: 0.001
+Ep 14980 | RawRew: 13.88 | LOSE | Wins: 257 | Time: 350.9m
+Ep 14990 | RawRew: 11.32 | LOSE | Wins: 257 | Time: 351.0m
+Ep 15000 | RawRew: 7.40 | LOSE | Wins: 257 | Time: 351.2m
+
+=== [趋势报告] Ep 15000 ===
+平均得分: 9.93
+当前运行胜场: 257/15000 (1.71%)
+探索系数: 0.0010
+============================
+
+
+>>> 评估模式 (50局)...
+>>> 评估胜率: 0.0% | 平均得分: 9.49
+💾 模型已保存到: checkpoints\ckpt_latest.pt
+>>> 安全存档已更新: checkpoints\ckpt_latest.pt
+
+训练完成！
+最终最佳胜率: 18.0% (得分 14.85)
